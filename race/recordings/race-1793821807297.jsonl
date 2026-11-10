@@ -1,0 +1,5 @@
+{"t":1793821807297,"lane":"sys","type":"race.start","t0":1793821807297,"replay":"lane2-ferry.json"}
+{"t":1793821807244,"lane":"3","type":"web.view","step":"home","label":"Opened the Harbour Line website","valueLen":14,"sessionId":"l3-20261105-012007-3b1d"}
+{"t":1793821807244,"lane":"2","type":"web.view","step":"home","label":"Opened the Harbour Line website","valueLen":38,"sessionId":"l2-replay-20261105-012007-hddk"}
+{"t":1793821807572,"lane":"1","type":"agent.say","text":"Starting. Mission received."}
+{"t":1793821814662,"lane":"sys","type":"race.reset"}

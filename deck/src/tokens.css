@@ -1,0 +1,237 @@
+/* Four looks from the design brain (fortuvp/design-brain, TASTE.md and the kept boards).
+   One stage, four worlds: switch with A (the alternatives panel) or ?look=glow|record|glass|paper.
+   The selectors are attribute-only so a thumbnail can wear a different look than the page.
+   - glow   YMax "glow stage": near-black tinted teal, one mint accent, aurora drama outside the frame
+   - record BlackOpal "editorial monochrome": black field, thin oversized type, dot matrix, one red
+   - glass  BEZY "iridescent glass": holographic field, frosted cards, bright gradient type
+   - paper  Cursor "warm paper + fine art": light paper, ink type, painted panels                 */
+:root, [data-look="glow"], [data-look="record"], [data-look="glass"], [data-look="paper"] {
+  color-scheme: dark;
+  --font-display: "Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-serif: "Instrument Serif", Georgia, "Times New Roman", serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --font-body: var(--font-display);
+  --font-emph: var(--font-serif);
+  --emph-style: italic;
+  --aurora-top: 0;
+  --font-label: var(--font-mono);
+
+  /* stage type scale (px on the 1920×1080 canvas) */
+  --t-mega: 260px;
+  --t-hero: 176px;
+  --t-display: 116px;
+  --t-title: 78px;
+  --t-lead: 42px;
+  --t-body: 32px;
+  --t-label: 22px;
+  --w-display: 300;
+  --track-display: -0.045em;
+  --track-label: 0.16em;
+
+  --margin-x: 136px;
+  --margin-y: 112px;
+  --radius: 28px;
+  --ease: cubic-bezier(0.2, 0.8, 0.1, 1);
+  --ease-snap: cubic-bezier(0.34, 1.36, 0.64, 1);
+
+  /* glow (default) */
+  --bg: #020b0a;
+  --bg-2: #071816;
+  --ink: #f2f7f4;
+  --ink-2: #b9cbc5;
+  --ink-3: #7f968f;
+  --ink-4: #4a5d57;
+  --accent: #52f2b6;
+  --accent-2: #2fd2c6;
+  --accent-ink: #03140f;
+  --hot: #f4e17a;
+  --fail: #ff6f6f;
+  --warn: #ffc46b;
+  --line: rgba(255, 255, 255, 0.08);
+  --line-2: rgba(255, 255, 255, 0.16);
+  --glass: rgba(255, 255, 255, 0.035);
+  --glass-2: rgba(255, 255, 255, 0.07);
+  --glass-blur: 22px;
+  --card-border: rgba(255, 255, 255, 0.09);
+  --ring: linear-gradient(100deg, #f4e17a, #52f2b6 45%, #2fd2c6 75%, #7fe3ff);
+  --aurora-a: rgba(82, 242, 182, 0.55);
+  --aurora-b: rgba(47, 210, 198, 0.42);
+  --aurora-c: rgba(18, 110, 96, 0.55);
+  --aurora-opacity: 1;
+  --dots-opacity: 0;
+  --holo-opacity: 0;
+  --paper-opacity: 0;
+  --net-node: 82, 242, 182;
+  --net-hot: 255, 111, 111;
+  --headline: var(--ink);
+  --emph: var(--accent);
+  --stamp: var(--accent);
+}
+
+[data-look="record"] {
+  color-scheme: dark;
+  --holo-opacity: 0;
+  --paper-opacity: 0;
+  --headline: var(--ink);
+  --bg: #050505;
+  --bg-2: #0c0c0c;
+  --ink: #f4f2ee;
+  --ink-2: #aaa79f;
+  --ink-3: #7c7972;
+  --ink-4: #4b4944;
+  --accent: #f4f2ee;
+  --accent-2: #d9d6cf;
+  --accent-ink: #050505;
+  --hot: #ff3b3b;
+  --fail: #ff3b3b;
+  --warn: #ff3b3b;
+  --line: rgba(255, 255, 255, 0.09);
+  --line-2: rgba(255, 255, 255, 0.18);
+  --glass: rgba(255, 255, 255, 0.02);
+  --glass-2: rgba(255, 255, 255, 0.05);
+  --glass-blur: 0px;
+  --card-border: rgba(255, 255, 255, 0.12);
+  --ring: linear-gradient(90deg, #ff3b3b, #ff3b3b);
+  --aurora-opacity: 0;
+  --dots-opacity: 1;
+  --w-display: 200;
+  --net-node: 244, 242, 238;
+  --net-hot: 255, 59, 59;
+  --emph: var(--hot);
+  --stamp: var(--hot);
+}
+
+[data-look="glass"] {
+  color-scheme: dark;
+  --dots-opacity: 0;
+  --paper-opacity: 0;
+  --headline: var(--ink);
+  --bg: #0b1d1a;
+  --bg-2: #10302a;
+  --ink: #ffffff;
+  --ink-2: #e2f4ee;
+  --ink-3: #b7d6cd;
+  --ink-4: #7fa79b;
+  --accent: #d8ff72;
+  --accent-2: #7fe7ff;
+  --accent-ink: #0b1d1a;
+  --hot: #ffd36e;
+  --fail: #ff7a96;
+  --warn: #ffd36e;
+  --line: rgba(255, 255, 255, 0.16);
+  --line-2: rgba(255, 255, 255, 0.28);
+  --glass: rgba(255, 255, 255, 0.1);
+  --glass-2: rgba(255, 255, 255, 0.16);
+  --glass-blur: 30px;
+  --card-border: rgba(255, 255, 255, 0.3);
+  --ring: linear-gradient(100deg, #ffd36e, #d8ff72 40%, #7fe7ff 75%, #c9a7ff);
+  --aurora-opacity: 0;
+  --holo-opacity: 1;
+  --w-display: 500;
+  --net-node: 255, 255, 255;
+  --net-hot: 255, 122, 150;
+  --emph: var(--accent);
+  --stamp: var(--accent);
+}
+
+[data-look="paper"] {
+  color-scheme: light;
+  --dots-opacity: 0;
+  --holo-opacity: 0;
+  --headline: var(--ink);
+  --bg: #f3f1ec;
+  --bg-2: #e9e5dc;
+  --ink: #24231e;
+  --ink-2: #4e4c44;
+  --ink-3: #7a776d;
+  --ink-4: #a6a296;
+  --accent: #24231e;
+  --accent-2: #3d5a73;
+  --accent-ink: #f3f1ec;
+  --hot: #3d5a73;
+  --fail: #b5412f;
+  --warn: #9a6a12;
+  --line: rgba(36, 35, 30, 0.1);
+  --line-2: rgba(36, 35, 30, 0.2);
+  --glass: rgba(255, 255, 255, 0.55);
+  --glass-2: rgba(255, 255, 255, 0.8);
+  --glass-blur: 10px;
+  --card-border: rgba(36, 35, 30, 0.1);
+  --ring: linear-gradient(100deg, #8ea7b8, #b9c6a5 45%, #d8c49a 80%);
+  --aurora-opacity: 0;
+  --paper-opacity: 1;
+  --w-display: 400;
+  --net-node: 61, 90, 115;
+  --net-hot: 181, 65, 47;
+  --emph: var(--accent-2);
+  --stamp: var(--fail);
+}
+
+/* CurateVision's three themes (fortuvp/curatevision DESIGN.md): the glow stage done right.
+   Blue aurora behind the top only, Urbanist 500 display, Geist text, lit edges, one accent. */
+[data-look="curate"], [data-look="kleros"], [data-look="daylight"] {
+  --font-display: "Urbanist", "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", "IBM Plex Mono", ui-monospace, monospace;
+  --font-emph: var(--font-display);
+  --emph-style: normal;
+  --w-display: 500;
+  --track-display: -0.04em;
+  --track-label: 0.08em;
+  --radius: 24px;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --aurora-opacity: 1;
+  --dots-opacity: 0;
+  --holo-opacity: 0;
+  --paper-opacity: 0;
+  --aurora-top: 1;
+  --font-label: var(--font-body);
+}
+[data-look="curate"] {
+  color-scheme: dark;
+  --bg: #02040b; --bg-2: #0c111d;
+  --ink: #f4f6fb; --ink-2: #c3cad8; --ink-3: #a1abc0; --ink-4: #7a849e;
+  --accent: #3d7bff; --accent-2: #45d4ff; --accent-ink: #f4f6fb;
+  --hot: #f5b04a; --fail: #ff6b7a; --warn: #f5b04a;
+  --line: rgba(255, 255, 255, 0.07); --line-2: rgba(255, 255, 255, 0.16);
+  --glass: #0c111d; --glass-2: rgba(255, 255, 255, 0.045); --glass-blur: 0px;
+  --card-border: rgba(255, 255, 255, 0.07);
+  --ring: conic-gradient(from 200deg, #7aa7ff, #45d4ff, #9b7bff, #f5b04a 62%, #7aa7ff);
+  --edge: conic-gradient(from var(--edge-angle, 210deg), #7aa7ff, #45d4ff, #9b7bff, #7aa7ff);
+  --cta-top: #15264f; --cta-bottom: #0a1226;
+  --aurora-a: #1b2fff; --aurora-b: #0a7cff; --aurora-c: #5b2bff;
+  --net-node: 122, 167, 255; --net-hot: 255, 107, 122;
+  --headline: var(--ink); --emph: #4f86ff; --stamp: #3d7bff;
+}
+[data-look="kleros"] {
+  color-scheme: dark;
+  --bg: #07001a; --bg-2: #1a073d;
+  --ink: #eaf4ff; --ink-2: #cfd7ec; --ink-3: #b9c6e0; --ink-4: #8f87bd;
+  --accent: #6cc5ff; --accent-2: #c084ff; --accent-ink: #eaf4ff;
+  --hot: #ffc46b; --fail: #ff5a78; --warn: #ffc46b;
+  --line: rgba(234, 244, 255, 0.08); --line-2: rgba(234, 244, 255, 0.18);
+  --glass: #1a073d; --glass-2: rgba(255, 255, 255, 0.05); --glass-blur: 0px;
+  --card-border: rgba(234, 244, 255, 0.09);
+  --ring: conic-gradient(from 200deg, #c084ff, #27cdfe, #6cc5ff, #ffc46b 62%, #c084ff);
+  --edge: conic-gradient(from var(--edge-angle, 210deg), #c084ff, #27cdfe, #6cc5ff, #c084ff);
+  --cta-top: #2c1266; --cta-bottom: #150437;
+  --aurora-a: #7e1bd4; --aurora-b: #4d00b4; --aurora-c: #27cdfe;
+  --net-node: 108, 197, 255; --net-hot: 255, 90, 120;
+  --headline: var(--ink); --emph: #6cc5ff; --stamp: #6cc5ff;
+}
+[data-look="daylight"] {
+  color-scheme: light;
+  --bg: #f5f7fc; --bg-2: #ffffff;
+  --ink: #0b1220; --ink-2: #2d3a50; --ink-3: #4d5a6e; --ink-4: #5e6a7d;
+  --accent: #2a63f0; --accent-2: #0a9fd0; --accent-ink: #0d1838;
+  --hot: #9a5b00; --fail: #c92a2a; --warn: #9a5b00;
+  --line: rgba(11, 18, 32, 0.08); --line-2: rgba(11, 18, 32, 0.16);
+  --glass: #ffffff; --glass-2: rgba(11, 18, 32, 0.04); --glass-blur: 0px;
+  --card-border: rgba(11, 18, 32, 0.08);
+  --ring: conic-gradient(from 200deg, #2a63f0, #0a9fd0, #7b4fd6, #e3a23b 62%, #2a63f0);
+  --edge: conic-gradient(from var(--edge-angle, 210deg), #2a63f0, #0a9fd0, #7b4fd6, #2a63f0);
+  --cta-top: #ffffff; --cta-bottom: #dde7ff;
+  --aurora-a: #9db7ff; --aurora-b: #b8e3ff; --aurora-c: #c9b8ff;
+  --net-node: 42, 99, 240; --net-hot: 201, 42, 42;
+  --headline: var(--ink); --emph: #2a63f0; --stamp: #2a63f0;
+}

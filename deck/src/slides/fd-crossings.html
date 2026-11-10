@@ -1,0 +1,215 @@
+<section class="slide" data-id="fd-crossings" data-title="Three things cross" data-chapter="Already starting · The agent acts on its own">
+  <div class="cx-k fade-in"><i class="cx-kdot"></i><span>Before · during · after</span></div>
+  <h2 class="cx-title"><span class="ln"><span>Three things cross the <em>narrow channel.</em></span></span></h2>
+
+  <!-- left: the agent's side, the same tiles as slide 2, dimmed -->
+  <div class="cx-wide">
+    <p class="cx-lbl">Your agent’s side</p>
+    <div class="cx-tiles">
+      <span style="--i:0">Every departure</span><span style="--i:1">Every seat class</span><span style="--i:2">The price rules</span>
+      <span style="--i:3">The timetable</span><span style="--i:4">The docs</span><span style="--i:5">The skill file</span>
+      <span style="--i:6">The terms</span><span style="--i:7">The refund rules</span><span class="cx-mine" style="--i:8">Your mission</span>
+      <span style="--i:9">The ID rules</span><span style="--i:10">Step-free access</span><span style="--i:11">Seats left</span>
+      <span style="--i:12">The API</span><span style="--i:13">Cancellation</span><span style="--i:14">Your budget</span>
+    </div>
+  </div>
+
+  <!-- the funnel, and the three paths through its narrow end -->
+  <svg class="cx-art" viewBox="0 0 1920 1080" aria-hidden="true">
+    <defs>
+      <linearGradient id="fd-cx-fn" x1="840" y1="0" x2="996" y2="0" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stop-color="#3d7bff" stop-opacity="0.30"/>
+        <stop offset="1" stop-color="#45d4ff" stop-opacity="0.55"/>
+      </linearGradient>
+    </defs>
+    <g class="cx-funnel">
+      <path class="cx-fn" d="M840 433 C 920 433 916 577 996 577 L996 657 C 916 657 920 801 840 801 Z"/>
+      <path class="cx-fe" d="M840 433 C 920 433 916 577 996 577"/>
+      <path class="cx-fe" d="M840 801 C 920 801 916 657 996 657"/>
+    </g>
+    <!-- before: from you into the funnel (drawn right to left) -->
+    <g class="cx-ar cx-a1">
+      <path class="cx-line" pathLength="1" d="M1168 416 C 1080 416 1090 597 1006 597"/>
+      <path class="cx-head" d="M1020 588 L1006 597 L1020 606"/>
+    </g>
+    <!-- during: from the funnel to you -->
+    <g class="cx-ar cx-a2">
+      <path class="cx-line" pathLength="1" d="M1004 617 H 1166"/>
+      <path class="cx-head" d="M1152 608 L1166 617 L1152 626"/>
+    </g>
+    <!-- after: from the funnel to you -->
+    <g class="cx-ar cx-a3">
+      <path class="cx-line" pathLength="1" d="M1004 637 C 1090 637 1080 837 1166 837"/>
+      <path class="cx-head" d="M1152 828 L1166 837 L1152 846"/>
+    </g>
+  </svg>
+
+  <!-- right: your side, three moments -->
+  <p class="cx-lbl cx-lbl-you">Your side</p>
+
+  <div class="cx-row cx-r1">
+    <p class="cx-slot-tag">Before</p>
+    <div class="cx-card">
+      <p class="cx-top"><b>Before</b><span>You tell your agent</span></p>
+      <p class="cx-mis">Book 4 ferry tickets · Sat 7 Nov</p>
+      <div class="cx-fence"><span>Under 4 USDC each</span><span>Ask me before paying</span></div>
+    </div>
+  </div>
+
+  <div class="cx-row cx-r2">
+    <p class="cx-slot-tag">During</p>
+    <p class="cx-ghost">On its own: no yes needed</p>
+    <div class="cx-card">
+      <p class="cx-top"><b>During</b><span>Your agent asks</span></p>
+      <p class="cx-amt">Pay <b>12.80 USDC</b>?</p>
+      <div class="cx-btns"><span>Not now</span><span class="is-yes">Yes, pay</span></div>
+    </div>
+  </div>
+
+  <div class="cx-row cx-r3">
+    <p class="cx-slot-tag">After</p>
+    <div class="cx-card">
+      <p class="cx-top"><b>After</b><span>Your agent reports</span></p>
+      <p class="cx-paid"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M7 17 L13 23 L25 9"/></svg>Paid <b>12.80 USDC</b></p>
+      <p class="cx-det">4 tickets · ref <code>HL-EFQTJZ</code></p>
+      <p class="cx-rul"><span>If it goes wrong:</span> a ruling in plain words</p>
+    </div>
+  </div>
+
+  <p class="cx-foot">Cards: a recorded run of this talk’s demo,<br>on a test network. The ferry line is made up.</p>
+
+  <p class="cx-end"><span>On its own, the middle one fades. The other two <em>never do.</em></span></p>
+
+  <i data-step="1" hidden></i><i data-step="2" hidden></i><i data-step="3" hidden></i><i data-step="4" hidden></i>
+  <aside class="notes">
+    <p><b>[1:00]</b></p>
+    <p>On entry: the picture from the start again. Left, dimmed, everything my agent takes in. Then the funnel, and on the right, my side, with three empty places. "So if less and less reaches me, what still has to cross that narrow channel? Three things."</p>
+    <p>Press: Before. The mission card goes from me into the funnel, and "Your mission" lights up on the agent's side. "Before: the mission and its fence. What to do, and how far it may go. Four ferry tickets for Saturday, under four USDC each, ask me before you pay. That one goes from me to the agent."</p>
+    <p>Press: During. The yes card comes back out of the funnel to me. "During: a yes, but only where I want one. One card, one decision, for this order only. That's the yes card you saw in the race."</p>
+    <p>Press: After. The receipt comes back the same way. "After: the receipt, and if something goes wrong, a ruling in plain words. A person reads it, not a log file. As a colleague put it on our stream, appeals go to people, and people don't read code."</p>
+    <p>Press: the yes card fades to an empty outline, and the last line appears. "Turn the dial to 'on its own' and the yes goes away. The other two never do. You always say what you want first, and you always get to see what happened after."</p>
+    <p>Careful: this is my model, not a standard; say "I think" if asked. Don't promise that the ruling exists for every purchase today: Kleros rules on disputes that are filed with it. The cards are from a recorded demo run on a test network, not a real purchase.</p>
+  </aside>
+</section>
+<style>
+section.slide[data-id="fd-crossings"] { padding: 0; display: block; gap: 0; }
+
+.slide[data-id="fd-crossings"] .cx-k { position: absolute; left: 120px; top: 96px; display: flex; align-items: center; gap: 16px; font: 500 22px/1.2 var(--font-body); letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-3); white-space: nowrap; }
+.slide[data-id="fd-crossings"] .cx-kdot { display: inline-block; flex: none; width: 10px; height: 10px; border-radius: 50%; background: #45d4ff; box-shadow: 0 0 0 5px rgba(69, 212, 255, 0.13), 0 0 14px rgba(69, 212, 255, 0.8); }
+.slide[data-id="fd-crossings"] .cx-title { position: absolute; left: 120px; top: 140px; margin: 0; font: 500 92px/1 var(--font-display); letter-spacing: -0.045em; color: var(--headline); white-space: nowrap; }
+.slide[data-id="fd-crossings"] .cx-title em { letter-spacing: inherit; }
+.slide[data-id="fd-crossings"] .cx-title .ln { padding-bottom: 0.14em; margin-bottom: -0.14em; }
+
+.slide[data-id="fd-crossings"] .cx-lbl { margin: 0; font: 500 22px/1.2 var(--font-body); letter-spacing: 0.12em; text-transform: uppercase; white-space: nowrap; }
+
+/* left: the agent's side, dimmed */
+.slide[data-id="fd-crossings"] .cx-wide { position: absolute; left: 120px; top: 405px; width: 708px; }
+.slide[data-id="fd-crossings"] .cx-wide .cx-lbl { margin-bottom: 20px; color: var(--ink-3); }
+.slide[data-id="fd-crossings"] .cx-tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.slide[data-id="fd-crossings"] .cx-tiles span { display: flex; align-items: center; height: 56px; padding: 0 16px; box-sizing: border-box; border-radius: 12px; border: 1px solid rgba(122, 167, 255, 0.28); background: rgba(61, 123, 255, 0.08); font: 500 22px/1.1 var(--font-body); color: #dbe6ff; white-space: nowrap; opacity: 0; transform: translateY(10px); transition: opacity 0.7s var(--ease), transform 0.9s var(--ease), border-color 0.9s var(--ease), background-color 0.9s var(--ease), box-shadow 0.9s var(--ease), color 0.9s var(--ease); transition-delay: calc(0.5s + var(--i) * 0.05s); }
+.slide[data-id="fd-crossings"].is-in .cx-tiles span { opacity: 0.42; transform: none; }
+/* before: the mission lands on the agent's side */
+.slide[data-id="fd-crossings"].is-in.b1 .cx-tiles .cx-mine { opacity: 1; border-color: rgba(69, 212, 255, 0.75); background: rgba(69, 212, 255, 0.12); color: #fff; box-shadow: 0 0 34px rgba(69, 212, 255, 0.28); transition-delay: 1.2s; }
+
+/* the funnel and the three paths */
+.slide[data-id="fd-crossings"] .cx-art { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: visible; pointer-events: none; }
+.slide[data-id="fd-crossings"] .cx-funnel { opacity: 0; transition: opacity 1.2s var(--ease) 1s; }
+.slide[data-id="fd-crossings"].is-in .cx-funnel { opacity: 1; }
+.slide[data-id="fd-crossings"] .cx-fn { fill: url(#fd-cx-fn); }
+.slide[data-id="fd-crossings"] .cx-fe { fill: none; stroke: rgba(201, 218, 255, 0.6); stroke-width: 1.6; }
+.slide[data-id="fd-crossings"] .cx-line { fill: none; stroke: #7aa7ff; stroke-width: 3; stroke-linecap: round; stroke-dasharray: 1 1; stroke-dashoffset: 1; filter: drop-shadow(0 0 6px rgba(61, 123, 255, 0.9)); transition: stroke-dashoffset 1.1s cubic-bezier(0.65, 0, 0.35, 1), stroke 1.2s var(--ease); }
+.slide[data-id="fd-crossings"] .cx-head { fill: none; stroke: #45d4ff; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; opacity: 0; transition: opacity 0.5s var(--ease); }
+.slide[data-id="fd-crossings"] .cx-ar { transition: opacity 1.2s var(--ease); }
+.slide[data-id="fd-crossings"] .cx-a1 .cx-line { transition-delay: 0.3s; }
+.slide[data-id="fd-crossings"] .cx-a1 .cx-head { transition-delay: 1.2s; }
+.slide[data-id="fd-crossings"] :is(.cx-a2, .cx-a3) .cx-head { transition-delay: 0.9s; }
+.slide[data-id="fd-crossings"].b1 .cx-a1 :is(.cx-line, .cx-head), .slide[data-id="fd-crossings"].b2 .cx-a2 :is(.cx-line, .cx-head), .slide[data-id="fd-crossings"].b3 .cx-a3 :is(.cx-line, .cx-head) { stroke-dashoffset: 0; opacity: 1; }
+
+/* right: your side */
+.slide[data-id="fd-crossings"] .cx-lbl-you { position: absolute; left: 1176px; top: 286px; color: var(--ink-2); opacity: 0; transition: opacity 1s var(--ease) 0.8s; }
+.slide[data-id="fd-crossings"].is-in .cx-lbl-you { opacity: 1; }
+.slide[data-id="fd-crossings"] .cx-row { position: absolute; left: 1176px; width: 624px; }
+.slide[data-id="fd-crossings"] .cx-r1 { top: 328px; height: 176px; }
+.slide[data-id="fd-crossings"] .cx-r2 { top: 522px; height: 190px; }
+.slide[data-id="fd-crossings"] .cx-r3 { top: 730px; height: 214px; }
+/* the empty place, which the card fills */
+.slide[data-id="fd-crossings"] .cx-row::before { content: ""; position: absolute; inset: 0; border-radius: 22px; border: 1.5px dashed rgba(122, 167, 255, 0.26); opacity: 0; transition: opacity 1s var(--ease) 1.1s, border-color 1.2s var(--ease); }
+.slide[data-id="fd-crossings"].is-in .cx-row::before { opacity: 1; }
+.slide[data-id="fd-crossings"] .cx-slot-tag { position: absolute; left: 28px; top: 24px; margin: 0; font: 500 22px/1.2 var(--font-body); letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-4); opacity: 0; transition: opacity 1s var(--ease) 1.1s; }
+.slide[data-id="fd-crossings"].is-in .cx-slot-tag { opacity: 1; }
+
+/* the cards: the yes card's look from slide 2 */
+.slide[data-id="fd-crossings"] .cx-card { position: absolute; inset: 0; box-sizing: border-box; padding: 22px 28px 0; border-radius: 22px; border: 1.5px solid rgba(255, 255, 255, 0.18); background: linear-gradient(180deg, #0d1430, #060a18); box-shadow: 0 24px 70px rgba(0, 0, 0, 0.5); font-family: var(--font-body); color: var(--ink); opacity: 0; filter: blur(6px); transition: opacity 0.9s var(--ease), transform 1.3s var(--ease), filter 0.9s var(--ease), border-color 1.2s var(--ease), box-shadow 1.2s var(--ease); }
+.slide[data-id="fd-crossings"] .cx-card p { margin: 0; }
+.slide[data-id="fd-crossings"] .cx-r1 .cx-card { transform: translateX(80px); }
+.slide[data-id="fd-crossings"] :is(.cx-r2, .cx-r3) .cx-card { transform: translateX(-60px); transition-delay: 0.5s; }
+.slide[data-id="fd-crossings"].b1 .cx-r1 .cx-card, .slide[data-id="fd-crossings"].b2 .cx-r2 .cx-card, .slide[data-id="fd-crossings"].b3 .cx-r3 .cx-card { opacity: 1; filter: none; transform: none; }
+.slide[data-id="fd-crossings"] .cx-top { display: flex; align-items: baseline; gap: 14px; font-size: 22px; line-height: 1.2; color: var(--ink-3); white-space: nowrap; }
+.slide[data-id="fd-crossings"] .cx-top b { font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #45d4ff; }
+.slide[data-id="fd-crossings"] .cx-top b::after { content: "·"; margin-left: 14px; letter-spacing: 0; color: var(--ink-4); }
+
+.slide[data-id="fd-crossings"] .cx-mis { margin-top: 10px !important; font: 500 36px/1.1 var(--font-display); letter-spacing: -0.02em; color: var(--headline); white-space: nowrap; }
+.slide[data-id="fd-crossings"] .cx-fence { display: flex; gap: 12px; margin-top: 16px; }
+.slide[data-id="fd-crossings"] .cx-fence span { display: flex; align-items: center; height: 40px; padding: 0 16px; border-radius: 10px; border: 1px solid rgba(122, 167, 255, 0.45); background: rgba(61, 123, 255, 0.1); font-size: 22px; color: #dbe6ff; white-space: nowrap; }
+
+.slide[data-id="fd-crossings"] .cx-amt { margin-top: 8px !important; font: 500 42px/1.1 var(--font-display); letter-spacing: -0.02em; color: var(--headline); white-space: nowrap; }
+.slide[data-id="fd-crossings"] .cx-amt b { font-weight: 500; color: #7aa7ff; }
+.slide[data-id="fd-crossings"] .cx-btns { display: grid; grid-template-columns: 1fr 1.3fr; gap: 12px; margin-top: 16px; }
+.slide[data-id="fd-crossings"] .cx-btns span { display: flex; align-items: center; justify-content: center; height: 50px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.16); font-size: 23px; color: var(--ink-2); }
+.slide[data-id="fd-crossings"] .cx-btns span.is-yes { border-color: transparent; background: #3d7bff; color: #fff; }
+
+.slide[data-id="fd-crossings"] .cx-paid { display: flex; align-items: center; gap: 12px; margin-top: 8px !important; font: 500 38px/1.1 var(--font-display); letter-spacing: -0.02em; color: var(--headline); white-space: nowrap; }
+.slide[data-id="fd-crossings"] .cx-paid b { font-weight: 500; color: #7aa7ff; }
+.slide[data-id="fd-crossings"] .cx-paid svg { flex: none; width: 32px; height: 32px; overflow: visible; }
+.slide[data-id="fd-crossings"] .cx-paid svg path { fill: none; stroke: #45d4ff; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.slide[data-id="fd-crossings"] .cx-det { margin-top: 6px !important; font-size: 24px; line-height: 1.3; color: var(--ink-2); white-space: nowrap; }
+.slide[data-id="fd-crossings"] .cx-det code { font: 500 23px/1 var(--font-mono); letter-spacing: 0.02em; color: var(--ink); }
+.slide[data-id="fd-crossings"] .cx-rul { margin-top: 12px !important; padding-top: 11px; border-top: 1px dashed rgba(122, 167, 255, 0.3); font-size: 24px; line-height: 1.3; color: var(--ink); white-space: nowrap; }
+.slide[data-id="fd-crossings"] .cx-rul span { color: var(--ink-3); }
+
+/* last beat: the yes fades to an empty outline; the other two stay lit */
+.slide[data-id="fd-crossings"] .cx-ghost { position: absolute; left: 28px; right: 28px; top: 50%; margin: 0; transform: translateY(-30%); font: 500 30px/1.2 var(--font-display); letter-spacing: -0.01em; color: var(--ink-3); text-align: center; white-space: nowrap; opacity: 0; transition: opacity 1.1s var(--ease), transform 1.3s var(--ease); }
+.slide[data-id="fd-crossings"].b4 .cx-r2 .cx-card { opacity: 0; filter: blur(4px); transform: scale(0.98); transition-delay: 0s; transition-duration: 1.2s; }
+.slide[data-id="fd-crossings"].b4 .cx-r2 .cx-ghost { opacity: 1; transform: translateY(-10%); transition-delay: 0.5s; }
+.slide[data-id="fd-crossings"].b4 .cx-r2 .cx-slot-tag { color: var(--ink-3); transition: color 1s var(--ease) 0.5s; }
+.slide[data-id="fd-crossings"].b4 .cx-r2::before { border-color: rgba(122, 167, 255, 0.4); transition-delay: 0.3s; }
+.slide[data-id="fd-crossings"].b4 .cx-a2 { opacity: 0.18; }
+.slide[data-id="fd-crossings"].b4 :is(.cx-r1, .cx-r3) .cx-card { border-color: rgba(122, 167, 255, 0.75); box-shadow: 0 0 0 1px rgba(122, 167, 255, 0.4), 0 0 60px rgba(61, 123, 255, 0.4), 0 24px 70px rgba(0, 0, 0, 0.5); transition-delay: 0.6s; }
+
+.slide[data-id="fd-crossings"] .cx-foot { position: absolute; left: 120px; top: 836px; width: 700px; margin: 0; font: 400 22px/1.45 var(--font-mono); letter-spacing: 0.01em; color: var(--ink-4); opacity: 0; transition: opacity 1s var(--ease) 1.2s; }
+.slide[data-id="fd-crossings"].is-in .cx-foot { opacity: 1; }
+
+.slide[data-id="fd-crossings"] .cx-end { position: absolute; left: 120px; top: 980px; display: flex; align-items: center; gap: 24px; margin: 0; font: 500 44px/1.2 var(--font-display); letter-spacing: -0.025em; color: var(--ink); white-space: nowrap; opacity: 0; transform: translateY(22px); filter: blur(6px); transition: opacity 1.2s var(--ease) 1s, transform 1.4s var(--ease) 1s, filter 1.2s var(--ease) 1s; }
+.slide[data-id="fd-crossings"] .cx-end::before { content: ""; flex: none; width: 56px; height: 3px; border-radius: 3px; background: linear-gradient(90deg, rgba(122, 167, 255, 0.15), #7aa7ff); box-shadow: 0 0 12px rgba(61, 123, 255, 0.9); }
+.slide[data-id="fd-crossings"] .cx-end em { letter-spacing: inherit; }
+.slide[data-id="fd-crossings"].b4 .cx-end { opacity: 1; transform: none; filter: none; }
+
+.slide[data-id="fd-crossings"].lx-snap *, .slide[data-id="fd-crossings"].lx-snap *::before, .slide[data-id="fd-crossings"].lx-snap *::after { transition-duration: 0s !important; transition-delay: 0s !important; }
+.slide[data-id="fd-crossings"].lx-back *, .slide[data-id="fd-crossings"].lx-back *::before, .slide[data-id="fd-crossings"].lx-back *::after { transition-duration: 0.45s !important; transition-delay: 0s !important; }
+
+/* thumbnails: fully built, before the last beat */
+.mini .slide[data-id="fd-crossings"] .cx-tiles span { opacity: 0.42; transform: none; }
+.mini .slide[data-id="fd-crossings"] :is(.cx-funnel, .cx-lbl-you, .cx-slot-tag, .cx-foot, .cx-head) { opacity: 1; }
+.mini .slide[data-id="fd-crossings"] .cx-row::before { opacity: 1; }
+.mini .slide[data-id="fd-crossings"] .cx-line { stroke-dashoffset: 0; }
+.mini .slide[data-id="fd-crossings"] .cx-card { opacity: 1; transform: none; filter: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .slide[data-id="fd-crossings"] *, .slide[data-id="fd-crossings"] *::before, .slide[data-id="fd-crossings"] *::after { transition-duration: 1ms !important; transition-delay: 0s !important; animation: none !important; }
+}
+</style>
+<script>
+(() => {
+  // Beats: 1 the mission goes from you into the funnel, 2 the yes comes out to you, 3 the receipt comes out to you,
+  // 4 the yes fades to an empty outline. Arriving straight at a step (deep link) snaps; going back is quick.
+  const brief = (slide, cls, ms) => { slide.classList.remove("lx-snap", "lx-back"); slide.classList.add(cls); clearTimeout(slide._lxT); slide._lxT = setTimeout(() => slide.classList.remove(cls), ms); };
+  window.DECK_SLIDE_HOOKS["fd-crossings"] = {
+    enter(slide) { slide._lxEnter = true; },
+    step(slide, n) {
+      if (slide._lxEnter && n > 0) brief(slide, "lx-snap", 80);
+      else if (n < (slide._lxN ?? 0)) brief(slide, "lx-back", 900);
+      slide._lxEnter = false; slide._lxN = n;
+    },
+  };
+})();
+</script>

@@ -1,0 +1,11 @@
+{"t":1793775674127,"type":"web.view","step":"home","label":"Opened the Harbour Line website","value":"/ferry/?lane=3","valueLen":14,"lane":"3","sessionId":"l3-20261104-123114-vhds"}
+{"t":1793775685206,"type":"web.click","step":"home","field":"cookie.necessary","label":"Cookies: only necessary","lane":"3","sessionId":"l3-20261104-123114-vhds"}
+{"t":1793775700589,"type":"web.click","step":"home","field":"nav.book","label":"Book tickets","lane":"3","sessionId":"l3-20261104-123114-vhds"}
+{"t":1793775700589,"type":"web.step","step":"auth","label":"Sign in","lane":"3","sessionId":"l3-20261104-123114-vhds"}
+{"t":1793775701822,"type":"web.click","step":"auth","field":"auth.tab","label":"Sign in tab","value":"signin","valueLen":6,"lane":"3","sessionId":"l3-20261104-123114-vhds"}
+{"t":1793775732138,"type":"web.field","step":"auth","field":"auth.siEmail","label":"Email address","value":"lane3.me@harbour-line.test","valueLen":26,"keys":[[1793775731339,"lane3.me@harbour-line.test"]],"lane":"3","sessionId":"l3-20261104-123114-vhds"}
+{"t":1793775740138,"type":"web.field","step":"auth","field":"auth.siPassword","label":"Password","value":"Ferry2026demo","valueLen":13,"keys":[[1793775739417,"Ferry2026demo"]],"lane":"3","sessionId":"l3-20261104-123114-vhds"}
+{"t":1793775740204,"type":"web.click","step":"auth","field":"auth.signin","label":"Sign in","lane":"3","sessionId":"l3-20261104-123114-vhds"}
+{"t":1793775740204,"type":"web.error","step":"auth","field":"auth.siEmail","label":"We could not find an account with this email. Create an account first.","lane":"3","sessionId":"l3-20261104-123114-vhds"}
+{"t":1793775741937,"type":"web.click","step":"auth","field":"auth.signin","label":"Sign in","lane":"3","sessionId":"l3-20261104-123114-vhds"}
+{"t":1793775741937,"type":"web.error","step":"auth","field":"auth.siEmail","label":"We could not find an account with this email. Create an account first.","lane":"3","sessionId":"l3-20261104-123114-vhds"}

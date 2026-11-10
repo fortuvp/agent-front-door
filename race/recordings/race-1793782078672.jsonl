@@ -1,0 +1,435 @@
+{"t":1793782078672,"lane":"sys","type":"race.start","t0":1793782078672,"replay":"lane2-ferry.json"}
+{"t":1793782078978,"lane":"1","type":"agent.say","text":"Starting. Mission received."}
+{"t":1793782081091,"lane":"3","type":"web.click","step":"home","field":"cookie.necessary","label":"Cookies: only necessary","sessionId":"l3-20261104-135614-pyxs"}
+{"t":1793782082222,"lane":"3","type":"web.click","step":"home","field":"nav.book","label":"Book tickets","sessionId":"l3-20261104-135614-pyxs"}
+{"t":1793782082223,"lane":"3","type":"web.step","step":"auth","label":"Sign in","sessionId":"l3-20261104-135614-pyxs"}
+{"t":1793782087350,"lane":"2","type":"web.click","step":"home","field":"cookie.necessary","label":"Cookies: only necessary","sessionId":"l2-replay-20261104-135614-e5q8"}
+{"t":1793782087352,"lane":"2","type":"web.click","step":"home","field":"cookie.necessary","label":"Cookies: only necessary","sessionId":"l2-replay-20261104-124841-50jl"}
+{"t":1793782091560,"lane":"2","type":"web.click","step":"home","field":"nav.book","label":"Book tickets","sessionId":"l2-replay-20261104-124841-50jl"}
+{"t":1793782091560,"lane":"2","type":"web.step","step":"auth","label":"Sign in","sessionId":"l2-replay-20261104-124841-50jl"}
+{"t":1793782091563,"lane":"2","type":"web.click","step":"home","field":"nav.book","label":"Book tickets","sessionId":"l2-replay-20261104-135614-e5q8"}
+{"t":1793782091563,"lane":"2","type":"web.step","step":"auth","label":"Sign in","sessionId":"l2-replay-20261104-135614-e5q8"}
+{"t":1793782094123,"lane":"3","type":"web.click","step":"auth","field":"auth.tab","label":"Sign in tab","valueLen":6,"sessionId":"l3-20261104-135614-pyxs"}
+{"t":1793782094772,"lane":"3","type":"web.click","step":"auth","field":"auth.tab","label":"Create account tab","valueLen":6,"sessionId":"l3-20261104-135614-pyxs"}
+{"t":1793782095339,"lane":"3","type":"web.click","step":"auth","field":"auth.tab","label":"Sign in tab","valueLen":6,"sessionId":"l3-20261104-135614-pyxs"}
+{"t":1793782096739,"lane":"3","type":"web.click","step":"auth","field":"auth.signin","label":"Sign in","sessionId":"l3-20261104-135614-pyxs"}
+{"t":1793782096739,"lane":"3","type":"web.submit","step":"auth","field":"auth.signin","label":"Signed in","sessionId":"l3-20261104-135614-pyxs"}
+{"t":1793782096739,"lane":"3","type":"web.step","step":"trip","label":"Trip","sessionId":"l3-20261104-135614-pyxs"}
+{"t":1793782101640,"lane":"3","type":"web.click","step":"trip","field":"trip.route.toggle","label":"Open the route list","sessionId":"l3-20261104-135614-pyxs"}
+{"t":1793782102640,"lane":"3","type":"web.click","step":"trip","field":"trip.route.pick","label":"Route: Gateway of India to Elephanta Island","valueLen":17,"sessionId":"l3-20261104-135614-pyxs"}
+{"t":1793782103206,"lane":"3","type":"web.click","step":"trip","field":"trip.date.toggle","label":"Open the calendar","sessionId":"l3-20261104-135614-pyxs"}
+{"t":1793782104339,"lane":"3","type":"web.click","step":"trip","field":"trip.date.pick","label":"Date: Fri 6 Nov","valueLen":10,"sessionId":"l3-20261104-135614-pyxs"}
+{"t":1793782106772,"lane":"3","type":"web.click","step":"trip","field":"trip.out","label":"Leave at 11:30","valueLen":5,"sessionId":"l3-20261104-135614-pyxs"}
+{"t":1793782107307,"lane":"3","type":"web.click","step":"trip","field":"trip.ret","label":"Return at 17:00","valueLen":5,"sessionId":"l3-20261104-135614-pyxs"}
+{"t":1793782107812,"lane":"2","type":"web.field","step":"auth","field":"auth.email","label":"Email address","valueLen":29,"sessionId":"l2-replay-20261104-124841-50jl"}
+{"t":1793782107823,"lane":"2","type":"web.field","step":"auth","field":"auth.password","label":"Password","valueLen":13,"sessionId":"l2-replay-20261104-124841-50jl"}
+{"t":1793782107812,"lane":"2","type":"web.field","step":"auth","field":"auth.email","label":"Email address","valueLen":29,"sessionId":"l2-replay-20261104-135614-e5q8"}
+{"t":1793782107820,"lane":"2","type":"web.field","step":"auth","field":"auth.password","label":"Password","valueLen":13,"sessionId":"l2-replay-20261104-135614-e5q8"}
+{"t":1793782108708,"lane":"3","type":"web.click","step":"trip","field":"trip.next","label":"Continue to passengers","sessionId":"l3-20261104-135614-pyxs"}
+{"t":1793782108708,"lane":"3","type":"web.submit","step":"trip","field":"trip.next","label":"Trip chosen: Fri 6 Nov, 11:30 and back at 17:00","sessionId":"l3-20261104-135614-pyxs"}
+{"t":1793782108708,"lane":"3","type":"web.step","step":"passengers","label":"Passengers","sessionId":"l3-20261104-135614-pyxs"}
+{"t":1793782112728,"lane":"2","type":"web.field","step":"auth","field":"auth.password2","label":"Repeat password","valueLen":13,"sessionId":"l2-replay-20261104-124841-50jl"}
+{"t":1793782112733,"lane":"2","type":"web.click","step":"auth","field":"auth.terms","label":"Accept the terms","sessionId":"l2-replay-20261104-124841-50jl"}
+{"t":1793782112726,"lane":"2","type":"web.field","step":"auth","field":"auth.password2","label":"Repeat password","valueLen":13,"sessionId":"l2-replay-20261104-135614-e5q8"}
+{"t":1793782112734,"lane":"2","type":"web.click","step":"auth","field":"auth.terms","label":"Accept the terms","sessionId":"l2-replay-20261104-135614-e5q8"}
+{"t":1793782115832,"lane":"3","type":"web.field","step":"passengers","field":"pax.0.name","label":"Passenger 1 · Full name","valueLen":11,"sessionId":"l3-20261104-135614-pyxs"}
+{"t":1793782116897,"lane":"3","type":"web.field","step":"passengers","field":"pax.0.age","label":"Passenger 1 · Age","valueLen":2,"sessionId":"l3-20261104-135614-pyxs"}
+{"t":1793782117582,"lane":"2","type":"web.click","step":"auth","field":"auth.terms","label":"Accept the terms","sessionId":"l2-replay-20261104-135614-e5q8"}
+{"t":1793782117580,"lane":"2","type":"web.click","step":"auth","field":"auth.terms","label":"Accept the terms","sessionId":"l2-replay-20261104-124841-50jl"}
+{"t":1793782121591,"lane":"3","type":"web.field","step":"passengers","field":"pax.0.idNumber","label":"Passenger 1 · ID number","valueLen":7,"sessionId":"l3-20261104-135614-pyxs"}
+{"t":1793782121724,"lane":"3","type":"web.click","step":"passengers","field":"pax.idtype.toggle","label":"Passenger 1 · open ID types","valueLen":1,"sessionId":"l3-20261104-135614-pyxs"}
+{"t":1793782122473,"lane":"3","type":"web.click","step":"passengers","field":"pax.idtype.pick","label":"Passenger 1 · ID type: Passport","valueLen":10,"sessionId":"l3-20261104-135614-pyxs"}
+{"t":1793782124609,"lane":"3","type":"web.click","step":"passengers","field":"pax.class","label":"Seats: Economy","valueLen":7,"sessionId":"l3-20261104-135614-pyxs"}
+{"t":1793782125990,"lane":"3","type":"web.click","step":"passengers","field":"pax.board","label":"Boarding: Gateway jetty 1","valueLen":7,"sessionId":"l3-20261104-135614-pyxs"}
+{"t":1793782127190,"lane":"2","type":"web.click","step":"auth","field":"auth.terms","label":"Accept the terms","sessionId":"l2-replay-20261104-135614-e5q8"}
+{"t":1793782127191,"lane":"2","type":"web.click","step":"auth","field":"auth.terms","label":"Accept the terms","sessionId":"l2-replay-20261104-124841-50jl"}
+{"t":1793782129542,"lane":"3","type":"web.field","step":"passengers","field":"pax.assist","label":"Special assistance","valueLen":2,"sessionId":"l3-20261104-135614-pyxs"}
+{"t":1793782129590,"lane":"3","type":"web.click","step":"passengers","field":"pax.next","label":"Check the price","sessionId":"l3-20261104-135614-pyxs"}
+{"t":1793782129591,"lane":"3","type":"web.error","step":"passengers","field":"pax.0.idNumber","label":"A passport number is one letter and 7 digits, like A1234567.","sessionId":"l3-20261104-135614-pyxs"}
+{"t":1793782131530,"lane":"2","type":"web.click","step":"auth","field":"auth.create","label":"Create account","sessionId":"l2-replay-20261104-124841-50jl"}
+{"t":1793782131530,"lane":"2","type":"web.submit","step":"auth","field":"auth.create","label":"Created an account","sessionId":"l2-replay-20261104-124841-50jl"}
+{"t":1793782131535,"lane":"2","type":"web.click","step":"auth","field":"auth.create","label":"Create account","sessionId":"l2-replay-20261104-135614-e5q8"}
+{"t":1793782131535,"lane":"2","type":"web.submit","step":"auth","field":"auth.create","label":"Created an account","sessionId":"l2-replay-20261104-135614-e5q8"}
+{"t":1793782134495,"lane":"3","type":"web.field","step":"passengers","field":"pax.0.idNumber","label":"Passenger 1 · ID number","valueLen":8,"sessionId":"l3-20261104-135614-pyxs"}
+{"t":1793782134525,"lane":"3","type":"web.click","step":"passengers","field":"pax.next","label":"Check the price","sessionId":"l3-20261104-135614-pyxs"}
+{"t":1793782134525,"lane":"3","type":"web.submit","step":"passengers","field":"pax.next","label":"Asked for the price","sessionId":"l3-20261104-135614-pyxs"}
+{"t":1793782134545,"lane":"3","type":"web.step","step":"review","label":"Review","sessionId":"l3-20261104-135614-pyxs"}
+{"t":1793782138772,"lane":"3","type":"web.click","step":"review","field":"review.terms","label":"Accept the conditions of carriage","sessionId":"l3-20261104-135614-pyxs"}
+{"t":1793782139456,"lane":"3","type":"web.click","step":"review","field":"review.next","label":"Continue to payment","sessionId":"l3-20261104-135614-pyxs"}
+{"t":1793782139456,"lane":"3","type":"web.submit","step":"review","field":"review.next","label":"Accepted the price, 2.60 USDC","sessionId":"l3-20261104-135614-pyxs"}
+{"t":1793782139456,"lane":"3","type":"web.step","step":"pay","label":"Pay","sessionId":"l3-20261104-135614-pyxs"}
+{"t":1793782143825,"lane":"3","type":"web.field","step":"pay","field":"pay.number","label":"Card number","valueLen":3,"sessionId":"l3-20261104-135614-pyxs"}
+{"t":1793782150629,"lane":"3","type":"web.field","step":"pay","field":"pay.expiry","label":"Expiry date","valueLen":7,"sessionId":"l3-20261104-135614-pyxs"}
+{"t":1793782152491,"lane":"3","type":"web.field","step":"pay","field":"pay.cvc","label":"Security code","valueLen":3,"sessionId":"l3-20261104-135614-pyxs"}
+{"t":1793782157351,"lane":"2","type":"web.click","step":"auth","field":"toast.close","label":"Close the message","sessionId":"l2-replay-20261104-124841-50jl"}
+{"t":1793782157355,"lane":"2","type":"web.click","step":"auth","field":"toast.close","label":"Close the message","sessionId":"l2-replay-20261104-135614-e5q8"}
+{"t":1793782159530,"lane":"3","type":"web.field","step":"pay","field":"pay.name","label":"Name on card","valueLen":11,"sessionId":"l3-20261104-135614-pyxs"}
+{"t":1793782159657,"lane":"3","type":"web.field","step":"pay","field":"pay.number","label":"Card number","valueLen":19,"sessionId":"l3-20261104-135614-pyxs"}
+{"t":1793782159657,"lane":"3","type":"web.click","step":"pay","field":"pay.submit","label":"Pay 2.60 USDC","sessionId":"l3-20261104-135614-pyxs"}
+{"t":1793782161264,"lane":"3","type":"web.submit","step":"pay","field":"pay.submit","label":"Paid with the card ending 4242","valueLen":8,"sessionId":"l3-20261104-135614-pyxs"}
+{"t":1793782161269,"lane":"3","type":"web.step","step":"ticket","label":"Ticket","sessionId":"l3-20261104-135614-pyxs"}
+{"t":1793782161269,"lane":"3","type":"web.done","step":"ticket","label":"Booked, reference HL-HWNN3J","valueLen":9,"ref":"HL-HWNN3J","sessionId":"l3-20261104-135614-pyxs"}
+{"t":1793782161282,"lane":"3","type":"lane.done","ms":82597,"steps":35}
+{"t":1793782165661,"lane":"2","type":"web.field","step":"auth","field":"auth.code","label":"Email code","valueLen":6,"sessionId":"l2-replay-20261104-124841-50jl"}
+{"t":1793782165666,"lane":"2","type":"web.click","step":"auth","field":"auth.verify","label":"Verify code","sessionId":"l2-replay-20261104-124841-50jl"}
+{"t":1793782165666,"lane":"2","type":"web.submit","step":"auth","field":"auth.verify","label":"Email code accepted","sessionId":"l2-replay-20261104-124841-50jl"}
+{"t":1793782165666,"lane":"2","type":"web.step","step":"trip","label":"Trip","sessionId":"l2-replay-20261104-124841-50jl"}
+{"t":1793782165663,"lane":"2","type":"web.field","step":"auth","field":"auth.code","label":"Email code","valueLen":6,"sessionId":"l2-replay-20261104-135614-e5q8"}
+{"t":1793782165671,"lane":"2","type":"web.click","step":"auth","field":"auth.verify","label":"Verify code","sessionId":"l2-replay-20261104-135614-e5q8"}
+{"t":1793782165671,"lane":"2","type":"web.submit","step":"auth","field":"auth.verify","label":"Email code accepted","sessionId":"l2-replay-20261104-135614-e5q8"}
+{"t":1793782165671,"lane":"2","type":"web.step","step":"trip","label":"Trip","sessionId":"l2-replay-20261104-135614-e5q8"}
+{"t":1793782170870,"lane":"2","type":"web.view","step":"home","label":"Opened the Harbour Line website","valueLen":38,"sessionId":"l2-replay-20261104-141930-1smf"}
+{"t":1793782170877,"lane":"2","type":"web.click","step":"home","field":"cookie.necessary","label":"Cookies: only necessary","sessionId":"l2-replay-20261104-141930-1smf"}
+{"t":1793782170882,"lane":"2","type":"web.click","step":"home","field":"nav.book","label":"Book tickets","sessionId":"l2-replay-20261104-141930-1smf"}
+{"t":1793782170882,"lane":"2","type":"web.step","step":"auth","label":"Sign in","sessionId":"l2-replay-20261104-141930-1smf"}
+{"t":1793782170886,"lane":"2","type":"web.field","step":"auth","field":"auth.email","label":"Email address","valueLen":29,"sessionId":"l2-replay-20261104-141930-1smf"}
+{"t":1793782170887,"lane":"2","type":"web.field","step":"auth","field":"auth.password","label":"Password","valueLen":13,"sessionId":"l2-replay-20261104-141930-1smf"}
+{"t":1793782170887,"lane":"2","type":"web.field","step":"auth","field":"auth.password2","label":"Repeat password","valueLen":13,"sessionId":"l2-replay-20261104-141930-1smf"}
+{"t":1793782170887,"lane":"2","type":"web.click","step":"auth","field":"auth.terms","label":"Accept the terms","sessionId":"l2-replay-20261104-141930-1smf"}
+{"t":1793782170889,"lane":"2","type":"web.click","step":"auth","field":"auth.terms","label":"Accept the terms","sessionId":"l2-replay-20261104-141930-1smf"}
+{"t":1793782170899,"lane":"2","type":"web.click","step":"auth","field":"auth.terms","label":"Accept the terms","sessionId":"l2-replay-20261104-141930-1smf"}
+{"t":1793782170910,"lane":"2","type":"web.click","step":"auth","field":"auth.create","label":"Create account","sessionId":"l2-replay-20261104-141930-1smf"}
+{"t":1793782170910,"lane":"2","type":"web.submit","step":"auth","field":"auth.create","label":"Created an account","sessionId":"l2-replay-20261104-141930-1smf"}
+{"t":1793782170918,"lane":"2","type":"web.click","step":"auth","field":"toast.close","label":"Close the message","sessionId":"l2-replay-20261104-141930-1smf"}
+{"t":1793782170934,"lane":"2","type":"web.field","step":"auth","field":"auth.code","label":"Email code","valueLen":6,"sessionId":"l2-replay-20261104-141930-1smf"}
+{"t":1793782170942,"lane":"2","type":"web.click","step":"auth","field":"auth.verify","label":"Verify code","sessionId":"l2-replay-20261104-141930-1smf"}
+{"t":1793782170942,"lane":"2","type":"web.submit","step":"auth","field":"auth.verify","label":"Email code accepted","sessionId":"l2-replay-20261104-141930-1smf"}
+{"t":1793782170942,"lane":"2","type":"web.step","step":"trip","label":"Trip","sessionId":"l2-replay-20261104-141930-1smf"}
+{"t":1793782170871,"lane":"3","type":"web.view","step":"home","label":"Opened the Harbour Line website","valueLen":14,"sessionId":"l3-20261104-141930-dblg"}
+{"t":1793782177219,"lane":"2","type":"web.click","step":"trip","field":"trip.route.toggle","label":"Open the route list","sessionId":"l2-replay-20261104-124841-50jl"}
+{"t":1793782177190,"lane":"2","type":"web.click","step":"trip","field":"trip.route.toggle","label":"Open the route list","sessionId":"l2-replay-20261104-141930-1smf"}
+{"t":1793782181808,"lane":"2","type":"web.view","step":"home","label":"Opened the Harbour Line website","valueLen":38,"sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782181819,"lane":"2","type":"web.click","step":"home","field":"cookie.necessary","label":"Cookies: only necessary","sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782181828,"lane":"2","type":"web.click","step":"home","field":"nav.book","label":"Book tickets","sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782181828,"lane":"2","type":"web.step","step":"auth","label":"Sign in","sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782181834,"lane":"2","type":"web.field","step":"auth","field":"auth.email","label":"Email address","valueLen":29,"sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782181834,"lane":"2","type":"web.field","step":"auth","field":"auth.password","label":"Password","valueLen":13,"sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782181835,"lane":"2","type":"web.field","step":"auth","field":"auth.password2","label":"Repeat password","valueLen":13,"sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782181835,"lane":"2","type":"web.click","step":"auth","field":"auth.terms","label":"Accept the terms","sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782181837,"lane":"2","type":"web.click","step":"auth","field":"auth.terms","label":"Accept the terms","sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782181846,"lane":"2","type":"web.click","step":"auth","field":"auth.terms","label":"Accept the terms","sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782181854,"lane":"2","type":"web.click","step":"auth","field":"auth.create","label":"Create account","sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782181854,"lane":"2","type":"web.submit","step":"auth","field":"auth.create","label":"Created an account","sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782181862,"lane":"2","type":"web.click","step":"auth","field":"toast.close","label":"Close the message","sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782181878,"lane":"2","type":"web.field","step":"auth","field":"auth.code","label":"Email code","valueLen":6,"sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782181887,"lane":"2","type":"web.click","step":"auth","field":"auth.verify","label":"Verify code","sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782181887,"lane":"2","type":"web.submit","step":"auth","field":"auth.verify","label":"Email code accepted","sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782181887,"lane":"2","type":"web.step","step":"trip","label":"Trip","sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782181895,"lane":"2","type":"web.click","step":"trip","field":"trip.route.toggle","label":"Open the route list","sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782181814,"lane":"3","type":"web.view","step":"home","label":"Opened the Harbour Line website","valueLen":14,"sessionId":"l3-20261104-141941-a47c"}
+{"t":1793782186410,"lane":"2","type":"web.click","step":"trip","field":"trip.route.pick","label":"Route: Gateway of India to Elephanta Island","valueLen":17,"sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782186434,"lane":"2","type":"web.click","step":"trip","field":"trip.route.pick","label":"Route: Gateway of India to Elephanta Island","valueLen":17,"sessionId":"l2-replay-20261104-124841-50jl"}
+{"t":1793782194460,"lane":"2","type":"web.click","step":"trip","field":"trip.date.toggle","label":"Open the calendar","sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782194481,"lane":"2","type":"web.click","step":"trip","field":"trip.date.toggle","label":"Open the calendar","sessionId":"l2-replay-20261104-124841-50jl"}
+{"t":1793782206343,"lane":"2","type":"web.click","step":"trip","field":"trip.date.pick","label":"Date: Sat 7 Nov","valueLen":10,"sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782206364,"lane":"2","type":"web.click","step":"trip","field":"trip.date.pick","label":"Date: Sat 7 Nov","valueLen":10,"sessionId":"l2-replay-20261104-124841-50jl"}
+{"t":1793782218095,"lane":"2","type":"web.click","step":"trip","field":"trip.out","label":"Leave at 09:30","valueLen":5,"sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782218117,"lane":"2","type":"web.click","step":"trip","field":"trip.out","label":"Leave at 09:30","valueLen":5,"sessionId":"l2-replay-20261104-124841-50jl"}
+{"t":1793782227592,"lane":"2","type":"web.click","step":"trip","field":"trip.ret","label":"Return at 14:00","valueLen":5,"sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782227603,"lane":"2","type":"web.click","step":"trip","field":"trip.next","label":"Continue to passengers","sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782227603,"lane":"2","type":"web.submit","step":"trip","field":"trip.next","label":"Trip chosen: Sat 7 Nov, 09:30 and back at 14:00","sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782227604,"lane":"2","type":"web.step","step":"passengers","label":"Passengers","sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782227614,"lane":"2","type":"web.click","step":"trip","field":"trip.ret","label":"Return at 14:00","valueLen":5,"sessionId":"l2-replay-20261104-124841-50jl"}
+{"t":1793782227625,"lane":"2","type":"web.click","step":"trip","field":"trip.next","label":"Continue to passengers","sessionId":"l2-replay-20261104-124841-50jl"}
+{"t":1793782227625,"lane":"2","type":"web.submit","step":"trip","field":"trip.next","label":"Trip chosen: Sat 7 Nov, 09:30 and back at 14:00","sessionId":"l2-replay-20261104-124841-50jl"}
+{"t":1793782227625,"lane":"2","type":"web.step","step":"passengers","label":"Passengers","sessionId":"l2-replay-20261104-124841-50jl"}
+{"t":1793782235100,"lane":"2","type":"web.click","step":"passengers","field":"pax.inc","label":"Add a passenger","sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782235124,"lane":"2","type":"web.click","step":"passengers","field":"pax.inc","label":"Add a passenger","sessionId":"l2-replay-20261104-124841-50jl"}
+{"t":1793782238884,"lane":"2","type":"web.click","step":"passengers","field":"pax.inc","label":"Add a passenger","sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782238905,"lane":"2","type":"web.click","step":"passengers","field":"pax.inc","label":"Add a passenger","sessionId":"l2-replay-20261104-124841-50jl"}
+{"t":1793782242568,"lane":"2","type":"web.click","step":"passengers","field":"pax.inc","label":"Add a passenger","sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782242588,"lane":"2","type":"web.click","step":"passengers","field":"pax.inc","label":"Add a passenger","sessionId":"l2-replay-20261104-124841-50jl"}
+{"t":1793782256171,"lane":"2","type":"web.field","step":"passengers","field":"pax.0.name","label":"Passenger 1 · Full name","valueLen":8,"sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782256187,"lane":"2","type":"web.field","step":"passengers","field":"pax.0.age","label":"Passenger 1 · Age","valueLen":2,"sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782256196,"lane":"2","type":"web.click","step":"passengers","field":"pax.idtype.toggle","label":"Passenger 1 · open ID types","valueLen":1,"sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782256194,"lane":"2","type":"web.field","step":"passengers","field":"pax.0.name","label":"Passenger 1 · Full name","valueLen":8,"sessionId":"l2-replay-20261104-124841-50jl"}
+{"t":1793782256205,"lane":"2","type":"web.field","step":"passengers","field":"pax.0.age","label":"Passenger 1 · Age","valueLen":2,"sessionId":"l2-replay-20261104-124841-50jl"}
+{"t":1793782256210,"lane":"2","type":"web.click","step":"passengers","field":"pax.idtype.toggle","label":"Passenger 1 · open ID types","valueLen":1,"sessionId":"l2-replay-20261104-124841-50jl"}
+{"t":1793782260659,"lane":"2","type":"web.click","step":"passengers","field":"pax.idtype.pick","label":"Passenger 1 · ID type: Passport","valueLen":10,"sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782260682,"lane":"2","type":"web.click","step":"passengers","field":"pax.idtype.pick","label":"Passenger 1 · ID type: Passport","valueLen":10,"sessionId":"l2-replay-20261104-124841-50jl"}
+{"t":1793782271151,"lane":"2","type":"web.field","step":"passengers","field":"pax.0.idNumber","label":"Passenger 1 · ID number","valueLen":8,"sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782271168,"lane":"2","type":"web.field","step":"passengers","field":"pax.1.name","label":"Passenger 2 · Full name","valueLen":9,"sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782271184,"lane":"2","type":"web.field","step":"passengers","field":"pax.1.age","label":"Passenger 2 · Age","valueLen":2,"sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782271191,"lane":"2","type":"web.click","step":"passengers","field":"pax.idtype.toggle","label":"Passenger 2 · open ID types","valueLen":1,"sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782271172,"lane":"2","type":"web.field","step":"passengers","field":"pax.0.idNumber","label":"Passenger 1 · ID number","valueLen":8,"sessionId":"l2-replay-20261104-124841-50jl"}
+{"t":1793782271185,"lane":"2","type":"web.field","step":"passengers","field":"pax.1.name","label":"Passenger 2 · Full name","valueLen":9,"sessionId":"l2-replay-20261104-124841-50jl"}
+{"t":1793782271197,"lane":"2","type":"web.field","step":"passengers","field":"pax.1.age","label":"Passenger 2 · Age","valueLen":2,"sessionId":"l2-replay-20261104-124841-50jl"}
+{"t":1793782271202,"lane":"2","type":"web.click","step":"passengers","field":"pax.idtype.toggle","label":"Passenger 2 · open ID types","valueLen":1,"sessionId":"l2-replay-20261104-124841-50jl"}
+{"t":1793782275743,"lane":"2","type":"web.click","step":"passengers","field":"pax.idtype.pick","label":"Passenger 2 · ID type: Passport","valueLen":10,"sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782275766,"lane":"2","type":"web.click","step":"passengers","field":"pax.idtype.pick","label":"Passenger 2 · ID type: Passport","valueLen":10,"sessionId":"l2-replay-20261104-124841-50jl"}
+{"t":1793782285707,"lane":"2","type":"web.field","step":"passengers","field":"pax.1.idNumber","label":"Passenger 2 · ID number","valueLen":8,"sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782285724,"lane":"2","type":"web.field","step":"passengers","field":"pax.2.name","label":"Passenger 3 · Full name","valueLen":7,"sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782285740,"lane":"2","type":"web.field","step":"passengers","field":"pax.2.age","label":"Passenger 3 · Age","valueLen":2,"sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782285748,"lane":"2","type":"web.click","step":"passengers","field":"pax.idtype.toggle","label":"Passenger 3 · open ID types","valueLen":1,"sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782285733,"lane":"2","type":"web.field","step":"passengers","field":"pax.1.idNumber","label":"Passenger 2 · ID number","valueLen":8,"sessionId":"l2-replay-20261104-124841-50jl"}
+{"t":1793782285742,"lane":"2","type":"web.field","step":"passengers","field":"pax.2.name","label":"Passenger 3 · Full name","valueLen":7,"sessionId":"l2-replay-20261104-124841-50jl"}
+{"t":1793782285752,"lane":"2","type":"web.field","step":"passengers","field":"pax.2.age","label":"Passenger 3 · Age","valueLen":2,"sessionId":"l2-replay-20261104-124841-50jl"}
+{"t":1793782285757,"lane":"2","type":"web.click","step":"passengers","field":"pax.idtype.toggle","label":"Passenger 3 · open ID types","valueLen":1,"sessionId":"l2-replay-20261104-124841-50jl"}
+{"t":1793782290012,"lane":"2","type":"web.click","step":"passengers","field":"pax.idtype.pick","label":"Passenger 3 · ID type: Driving licence","valueLen":17,"sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782290034,"lane":"2","type":"web.click","step":"passengers","field":"pax.idtype.pick","label":"Passenger 3 · ID type: Driving licence","valueLen":17,"sessionId":"l2-replay-20261104-124841-50jl"}
+{"t":1793782296812,"lane":"2","type":"web.field","step":"passengers","field":"pax.2.idNumber","label":"Passenger 3 · ID number","valueLen":12,"sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782296828,"lane":"2","type":"web.field","step":"passengers","field":"pax.3.name","label":"Passenger 4 · Full name","valueLen":9,"sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782296843,"lane":"2","type":"web.field","step":"passengers","field":"pax.3.age","label":"Passenger 4 · Age","valueLen":2,"sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782296853,"lane":"2","type":"web.click","step":"passengers","field":"pax.idtype.toggle","label":"Passenger 4 · open ID types","valueLen":1,"sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782296831,"lane":"2","type":"web.field","step":"passengers","field":"pax.2.idNumber","label":"Passenger 3 · ID number","valueLen":12,"sessionId":"l2-replay-20261104-124841-50jl"}
+{"t":1793782296841,"lane":"2","type":"web.field","step":"passengers","field":"pax.3.name","label":"Passenger 4 · Full name","valueLen":9,"sessionId":"l2-replay-20261104-124841-50jl"}
+{"t":1793782296852,"lane":"2","type":"web.field","step":"passengers","field":"pax.3.age","label":"Passenger 4 · Age","valueLen":2,"sessionId":"l2-replay-20261104-124841-50jl"}
+{"t":1793782296858,"lane":"2","type":"web.click","step":"passengers","field":"pax.idtype.toggle","label":"Passenger 4 · open ID types","valueLen":1,"sessionId":"l2-replay-20261104-124841-50jl"}
+{"t":1793782301972,"lane":"2","type":"web.click","step":"passengers","field":"pax.idtype.pick","label":"Passenger 4 · ID type: Passport","valueLen":10,"sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782301992,"lane":"2","type":"web.click","step":"passengers","field":"pax.idtype.pick","label":"Passenger 4 · ID type: Passport","valueLen":10,"sessionId":"l2-replay-20261104-124841-50jl"}
+{"t":1793782313384,"lane":"2","type":"web.field","step":"passengers","field":"pax.3.idNumber","label":"Passenger 4 · ID number","valueLen":8,"sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782313392,"lane":"2","type":"web.click","step":"passengers","field":"pax.class","label":"Seats: Upper deck","valueLen":10,"sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782313407,"lane":"2","type":"web.field","step":"passengers","field":"pax.3.idNumber","label":"Passenger 4 · ID number","valueLen":8,"sessionId":"l2-replay-20261104-124841-50jl"}
+{"t":1793782313413,"lane":"2","type":"web.click","step":"passengers","field":"pax.class","label":"Seats: Upper deck","valueLen":10,"sessionId":"l2-replay-20261104-124841-50jl"}
+{"t":1793782315786,"lane":"2","type":"web.view","step":"home","label":"Opened the Harbour Line website","valueLen":38,"sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782315812,"lane":"2","type":"web.click","step":"home","field":"cookie.necessary","label":"Cookies: only necessary","sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782315822,"lane":"2","type":"web.click","step":"home","field":"nav.book","label":"Book tickets","sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782315822,"lane":"2","type":"web.step","step":"auth","label":"Sign in","sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782315825,"lane":"2","type":"web.field","step":"auth","field":"auth.email","label":"Email address","valueLen":29,"sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782315826,"lane":"2","type":"web.field","step":"auth","field":"auth.password","label":"Password","valueLen":13,"sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782315836,"lane":"2","type":"web.field","step":"auth","field":"auth.password2","label":"Repeat password","valueLen":13,"sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782315841,"lane":"2","type":"web.click","step":"auth","field":"auth.terms","label":"Accept the terms","sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782315847,"lane":"2","type":"web.click","step":"auth","field":"auth.terms","label":"Accept the terms","sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782315852,"lane":"2","type":"web.click","step":"auth","field":"auth.terms","label":"Accept the terms","sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782315858,"lane":"2","type":"web.click","step":"auth","field":"auth.create","label":"Create account","sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782315858,"lane":"2","type":"web.submit","step":"auth","field":"auth.create","label":"Created an account","sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782315864,"lane":"2","type":"web.click","step":"auth","field":"toast.close","label":"Close the message","sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782315874,"lane":"2","type":"web.field","step":"auth","field":"auth.code","label":"Email code","valueLen":6,"sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782315880,"lane":"2","type":"web.click","step":"auth","field":"auth.verify","label":"Verify code","sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782315880,"lane":"2","type":"web.submit","step":"auth","field":"auth.verify","label":"Email code accepted","sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782315880,"lane":"2","type":"web.step","step":"trip","label":"Trip","sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782315886,"lane":"2","type":"web.click","step":"trip","field":"trip.route.toggle","label":"Open the route list","sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782315892,"lane":"2","type":"web.click","step":"trip","field":"trip.route.pick","label":"Route: Gateway of India to Elephanta Island","valueLen":17,"sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782315897,"lane":"2","type":"web.click","step":"trip","field":"trip.date.toggle","label":"Open the calendar","sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782315904,"lane":"2","type":"web.click","step":"trip","field":"trip.date.pick","label":"Date: Sat 7 Nov","valueLen":10,"sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782315936,"lane":"2","type":"web.click","step":"trip","field":"trip.out","label":"Leave at 09:30","valueLen":5,"sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782315942,"lane":"2","type":"web.click","step":"trip","field":"trip.ret","label":"Return at 14:00","valueLen":5,"sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782315947,"lane":"2","type":"web.click","step":"trip","field":"trip.next","label":"Continue to passengers","sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782315947,"lane":"2","type":"web.submit","step":"trip","field":"trip.next","label":"Trip chosen: Sat 7 Nov, 09:30 and back at 14:00","sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782315948,"lane":"2","type":"web.step","step":"passengers","label":"Passengers","sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782315955,"lane":"2","type":"web.click","step":"passengers","field":"pax.inc","label":"Add a passenger","sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782315961,"lane":"2","type":"web.click","step":"passengers","field":"pax.inc","label":"Add a passenger","sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782315966,"lane":"2","type":"web.click","step":"passengers","field":"pax.inc","label":"Add a passenger","sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782315787,"lane":"3","type":"web.view","step":"home","label":"Opened the Harbour Line website","valueLen":14,"sessionId":"l3-20261104-142155-m0wb"}
+{"t":1793782315980,"lane":"2","type":"web.field","step":"passengers","field":"pax.0.name","label":"Passenger 1 · Full name","valueLen":8,"sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782315991,"lane":"2","type":"web.field","step":"passengers","field":"pax.0.age","label":"Passenger 1 · Age","valueLen":2,"sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782315996,"lane":"2","type":"web.click","step":"passengers","field":"pax.idtype.toggle","label":"Passenger 1 · open ID types","valueLen":1,"sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782316003,"lane":"2","type":"web.click","step":"passengers","field":"pax.idtype.pick","label":"Passenger 1 · ID type: Passport","valueLen":10,"sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782316014,"lane":"2","type":"web.field","step":"passengers","field":"pax.0.idNumber","label":"Passenger 1 · ID number","valueLen":8,"sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782316023,"lane":"2","type":"web.field","step":"passengers","field":"pax.1.name","label":"Passenger 2 · Full name","valueLen":9,"sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782316034,"lane":"2","type":"web.field","step":"passengers","field":"pax.1.age","label":"Passenger 2 · Age","valueLen":2,"sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782316039,"lane":"2","type":"web.click","step":"passengers","field":"pax.idtype.toggle","label":"Passenger 2 · open ID types","valueLen":1,"sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782316046,"lane":"2","type":"web.click","step":"passengers","field":"pax.idtype.pick","label":"Passenger 2 · ID type: Passport","valueLen":10,"sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782316056,"lane":"2","type":"web.field","step":"passengers","field":"pax.1.idNumber","label":"Passenger 2 · ID number","valueLen":8,"sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782316066,"lane":"2","type":"web.field","step":"passengers","field":"pax.2.name","label":"Passenger 3 · Full name","valueLen":7,"sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782316075,"lane":"2","type":"web.field","step":"passengers","field":"pax.2.age","label":"Passenger 3 · Age","valueLen":2,"sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782316080,"lane":"2","type":"web.click","step":"passengers","field":"pax.idtype.toggle","label":"Passenger 3 · open ID types","valueLen":1,"sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782316087,"lane":"2","type":"web.click","step":"passengers","field":"pax.idtype.pick","label":"Passenger 3 · ID type: Driving licence","valueLen":17,"sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782316101,"lane":"2","type":"web.field","step":"passengers","field":"pax.2.idNumber","label":"Passenger 3 · ID number","valueLen":12,"sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782316110,"lane":"2","type":"web.field","step":"passengers","field":"pax.3.name","label":"Passenger 4 · Full name","valueLen":9,"sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782316119,"lane":"2","type":"web.field","step":"passengers","field":"pax.3.age","label":"Passenger 4 · Age","valueLen":2,"sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782316124,"lane":"2","type":"web.click","step":"passengers","field":"pax.idtype.toggle","label":"Passenger 4 · open ID types","valueLen":1,"sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782316131,"lane":"2","type":"web.click","step":"passengers","field":"pax.idtype.pick","label":"Passenger 4 · ID type: Passport","valueLen":10,"sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782316141,"lane":"2","type":"web.field","step":"passengers","field":"pax.3.idNumber","label":"Passenger 4 · ID number","valueLen":8,"sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782316147,"lane":"2","type":"web.click","step":"passengers","field":"pax.class","label":"Seats: Upper deck","valueLen":10,"sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782318119,"lane":"2","type":"web.click","step":"passengers","field":"pax.board","label":"Boarding: Gateway jetty 4","valueLen":7,"sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782318124,"lane":"2","type":"web.click","step":"passengers","field":"pax.board","label":"Boarding: Gateway jetty 4","valueLen":7,"sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782326727,"lane":"2","type":"web.field","step":"passengers","field":"pax.assist","label":"Special assistance","valueLen":48,"sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782326732,"lane":"2","type":"web.click","step":"passengers","field":"pax.next","label":"Check the price","sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782326733,"lane":"2","type":"web.submit","step":"passengers","field":"pax.next","label":"Asked for the price","sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782326749,"lane":"2","type":"web.step","step":"review","label":"Review","sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782326732,"lane":"2","type":"web.field","step":"passengers","field":"pax.assist","label":"Special assistance","valueLen":48,"sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782326741,"lane":"2","type":"web.click","step":"passengers","field":"pax.next","label":"Check the price","sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782326742,"lane":"2","type":"web.submit","step":"passengers","field":"pax.next","label":"Asked for the price","sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782326753,"lane":"2","type":"web.step","step":"review","label":"Review","sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782351232,"lane":"2","type":"web.click","step":"review","field":"review.terms","label":"Accept the conditions of carriage","sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782351238,"lane":"2","type":"web.click","step":"review","field":"review.terms","label":"Accept the conditions of carriage","sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782357373,"lane":"2","type":"web.click","step":"review","field":"review.next","label":"Continue to payment","sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782357373,"lane":"2","type":"web.submit","step":"review","field":"review.next","label":"Accepted the price, 12.80 USDC","sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782357373,"lane":"2","type":"web.step","step":"pay","label":"Pay","sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782357376,"lane":"2","type":"web.click","step":"review","field":"review.next","label":"Continue to payment","sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782357376,"lane":"2","type":"web.submit","step":"review","field":"review.next","label":"Accepted the price, 12.80 USDC","sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782357376,"lane":"2","type":"web.step","step":"pay","label":"Pay","sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782364184,"lane":"2","type":"web.field","step":"pay","field":"pay.number","label":"Card number","valueLen":19,"sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782364195,"lane":"2","type":"web.field","step":"pay","field":"pay.expiry","label":"Expiry date","valueLen":7,"sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782364205,"lane":"2","type":"web.field","step":"pay","field":"pay.cvc","label":"Security code","valueLen":3,"sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782364189,"lane":"2","type":"web.field","step":"pay","field":"pay.number","label":"Card number","valueLen":19,"sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782364205,"lane":"2","type":"web.field","step":"pay","field":"pay.expiry","label":"Expiry date","valueLen":7,"sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782364220,"lane":"2","type":"web.field","step":"pay","field":"pay.cvc","label":"Security code","valueLen":3,"sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782374870,"lane":"2","type":"web.field","step":"pay","field":"pay.name","label":"Name on card","valueLen":8,"sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782374875,"lane":"2","type":"web.click","step":"pay","field":"pay.submit","label":"Pay 12.80 USDC","sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782374873,"lane":"2","type":"web.field","step":"pay","field":"pay.name","label":"Name on card","valueLen":8,"sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782374881,"lane":"2","type":"web.click","step":"pay","field":"pay.submit","label":"Pay 12.80 USDC","sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782376486,"lane":"2","type":"web.submit","step":"pay","field":"pay.submit","label":"Paid with the card ending 4242","valueLen":8,"sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782376489,"lane":"2","type":"web.step","step":"ticket","label":"Ticket","sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782376489,"lane":"2","type":"web.done","step":"ticket","label":"Booked, reference HL-DG23HU","valueLen":9,"ref":"HL-DG23HU","sessionId":"l2-replay-20261104-142155-185b"}
+{"t":1793782376495,"lane":"2","type":"lane.done","ms":297817,"steps":147}
+{"t":1793782376500,"lane":"2","type":"web.submit","step":"pay","field":"pay.submit","label":"Paid with the card ending 4242","valueLen":8,"sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782376506,"lane":"2","type":"web.step","step":"ticket","label":"Ticket","sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782376506,"lane":"2","type":"web.done","step":"ticket","label":"Booked, reference HL-F8ASP3","valueLen":9,"ref":"HL-F8ASP3","sessionId":"l2-replay-20261104-141941-0lkz"}
+{"t":1793782559006,"lane":"1","type":"agent.done","ok":false,"ms":480060,"error":"stopped after 480 s"}
+{"t":1793782622825,"lane":"2","type":"web.view","step":"home","label":"Opened the Harbour Line website","valueLen":38,"sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782622859,"lane":"2","type":"web.click","step":"home","field":"cookie.necessary","label":"Cookies: only necessary","sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782622864,"lane":"2","type":"web.click","step":"home","field":"nav.book","label":"Book tickets","sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782622864,"lane":"2","type":"web.step","step":"auth","label":"Sign in","sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782622871,"lane":"2","type":"web.field","step":"auth","field":"auth.email","label":"Email address","valueLen":29,"sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782622872,"lane":"2","type":"web.field","step":"auth","field":"auth.password","label":"Password","valueLen":13,"sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782622882,"lane":"2","type":"web.field","step":"auth","field":"auth.password2","label":"Repeat password","valueLen":13,"sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782622887,"lane":"2","type":"web.click","step":"auth","field":"auth.terms","label":"Accept the terms","sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782622893,"lane":"2","type":"web.click","step":"auth","field":"auth.terms","label":"Accept the terms","sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782622899,"lane":"2","type":"web.click","step":"auth","field":"auth.terms","label":"Accept the terms","sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782622904,"lane":"2","type":"web.click","step":"auth","field":"auth.create","label":"Create account","sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782622904,"lane":"2","type":"web.submit","step":"auth","field":"auth.create","label":"Created an account","sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782622909,"lane":"2","type":"web.click","step":"auth","field":"toast.close","label":"Close the message","sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782622918,"lane":"2","type":"web.field","step":"auth","field":"auth.code","label":"Email code","valueLen":6,"sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782622923,"lane":"2","type":"web.click","step":"auth","field":"auth.verify","label":"Verify code","sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782622923,"lane":"2","type":"web.submit","step":"auth","field":"auth.verify","label":"Email code accepted","sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782622923,"lane":"2","type":"web.step","step":"trip","label":"Trip","sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782622930,"lane":"2","type":"web.click","step":"trip","field":"trip.route.toggle","label":"Open the route list","sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782622936,"lane":"2","type":"web.click","step":"trip","field":"trip.route.pick","label":"Route: Gateway of India to Elephanta Island","valueLen":17,"sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782622942,"lane":"2","type":"web.click","step":"trip","field":"trip.date.toggle","label":"Open the calendar","sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782622948,"lane":"2","type":"web.click","step":"trip","field":"trip.date.pick","label":"Date: Sat 7 Nov","valueLen":10,"sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782622978,"lane":"2","type":"web.click","step":"trip","field":"trip.out","label":"Leave at 09:30","valueLen":5,"sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782622985,"lane":"2","type":"web.click","step":"trip","field":"trip.ret","label":"Return at 14:00","valueLen":5,"sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782622991,"lane":"2","type":"web.click","step":"trip","field":"trip.next","label":"Continue to passengers","sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782622991,"lane":"2","type":"web.submit","step":"trip","field":"trip.next","label":"Trip chosen: Sat 7 Nov, 09:30 and back at 14:00","sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782622991,"lane":"2","type":"web.step","step":"passengers","label":"Passengers","sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782622999,"lane":"2","type":"web.click","step":"passengers","field":"pax.inc","label":"Add a passenger","sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782623004,"lane":"2","type":"web.click","step":"passengers","field":"pax.inc","label":"Add a passenger","sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782622838,"lane":"3","type":"web.view","step":"home","label":"Opened the Harbour Line website","valueLen":14,"sessionId":"l3-20261104-142702-z3s6"}
+{"t":1793782623011,"lane":"2","type":"web.click","step":"passengers","field":"pax.inc","label":"Add a passenger","sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782623025,"lane":"2","type":"web.field","step":"passengers","field":"pax.0.name","label":"Passenger 1 · Full name","valueLen":8,"sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782623035,"lane":"2","type":"web.field","step":"passengers","field":"pax.0.age","label":"Passenger 1 · Age","valueLen":2,"sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782623040,"lane":"2","type":"web.click","step":"passengers","field":"pax.idtype.toggle","label":"Passenger 1 · open ID types","valueLen":1,"sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782623047,"lane":"2","type":"web.click","step":"passengers","field":"pax.idtype.pick","label":"Passenger 1 · ID type: Passport","valueLen":10,"sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782623056,"lane":"2","type":"web.field","step":"passengers","field":"pax.0.idNumber","label":"Passenger 1 · ID number","valueLen":8,"sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782623067,"lane":"2","type":"web.field","step":"passengers","field":"pax.1.name","label":"Passenger 2 · Full name","valueLen":9,"sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782623076,"lane":"2","type":"web.field","step":"passengers","field":"pax.1.age","label":"Passenger 2 · Age","valueLen":2,"sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782623081,"lane":"2","type":"web.click","step":"passengers","field":"pax.idtype.toggle","label":"Passenger 2 · open ID types","valueLen":1,"sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782623087,"lane":"2","type":"web.click","step":"passengers","field":"pax.idtype.pick","label":"Passenger 2 · ID type: Passport","valueLen":10,"sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782623100,"lane":"2","type":"web.field","step":"passengers","field":"pax.1.idNumber","label":"Passenger 2 · ID number","valueLen":8,"sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782623109,"lane":"2","type":"web.field","step":"passengers","field":"pax.2.name","label":"Passenger 3 · Full name","valueLen":7,"sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782623119,"lane":"2","type":"web.field","step":"passengers","field":"pax.2.age","label":"Passenger 3 · Age","valueLen":2,"sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782623123,"lane":"2","type":"web.click","step":"passengers","field":"pax.idtype.toggle","label":"Passenger 3 · open ID types","valueLen":1,"sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782623130,"lane":"2","type":"web.click","step":"passengers","field":"pax.idtype.pick","label":"Passenger 3 · ID type: Driving licence","valueLen":17,"sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782623140,"lane":"2","type":"web.field","step":"passengers","field":"pax.2.idNumber","label":"Passenger 3 · ID number","valueLen":12,"sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782623150,"lane":"2","type":"web.field","step":"passengers","field":"pax.3.name","label":"Passenger 4 · Full name","valueLen":9,"sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782623160,"lane":"2","type":"web.field","step":"passengers","field":"pax.3.age","label":"Passenger 4 · Age","valueLen":2,"sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782623165,"lane":"2","type":"web.click","step":"passengers","field":"pax.idtype.toggle","label":"Passenger 4 · open ID types","valueLen":1,"sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782623171,"lane":"2","type":"web.click","step":"passengers","field":"pax.idtype.pick","label":"Passenger 4 · ID type: Passport","valueLen":10,"sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782623182,"lane":"2","type":"web.field","step":"passengers","field":"pax.3.idNumber","label":"Passenger 4 · ID number","valueLen":8,"sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782623187,"lane":"2","type":"web.click","step":"passengers","field":"pax.class","label":"Seats: Upper deck","valueLen":10,"sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782623194,"lane":"2","type":"web.click","step":"passengers","field":"pax.board","label":"Boarding: Gateway jetty 4","valueLen":7,"sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782623208,"lane":"2","type":"web.field","step":"passengers","field":"pax.assist","label":"Special assistance","valueLen":48,"sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782623213,"lane":"2","type":"web.click","step":"passengers","field":"pax.next","label":"Check the price","sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782623213,"lane":"2","type":"web.submit","step":"passengers","field":"pax.next","label":"Asked for the price","sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782623219,"lane":"2","type":"web.step","step":"review","label":"Review","sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782623245,"lane":"2","type":"web.click","step":"review","field":"review.terms","label":"Accept the conditions of carriage","sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782623252,"lane":"2","type":"web.click","step":"review","field":"review.next","label":"Continue to payment","sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782623253,"lane":"2","type":"web.submit","step":"review","field":"review.next","label":"Accepted the price, 12.80 USDC","sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782623253,"lane":"2","type":"web.step","step":"pay","label":"Pay","sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782623265,"lane":"2","type":"web.field","step":"pay","field":"pay.number","label":"Card number","valueLen":19,"sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782623274,"lane":"2","type":"web.field","step":"pay","field":"pay.expiry","label":"Expiry date","valueLen":7,"sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782623284,"lane":"2","type":"web.field","step":"pay","field":"pay.cvc","label":"Security code","valueLen":3,"sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782623293,"lane":"2","type":"web.field","step":"pay","field":"pay.name","label":"Name on card","valueLen":8,"sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782623298,"lane":"2","type":"web.click","step":"pay","field":"pay.submit","label":"Pay 12.80 USDC","sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782624906,"lane":"2","type":"web.submit","step":"pay","field":"pay.submit","label":"Paid with the card ending 4242","valueLen":8,"sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782624909,"lane":"2","type":"web.step","step":"ticket","label":"Ticket","sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782624909,"lane":"2","type":"web.done","step":"ticket","label":"Booked, reference HL-VR3ZVH","valueLen":9,"ref":"HL-VR3ZVH","sessionId":"l2-replay-20261104-142702-i9wy"}
+{"t":1793782697316,"lane":"x","type":"agent.request","method":"GET","path":"/talk","status":200,"bytes":5839,"ms":1,"accept":"text/markdown","summary":"read the talk's door as Markdown (5.7 KB)"}
+{"t":1793782699156,"lane":"x","type":"agent.request","method":"GET","path":"/talk","status":200,"bytes":39941,"ms":1,"accept":"text/html","summary":"read the talk's door as HTML (39.0 KB)"}
+{"t":1793782699157,"lane":"x","type":"agent.request","method":"GET","path":"/talk","status":200,"bytes":39941,"ms":0,"accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7","summary":"read the talk's door as HTML (39.0 KB)"}
+{"t":1793782699164,"lane":"x","type":"agent.request","method":"GET","path":"/talk","status":200,"bytes":5839,"ms":0,"accept":"text/markdown","summary":"read the talk's door as Markdown (5.7 KB)"}
+{"t":1793782699165,"lane":"x","type":"agent.request","method":"GET","path":"/talk","status":200,"bytes":39941,"ms":0,"accept":"text/html","summary":"read the talk's door as HTML (39.0 KB)"}
+{"t":1793782699167,"lane":"x","type":"agent.request","method":"GET","path":"/talk/talk.md","status":200,"bytes":5839,"ms":1,"accept":"text/markdown","summary":"GET /talk/talk.md: 200"}
+{"t":1793782699170,"lane":"x","type":"agent.request","method":"GET","path":"/talk/fonts/urbanist-latin-500-normal.woff2","status":200,"bytes":12108,"ms":1,"accept":"*/*","summary":"GET /talk/fonts/urbanist-latin-500-normal.woff2: 200"}
+{"t":1793782699171,"lane":"x","type":"agent.request","method":"GET","path":"/talk/fonts/geist-latin-400-normal.woff2","status":200,"bytes":12956,"ms":0,"accept":"*/*","summary":"GET /talk/fonts/geist-latin-400-normal.woff2: 200"}
+{"t":1793782699172,"lane":"x","type":"agent.request","method":"GET","path":"/talk/fonts/geist-latin-500-normal.woff2","status":200,"bytes":13296,"ms":0,"accept":"*/*","summary":"GET /talk/fonts/geist-latin-500-normal.woff2: 200"}
+{"t":1793782699173,"lane":"x","type":"agent.request","method":"GET","path":"/talk/fonts/geist-mono-latin-400-normal.woff2","status":200,"bytes":14712,"ms":0,"accept":"*/*","summary":"GET /talk/fonts/geist-mono-latin-400-normal.woff2: 200"}
+{"t":1793782699174,"lane":"x","type":"agent.request","method":"GET","path":"/talk/fonts/geist-mono-latin-500-normal.woff2","status":200,"bytes":15304,"ms":0,"accept":"*/*","summary":"GET /talk/fonts/geist-mono-latin-500-normal.woff2: 200"}
+{"t":1793782699336,"lane":"x","type":"agent.request","method":"GET","path":"/talk","status":200,"bytes":5839,"ms":0,"accept":"text/markdown","summary":"read the talk's door as Markdown (5.7 KB)"}
+{"t":1793782707311,"lane":"x","type":"agent.request","method":"GET","path":"/ferry/?lane=2&replay=lane2-ferry.json","status":200,"bytes":1476,"ms":1,"accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7","summary":"read the website as HTML (1.4 KB)"}
+{"t":1793782707313,"lane":"x","type":"agent.request","method":"GET","path":"/ferry/?lane=3","status":200,"bytes":1476,"ms":1,"accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7","summary":"read the website as HTML (1.4 KB)"}
+{"t":1793782707320,"lane":"x","type":"agent.request","method":"GET","path":"/ferry/style.css","status":200,"bytes":39754,"ms":2,"accept":"text/css,*/*;q=0.1","summary":"fetched style.css (38.8 KB)"}
+{"t":1793782707322,"lane":"x","type":"agent.request","method":"GET","path":"/ferry/style.css","status":200,"bytes":39754,"ms":1,"accept":"text/css,*/*;q=0.1","summary":"fetched style.css (38.8 KB)"}
+{"t":1793782707323,"lane":"x","type":"agent.request","method":"GET","path":"/ferry/mock.js","status":200,"bytes":7316,"ms":1,"accept":"*/*","summary":"fetched mock.js (7.1 KB)"}
+{"t":1793782707326,"lane":"x","type":"agent.request","method":"GET","path":"/ferry/art.js","status":200,"bytes":13085,"ms":1,"accept":"*/*","summary":"fetched art.js (12.8 KB)"}
+{"t":1793782707333,"lane":"x","type":"agent.request","method":"GET","path":"/ferry/app.js","status":200,"bytes":81026,"ms":1,"accept":"*/*","summary":"fetched app.js (79.1 KB)"}
+{"t":1793782707342,"lane":"x","type":"agent.request","method":"GET","path":"/ferry/replay.js","status":200,"bytes":10838,"ms":6,"accept":"*/*","summary":"fetched replay.js (10.6 KB)"}
+{"t":1793782707344,"lane":"x","type":"agent.request","method":"GET","path":"/ferry/mock.js","status":200,"bytes":7316,"ms":0,"accept":"*/*","summary":"fetched mock.js (7.1 KB)"}
+{"t":1793782707345,"lane":"x","type":"agent.request","method":"GET","path":"/ferry/art.js","status":200,"bytes":13085,"ms":0,"accept":"*/*","summary":"fetched art.js (12.8 KB)"}
+{"t":1793782707345,"lane":"x","type":"agent.request","method":"GET","path":"/ferry/recorder.js","status":200,"bytes":3526,"ms":1,"accept":"*/*","summary":"fetched recorder.js (3.4 KB)"}
+{"t":1793782707346,"lane":"x","type":"agent.request","method":"GET","path":"/ferry/app.js","status":200,"bytes":81026,"ms":0,"accept":"*/*","summary":"fetched app.js (79.1 KB)"}
+{"t":1793782707355,"lane":"x","type":"agent.request","method":"GET","path":"/ferry/replay.js","status":200,"bytes":10838,"ms":8,"accept":"*/*","summary":"fetched replay.js (10.6 KB)"}
+{"t":1793782707356,"lane":"x","type":"agent.request","method":"GET","path":"/ferry/recorder.js","status":200,"bytes":3526,"ms":0,"accept":"*/*","summary":"fetched recorder.js (3.4 KB)"}
+{"t":1793782707357,"lane":"2","type":"agent.request","method":"GET","path":"/ferry/api/routes","status":200,"bytes":2945,"ms":0,"accept":"application/json","summary":"asked for the routes and prices"}
+{"t":1793782707404,"lane":"3","type":"agent.request","method":"GET","path":"/ferry/api/routes","status":200,"bytes":2945,"ms":0,"accept":"application/json","summary":"asked for the routes and prices"}
+{"t":1793782707395,"lane":"2","type":"web.view","step":"home","label":"Opened the Harbour Line website","valueLen":38,"sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782707428,"lane":"2","type":"web.click","step":"home","field":"cookie.necessary","label":"Cookies: only necessary","sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782707437,"lane":"2","type":"web.click","step":"home","field":"nav.book","label":"Book tickets","sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782707437,"lane":"2","type":"web.step","step":"auth","label":"Sign in","sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782707448,"lane":"2","type":"web.field","step":"auth","field":"auth.email","label":"Email address","valueLen":29,"sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782707449,"lane":"2","type":"web.field","step":"auth","field":"auth.password","label":"Password","valueLen":13,"sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782707464,"lane":"2","type":"web.field","step":"auth","field":"auth.password2","label":"Repeat password","valueLen":13,"sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782707473,"lane":"2","type":"web.click","step":"auth","field":"auth.terms","label":"Accept the terms","sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782707479,"lane":"2","type":"web.click","step":"auth","field":"auth.terms","label":"Accept the terms","sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782707488,"lane":"2","type":"web.click","step":"auth","field":"auth.terms","label":"Accept the terms","sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782707494,"lane":"2","type":"web.click","step":"auth","field":"auth.create","label":"Create account","sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782707495,"lane":"2","type":"web.submit","step":"auth","field":"auth.create","label":"Created an account","sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782707500,"lane":"2","type":"web.click","step":"auth","field":"toast.close","label":"Close the message","sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782707512,"lane":"2","type":"web.field","step":"auth","field":"auth.code","label":"Email code","valueLen":6,"sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782707516,"lane":"2","type":"web.click","step":"auth","field":"auth.verify","label":"Verify code","sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782707516,"lane":"2","type":"web.submit","step":"auth","field":"auth.verify","label":"Email code accepted","sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782707516,"lane":"2","type":"web.step","step":"trip","label":"Trip","sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782707524,"lane":"2","type":"web.click","step":"trip","field":"trip.route.toggle","label":"Open the route list","sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782707548,"lane":"2","type":"agent.request","method":"GET","path":"/ferry/api/departures?route=gateway-elephanta&date=2026-11-07","status":200,"bytes":4434,"ms":0,"accept":"application/json","summary":"asked for departures on Sat 7 Nov"}
+{"t":1793782707530,"lane":"2","type":"web.click","step":"trip","field":"trip.route.pick","label":"Route: Gateway of India to Elephanta Island","valueLen":17,"sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782707539,"lane":"2","type":"web.click","step":"trip","field":"trip.date.toggle","label":"Open the calendar","sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782707547,"lane":"2","type":"web.click","step":"trip","field":"trip.date.pick","label":"Date: Sat 7 Nov","valueLen":10,"sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782707556,"lane":"2","type":"web.click","step":"trip","field":"trip.out","label":"Leave at 09:30","valueLen":5,"sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782707562,"lane":"2","type":"web.click","step":"trip","field":"trip.ret","label":"Return at 14:00","valueLen":5,"sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782707572,"lane":"2","type":"web.click","step":"trip","field":"trip.next","label":"Continue to passengers","sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782707572,"lane":"2","type":"web.submit","step":"trip","field":"trip.next","label":"Trip chosen: Sat 7 Nov, 09:30 and back at 14:00","sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782707572,"lane":"2","type":"web.step","step":"passengers","label":"Passengers","sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782707587,"lane":"2","type":"web.click","step":"passengers","field":"pax.inc","label":"Add a passenger","sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782707594,"lane":"2","type":"web.click","step":"passengers","field":"pax.inc","label":"Add a passenger","sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782707406,"lane":"3","type":"web.view","step":"home","label":"Opened the Harbour Line website","valueLen":14,"sessionId":"l3-20261104-142827-iuys"}
+{"t":1793782707807,"lane":"2","type":"order.quoted","quoteId":"q-g9umju","total":12.8,"totalText":"12.80","summary":["4 people: Asha Rao, Leo Marin, Mei Tan, Sam Okoye","Sat 7 Nov, Gateway of India 09:30 to Elephanta Island, back at 14:00","Upper deck, 3.20 USDC a person","Board at Gateway jetty 4 (step-free), with help boarding"]}
+{"t":1793782707807,"lane":"2","type":"agent.request","method":"POST","path":"/ferry/api/quote","status":200,"bytes":8074,"ms":1,"accept":"application/json","summary":"got a quote: 12.80 USDC for 4 people, upper deck at 09:30"}
+{"t":1793782707600,"lane":"2","type":"web.click","step":"passengers","field":"pax.inc","label":"Add a passenger","sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782707612,"lane":"2","type":"web.field","step":"passengers","field":"pax.0.name","label":"Passenger 1 · Full name","valueLen":8,"sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782707623,"lane":"2","type":"web.field","step":"passengers","field":"pax.0.age","label":"Passenger 1 · Age","valueLen":2,"sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782707627,"lane":"2","type":"web.click","step":"passengers","field":"pax.idtype.toggle","label":"Passenger 1 · open ID types","valueLen":1,"sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782707634,"lane":"2","type":"web.click","step":"passengers","field":"pax.idtype.pick","label":"Passenger 1 · ID type: Passport","valueLen":10,"sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782707644,"lane":"2","type":"web.field","step":"passengers","field":"pax.0.idNumber","label":"Passenger 1 · ID number","valueLen":8,"sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782707655,"lane":"2","type":"web.field","step":"passengers","field":"pax.1.name","label":"Passenger 2 · Full name","valueLen":9,"sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782707665,"lane":"2","type":"web.field","step":"passengers","field":"pax.1.age","label":"Passenger 2 · Age","valueLen":2,"sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782707672,"lane":"2","type":"web.click","step":"passengers","field":"pax.idtype.toggle","label":"Passenger 2 · open ID types","valueLen":1,"sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782707679,"lane":"2","type":"web.click","step":"passengers","field":"pax.idtype.pick","label":"Passenger 2 · ID type: Passport","valueLen":10,"sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782707690,"lane":"2","type":"web.field","step":"passengers","field":"pax.1.idNumber","label":"Passenger 2 · ID number","valueLen":8,"sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782707700,"lane":"2","type":"web.field","step":"passengers","field":"pax.2.name","label":"Passenger 3 · Full name","valueLen":7,"sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782707708,"lane":"2","type":"web.field","step":"passengers","field":"pax.2.age","label":"Passenger 3 · Age","valueLen":2,"sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782707713,"lane":"2","type":"web.click","step":"passengers","field":"pax.idtype.toggle","label":"Passenger 3 · open ID types","valueLen":1,"sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782707721,"lane":"2","type":"web.click","step":"passengers","field":"pax.idtype.pick","label":"Passenger 3 · ID type: Driving licence","valueLen":17,"sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782707732,"lane":"2","type":"web.field","step":"passengers","field":"pax.2.idNumber","label":"Passenger 3 · ID number","valueLen":12,"sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782707742,"lane":"2","type":"web.field","step":"passengers","field":"pax.3.name","label":"Passenger 4 · Full name","valueLen":9,"sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782707754,"lane":"2","type":"web.field","step":"passengers","field":"pax.3.age","label":"Passenger 4 · Age","valueLen":2,"sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782707759,"lane":"2","type":"web.click","step":"passengers","field":"pax.idtype.toggle","label":"Passenger 4 · open ID types","valueLen":1,"sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782707766,"lane":"2","type":"web.click","step":"passengers","field":"pax.idtype.pick","label":"Passenger 4 · ID type: Passport","valueLen":10,"sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782707777,"lane":"2","type":"web.field","step":"passengers","field":"pax.3.idNumber","label":"Passenger 4 · ID number","valueLen":8,"sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782707782,"lane":"2","type":"web.click","step":"passengers","field":"pax.class","label":"Seats: Upper deck","valueLen":10,"sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782707789,"lane":"2","type":"web.click","step":"passengers","field":"pax.board","label":"Boarding: Gateway jetty 4","valueLen":7,"sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782707800,"lane":"2","type":"web.field","step":"passengers","field":"pax.assist","label":"Special assistance","valueLen":48,"sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782707804,"lane":"2","type":"web.click","step":"passengers","field":"pax.next","label":"Check the price","sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782707805,"lane":"2","type":"web.submit","step":"passengers","field":"pax.next","label":"Asked for the price","sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782707808,"lane":"2","type":"web.step","step":"review","label":"Review","sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782707812,"lane":"2","type":"web.click","step":"review","field":"review.terms","label":"Accept the conditions of carriage","sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782707823,"lane":"2","type":"web.click","step":"review","field":"review.next","label":"Continue to payment","sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782707823,"lane":"2","type":"web.submit","step":"review","field":"review.next","label":"Accepted the price, 12.80 USDC","sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782707823,"lane":"2","type":"web.step","step":"pay","label":"Pay","sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782707837,"lane":"2","type":"web.field","step":"pay","field":"pay.number","label":"Card number","valueLen":19,"sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782707847,"lane":"2","type":"web.field","step":"pay","field":"pay.expiry","label":"Expiry date","valueLen":7,"sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782707860,"lane":"2","type":"web.field","step":"pay","field":"pay.cvc","label":"Security code","valueLen":3,"sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782707870,"lane":"2","type":"web.field","step":"pay","field":"pay.name","label":"Name on card","valueLen":8,"sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782707875,"lane":"2","type":"web.click","step":"pay","field":"pay.submit","label":"Pay 12.80 USDC","sessionId":"l2-replay-20261104-142827-8o3a"}
+{"t":1793782708892,"lane":"sys","type":"race.reset"}

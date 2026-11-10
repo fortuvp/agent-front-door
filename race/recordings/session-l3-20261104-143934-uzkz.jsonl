@@ -1,0 +1,2 @@
+{"t":1793783374323,"type":"web.view","step":"home","label":"Opened the Harbour Line website","value":"/ferry/?lane=3","valueLen":14,"lane":"3","sessionId":"l3-20261104-143934-uzkz"}
+{"t":1793784067960,"type":"web.click","step":"home","field":"cookie.necessary","label":"Cookies: only necessary","lane":"3","sessionId":"l3-20261104-143934-uzkz"}

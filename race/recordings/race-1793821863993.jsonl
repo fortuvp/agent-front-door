@@ -1,0 +1,7 @@
+{"t":1793821863993,"lane":"sys","type":"race.start","t0":1793821863993,"replay":"lane2-ferry.json"}
+{"t":1793821864048,"lane":"1","type":"agent.say","text":"Starting. Mission received."}
+{"t":1793821868365,"lane":"2","type":"web.view","step":"home","label":"Opened the Harbour Line website","valueLen":38,"sessionId":"l2-replay-20261105-012108-pcow"}
+{"t":1793821868364,"lane":"3","type":"web.view","step":"home","label":"Opened the Harbour Line website","valueLen":14,"sessionId":"l3-20261105-012108-trwt"}
+{"t":1793821872642,"lane":"2","type":"web.click","step":"home","field":"cookie.necessary","label":"Cookies: only necessary","sessionId":"l2-replay-20261105-012108-pcow"}
+{"t":1793821873152,"lane":"2","type":"web.click","step":"home","field":"cookie.necessary","label":"Cookies: only necessary","sessionId":"l2-replay-20261105-012102-31xb"}
+{"t":1793821874860,"lane":"sys","type":"race.reset"}

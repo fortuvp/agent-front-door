@@ -1,0 +1,22 @@
+{"t":1793775667378,"type":"web.view","step":"home","label":"Opened the Harbour Line website","value":"/ferry/?lane=2&replay=lane2-ferry.json","valueLen":38,"lane":"2","sessionId":"l2-replay-20261104-123107-ga5f"}
+{"t":1793775667396,"type":"web.click","step":"home","field":"cookie.necessary","label":"Cookies: only necessary","lane":"2","sessionId":"l2-replay-20261104-123107-ga5f"}
+{"t":1793775667397,"type":"web.click","step":"home","field":"nav.book","label":"Book tickets","lane":"2","sessionId":"l2-replay-20261104-123107-ga5f"}
+{"t":1793775667398,"type":"web.step","step":"auth","label":"Sign in","lane":"2","sessionId":"l2-replay-20261104-123107-ga5f"}
+{"t":1793775667378,"type":"web.view","step":"home","label":"Opened the Harbour Line website","value":"/ferry/?lane=2&replay=lane2-ferry.json","valueLen":38,"lane":"2","sessionId":"l2-replay-20261104-123107-ga5f"}
+{"t":1793775667396,"type":"web.click","step":"home","field":"cookie.necessary","label":"Cookies: only necessary","lane":"2","sessionId":"l2-replay-20261104-123107-ga5f"}
+{"t":1793775667397,"type":"web.click","step":"home","field":"nav.book","label":"Book tickets","lane":"2","sessionId":"l2-replay-20261104-123107-ga5f"}
+{"t":1793775667398,"type":"web.step","step":"auth","label":"Sign in","lane":"2","sessionId":"l2-replay-20261104-123107-ga5f"}
+{"t":1793775667404,"type":"web.field","step":"auth","field":"auth.email","label":"Email address","value":"lane2.agent@harbour-line.test","valueLen":29,"keys":[[1793775667404,"lane2.agent@harbour-line.test"]],"lane":"2","sessionId":"l2-replay-20261104-123107-ga5f"}
+{"t":1793775667405,"type":"web.field","step":"auth","field":"auth.password","label":"Password","value":"Ferry2026demo","valueLen":13,"keys":[[1793775667405,"Ferry2026demo"]],"lane":"2","sessionId":"l2-replay-20261104-123107-ga5f"}
+{"t":1793775667415,"type":"web.field","step":"auth","field":"auth.password2","label":"Repeat password","value":"Ferry2026demo","valueLen":13,"keys":[[1793775667410,"Ferry2026demo"]],"lane":"2","sessionId":"l2-replay-20261104-123107-ga5f"}
+{"t":1793775667421,"type":"web.click","step":"auth","field":"auth.terms","label":"Accept the terms","lane":"2","sessionId":"l2-replay-20261104-123107-ga5f"}
+{"t":1793775667426,"type":"web.click","step":"auth","field":"auth.terms","label":"Accept the terms","lane":"2","sessionId":"l2-replay-20261104-123107-ga5f"}
+{"t":1793775667432,"type":"web.click","step":"auth","field":"auth.terms","label":"Accept the terms","lane":"2","sessionId":"l2-replay-20261104-123107-ga5f"}
+{"t":1793775667437,"type":"web.click","step":"auth","field":"auth.create","label":"Create account","lane":"2","sessionId":"l2-replay-20261104-123107-ga5f"}
+{"t":1793775667437,"type":"web.submit","step":"auth","field":"auth.create","label":"Created an account","lane":"2","sessionId":"l2-replay-20261104-123107-ga5f"}
+{"t":1793775667442,"type":"web.click","step":"auth","field":"toast.close","label":"Close the message","lane":"2","sessionId":"l2-replay-20261104-123107-ga5f"}
+{"t":1793775667453,"type":"web.field","step":"auth","field":"auth.code","label":"Email code","value":"813074","valueLen":6,"keys":[[1793775667448,"813074"]],"lane":"2","sessionId":"l2-replay-20261104-123107-ga5f"}
+{"t":1793775667458,"type":"web.click","step":"auth","field":"auth.verify","label":"Verify code","lane":"2","sessionId":"l2-replay-20261104-123107-ga5f"}
+{"t":1793775667458,"type":"web.submit","step":"auth","field":"auth.verify","label":"Email code accepted","lane":"2","sessionId":"l2-replay-20261104-123107-ga5f"}
+{"t":1793775667458,"type":"web.step","step":"trip","label":"Trip","lane":"2","sessionId":"l2-replay-20261104-123107-ga5f"}
+{"t":1793775667464,"type":"web.click","step":"trip","field":"trip.route.toggle","label":"Open the route list","lane":"2","sessionId":"l2-replay-20261104-123107-ga5f"}

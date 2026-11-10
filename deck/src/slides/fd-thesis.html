@@ -1,0 +1,109 @@
+<section class="slide" data-id="fd-thesis" data-title="The whole talk in one picture" data-chapter="Opening">
+  <p class="th-kick label">The whole talk in one picture</p>
+  <h2 class="th-head">
+    <span class="ln"><span>The agent’s channel is getting <em>wider.</em></span></span>
+    <span class="ln th-l2" style="--d:1"><span>The human’s is getting narrower.</span></span>
+  </h2>
+
+  <!-- left: everything the agent takes in when it buys for you -->
+  <div class="th-wide">
+    <p class="th-lbl label">What your agent takes in</p>
+    <div class="th-chips">
+      <span style="--i:0">Every departure</span><span style="--i:1">Every seat class</span><span style="--i:2">The price rules</span><span style="--i:3">The timetable</span>
+      <span style="--i:4">The docs</span><span style="--i:5">The skill file</span><span style="--i:6">The terms</span><span style="--i:7">The refund rules</span>
+      <span style="--i:8">The ID rules</span><span style="--i:9">Step-free access</span><span style="--i:10">The other options</span><span style="--i:11">Your budget</span>
+      <span style="--i:12">The API</span><span style="--i:13">Seats left</span><span style="--i:14">Cancellation</span><span style="--i:15">Your mission</span>
+    </div>
+  </div>
+
+  <!-- the funnel: wide on the agent's side, narrow on the person's side -->
+  <svg class="th-funnel" viewBox="0 0 170 420" width="170" height="420" aria-hidden="true">
+    <defs>
+      <linearGradient id="fd-thesis-fn" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stop-color="#3d7bff" stop-opacity="0.30"/>
+        <stop offset="1" stop-color="#45d4ff" stop-opacity="0.55"/>
+      </linearGradient>
+    </defs>
+    <path d="M0 0 C 90 0 80 150 170 150 L170 270 C 80 270 90 420 0 420 Z" fill="url(#fd-thesis-fn)"/>
+    <path class="th-fe" d="M0 0 C 90 0 80 150 170 150"/>
+    <path class="th-fe" d="M0 420 C 90 420 80 270 170 270"/>
+  </svg>
+
+  <!-- right: the one card that reaches the person -->
+  <div class="th-narrow">
+    <p class="th-lbl label">What reaches you</p>
+    <div class="th-card">
+      <p class="th-c-top">Your agent asks</p>
+      <p class="th-c-amt">Pay <b>12.80 USDC</b>?</p>
+      <p class="th-c-what">4 ferry tickets · Sat 7 Nov</p>
+      <div class="th-c-btns"><span>Not now</span><span class="is-yes">Yes, pay</span></div>
+    </div>
+  </div>
+
+  <p class="th-line2"><span class="ln"><span>Design what crosses the <em>narrow one.</em></span></span></p>
+
+  <i data-step="1" hidden></i>
+  <aside class="notes">
+    <p><b>[0:45]</b></p>
+    <p>On entry: the two lines, then the left side fills with what the agent takes in, and one card appears on the right. "Here is the whole talk in one picture. When an agent buys something for you, it takes in everything: every departure, every price rule, the docs, the terms, the refund rules. That side keeps getting wider. And what reaches you, the person? One card. Four ferry tickets, 12.80, yes or not now. That side keeps getting narrower, because the agent does more of the work."</p>
+    <p>Press: the left side steps back, the card lights up, and the last line rises. "So the design job changes. Design what crosses the narrow one: what you asked for, the one yes, and the receipt after. Get those few things right, and give the agent its own door for everything else. That is this talk."</p>
+    <p>Careful: this is my model, not a measurement. The only number is the demo's own price. Don't say people are leaving the loop: the narrow channel never closes.</p>
+  </aside>
+</section>
+<style>
+  section.slide[data-id="fd-thesis"] { display: block; padding: 0; gap: 0; }
+  .slide[data-id="fd-thesis"] .th-kick { position: absolute; left: 136px; top: 72px; margin: 0; font-size: 22px; letter-spacing: 0.12em; color: var(--accent); }
+  .slide[data-id="fd-thesis"] .th-head { position: absolute; left: 136px; top: 116px; margin: 0; font: 500 80px/1.08 var(--font-display); letter-spacing: -0.04em; color: var(--headline); white-space: nowrap; transition: opacity 1.4s var(--ease); }
+  .slide[data-id="fd-thesis"] .th-l2 > span { color: var(--ink-2); }
+  .slide[data-id="fd-thesis"].b1 .th-head { opacity: 0.5; }
+
+  .slide[data-id="fd-thesis"] .th-lbl { margin: 0 0 18px; font-size: 22px; letter-spacing: 0.1em; }
+
+  /* the wide side */
+  .slide[data-id="fd-thesis"] .th-wide { position: absolute; left: 136px; top: 356px; width: 1030px; transition: opacity 1.4s var(--ease); }
+  .slide[data-id="fd-thesis"] .th-wide .th-lbl { color: #9cc0ff; }
+  .slide[data-id="fd-thesis"] .th-chips { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .slide[data-id="fd-thesis"] .th-chips span { display: flex; align-items: center; height: 72px; padding: 0 20px; box-sizing: border-box; border-radius: 14px; border: 1px solid rgba(122, 167, 255, 0.28); background: rgba(61, 123, 255, 0.08); font: 500 25px/1.1 var(--font-body); color: #dbe6ff; white-space: nowrap; opacity: 0; transform: translateY(12px); transition: opacity 0.7s var(--ease), transform 0.9s var(--ease); transition-delay: calc(0.6s + var(--i) * 0.07s); }
+  .slide[data-id="fd-thesis"].is-in .th-chips span { opacity: 1; transform: none; }
+  .slide[data-id="fd-thesis"].b1 .th-wide { opacity: 0.38; }
+
+  /* the funnel */
+  .slide[data-id="fd-thesis"] .th-funnel { position: absolute; left: 1176px; top: 396px; overflow: visible; opacity: 0; transition: opacity 1.2s var(--ease) 1.6s; }
+  .slide[data-id="fd-thesis"].is-in .th-funnel { opacity: 1; }
+  .slide[data-id="fd-thesis"] .th-fe { fill: none; stroke: rgba(201, 218, 255, 0.6); stroke-width: 1.6; }
+
+  /* the narrow side: one card */
+  .slide[data-id="fd-thesis"] .th-narrow { position: absolute; left: 1356px; top: 500px; width: 428px; opacity: 0; transform: translateX(20px); transition: opacity 1.1s var(--ease) 2s, transform 1.3s var(--ease) 2s; }
+  .slide[data-id="fd-thesis"].is-in .th-narrow { opacity: 1; transform: none; }
+  .slide[data-id="fd-thesis"] .th-narrow .th-lbl { position: absolute; top: -48px; left: 0; color: var(--ink-2); white-space: nowrap; }
+  .slide[data-id="fd-thesis"] .th-card { box-sizing: border-box; padding: 24px 28px 26px; border-radius: 22px; border: 1.5px solid rgba(255, 255, 255, 0.18); background: linear-gradient(180deg, #0d1430, #060a18); box-shadow: 0 24px 70px rgba(0, 0, 0, 0.5); font-family: var(--font-body); color: var(--ink); transition: box-shadow 1.4s var(--ease), border-color 1.4s var(--ease); }
+  .slide[data-id="fd-thesis"] .th-card p { margin: 0; }
+  .slide[data-id="fd-thesis"] .th-c-top { font-size: 22px; color: var(--ink-3); }
+  .slide[data-id="fd-thesis"] .th-c-amt { margin-top: 8px !important; font: 500 44px/1.1 var(--font-display); letter-spacing: -0.02em; color: var(--headline); }
+  .slide[data-id="fd-thesis"] .th-c-amt b { font-weight: 500; color: #7aa7ff; }
+  .slide[data-id="fd-thesis"] .th-c-what { margin-top: 8px !important; font-size: 24px; color: var(--ink-2); }
+  .slide[data-id="fd-thesis"] .th-c-btns { display: grid; grid-template-columns: 1fr 1.3fr; gap: 12px; margin-top: 22px; }
+  .slide[data-id="fd-thesis"] .th-c-btns span { display: flex; align-items: center; justify-content: center; height: 56px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.16); font-size: 23px; color: var(--ink-2); }
+  .slide[data-id="fd-thesis"] .th-c-btns span.is-yes { border-color: transparent; background: #3d7bff; color: #fff; }
+  .slide[data-id="fd-thesis"].b1 .th-card { border-color: rgba(122, 167, 255, 0.75); box-shadow: 0 0 0 1px rgba(122, 167, 255, 0.4), 0 0 60px rgba(61, 123, 255, 0.45), 0 24px 70px rgba(0, 0, 0, 0.5); }
+
+  .slide[data-id="fd-thesis"] .th-line2 { position: absolute; left: 136px; top: 862px; margin: 0; font: 500 92px/1.05 var(--font-display); letter-spacing: -0.04em; color: var(--headline); white-space: nowrap; }
+  .slide[data-id="fd-thesis"] .th-line2 .ln > span { transform: translateY(110%); transition: transform 1.4s var(--ease) 0.4s; }
+  .slide[data-id="fd-thesis"].is-in.b1 .th-line2 .ln > span { transform: none; }
+
+  .slide[data-id="fd-thesis"].lx-snap *, .slide[data-id="fd-thesis"].lx-snap *::before, .slide[data-id="fd-thesis"].lx-snap *::after { transition-duration: 0s !important; transition-delay: 0s !important; }
+  .mini .slide[data-id="fd-thesis"] .th-chips span, .mini .slide[data-id="fd-thesis"] .th-funnel, .mini .slide[data-id="fd-thesis"] .th-narrow { opacity: 1; transform: none; }
+  .mini .slide[data-id="fd-thesis"] .th-line2 .ln > span { transform: none; }
+</style>
+<script>
+(() => {
+  // Arriving straight at step 1 (deep link, going back): snap to the built state instead of replaying it.
+  window.DECK_SLIDE_HOOKS["fd-thesis"] = {
+    enter(slide) { slide._thEnter = true; },
+    step(slide, n) {
+      if (slide._thEnter && n > 0) { slide.classList.add("lx-snap"); setTimeout(() => slide.classList.remove("lx-snap"), 80); }
+      slide._thEnter = false;
+    },
+  };
+})();
+</script>

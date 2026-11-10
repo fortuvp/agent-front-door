@@ -1,0 +1,734 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#02040b">
+<meta name="color-scheme" content="dark">
+<title>Your yes</title>
+<meta name="description" content="Your agent asks before it pays. Check the order, then say yes or not now.">
+<link rel="preload" href="/approve/fonts/geist-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/approve/fonts/urbanist-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face { font-family: "Urbanist"; font-weight: 500; font-display: swap; src: url("/approve/fonts/urbanist-latin-500-normal.woff2") format("woff2"); }
+@font-face { font-family: "Urbanist"; font-weight: 600; font-display: swap; src: url("/approve/fonts/urbanist-latin-600-normal.woff2") format("woff2"); }
+@font-face { font-family: "Geist"; font-weight: 400; font-display: swap; src: url("/approve/fonts/geist-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "Geist"; font-weight: 500; font-display: swap; src: url("/approve/fonts/geist-latin-500-normal.woff2") format("woff2"); }
+@font-face { font-family: "Geist"; font-weight: 600; font-display: swap; src: url("/approve/fonts/geist-latin-600-normal.woff2") format("woff2"); }
+@font-face { font-family: "Geist Mono"; font-weight: 400; font-display: swap; src: url("/approve/fonts/geist-mono-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "Geist Mono"; font-weight: 500; font-display: swap; src: url("/approve/fonts/geist-mono-latin-500-normal.woff2") format("woff2"); }
+
+:root {
+  color-scheme: dark;
+  --font-display: "Urbanist", "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Geist", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --bg: #02040b; --bg-2: #0c111d;
+  --ink: #f4f6fb; --ink-2: #c3cad8; --ink-3: #a1abc0; --ink-4: #7a849e;
+  --accent: #3d7bff; --accent-2: #45d4ff;
+  --ok: #34d399; --warn: #f5b04a; --fail: #ff6b7a;
+  --line: rgba(255, 255, 255, 0.08); --line-2: rgba(255, 255, 255, 0.14);
+  --panel: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.025));
+  --edge-1: #7aa7ff; --edge-2: #45d4ff; --edge-3: #9b7bff;
+  --cta-top: #1a2d5e; --cta-bottom: #0a1226;
+  --lit: linear-gradient(180deg, #d4e2ff 0%, #7aa7ff 50%, #3d7bff 100%);
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+@property --edge-angle { syntax: "<angle>"; inherits: false; initial-value: 210deg; }
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; background: var(--bg); }
+body { margin: 0; min-height: 100vh; min-height: 100dvh; background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 15px; line-height: 1.4; -webkit-font-smoothing: antialiased; -webkit-tap-highlight-color: transparent; overflow-x: hidden; }
+h1, h2, h3, p, ul, ol, dl, dd { margin: 0; padding: 0; }
+ul, ol { list-style: none; }
+button { font: inherit; color: inherit; }
+a { color: inherit; }
+[hidden] { display: none !important; }
+.num { font-variant-numeric: tabular-nums; }
+
+.aurora { position: fixed; z-index: 0; left: 0; right: 0; top: 0; height: 420px; pointer-events: none; overflow: hidden; -webkit-mask-image: linear-gradient(#000 30%, transparent); mask-image: linear-gradient(#000 30%, transparent); }
+.aurora i { position: absolute; display: block; }
+.aurora i:nth-child(1) { width: 640px; height: 640px; left: -260px; top: -430px; background: radial-gradient(closest-side, rgba(10, 124, 255, 0.34), rgba(27, 47, 255, 0.14) 50%, transparent 75%); animation: da 30s ease-in-out infinite alternate; }
+.aurora i:nth-child(2) { width: 900px; height: 220px; left: -240px; top: -130px; transform: rotate(-9deg); background: linear-gradient(90deg, transparent 8%, rgba(27, 47, 255, 0.3) 32%, rgba(10, 124, 255, 0.34) 52%, rgba(91, 43, 255, 0.16) 76%, transparent 94%); -webkit-mask-image: radial-gradient(closest-side, #000, rgba(0, 0, 0, .45) 55%, transparent); mask-image: radial-gradient(closest-side, #000, rgba(0, 0, 0, .45) 55%, transparent); animation: db 26s ease-in-out infinite alternate; }
+.aurora i:nth-child(3) { width: 560px; height: 560px; right: -260px; top: -400px; background: radial-gradient(closest-side, rgba(91, 43, 255, 0.22), rgba(27, 47, 255, 0.1) 50%, transparent 75%); animation: dc 34s ease-in-out infinite alternate; }
+@keyframes da { to { transform: translate3d(40px, 20px, 0) scale(1.06); } }
+@keyframes db { from { transform: rotate(-9deg); } to { transform: translate3d(30px, 10px, 0) rotate(-6deg); } }
+@keyframes dc { to { transform: translate3d(-40px, 30px, 0) scale(1.05); } }
+
+.card { position: relative; z-index: 1; max-width: 430px; margin: 0 auto; padding: calc(env(safe-area-inset-top, 0px) + 18px) 16px calc(env(safe-area-inset-bottom, 0px) + 120px); }
+body.is-frame .card { padding-top: 44px; }
+
+/* top line */
+.top { display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 30px; }
+.from { display: flex; align-items: center; gap: 9px; font-size: 14px; color: var(--ink-2); min-width: 0; }
+.from .av { flex: none; width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(160deg, #1d2f60, #0b1430); box-shadow: 0 0 0 1px rgba(122, 167, 255, 0.4), 0 0 14px rgba(61, 123, 255, 0.35); }
+.from .av svg { width: 14px; height: 14px; }
+.from b { font-weight: 500; color: var(--ink); }
+.from > span:last-child { min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.badge { flex: none; display: inline-flex; align-items: center; gap: 6px; height: 26px; padding: 0 10px; border-radius: 999px; font-size: 12px; font-weight: 500; white-space: nowrap; color: #9fe6ff; border: 1px solid rgba(69, 212, 255, 0.38); background: rgba(69, 212, 255, 0.07); }
+.badge::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.badge.is-sim { color: var(--warn); border-color: rgba(245, 176, 74, 0.5); background: rgba(245, 176, 74, 0.1); }
+
+/* picture */
+.pic { position: relative; margin-top: 14px; border-radius: 20px; overflow: hidden; border: 1px solid var(--line); background: linear-gradient(180deg, #08112a 0%, #050a19 100%); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06); }
+.pic svg { display: block; width: 100%; height: auto; }
+.pic .route { stroke-dasharray: 3 5; animation: dash 3.2s linear infinite; }
+.pic .boat { animation: bob 3.4s ease-in-out infinite alternate; transform-box: fill-box; }
+@keyframes dash { to { stroke-dashoffset: -16; } }
+@keyframes bob { from { transform: translateY(0.6px) rotate(-0.6deg); } to { transform: translateY(-1.2px) rotate(0.6deg); } }
+
+/* the ask */
+.ask { margin-top: 20px; }
+.ask h1 { font-family: var(--font-display); font-weight: 500; font-size: 44px; line-height: 1; letter-spacing: -0.035em; }
+.ask h1 em { font-style: normal; background: var(--lit); -webkit-background-clip: text; background-clip: text; color: transparent; padding-right: 0.03em; }
+.ask .to { margin-top: 8px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; font-size: 16px; color: var(--ink-2); }
+.ask .to b { font-weight: 500; color: var(--ink); }
+.ask .to span { font-size: 13px; color: var(--ink-4); }
+
+/* order */
+.order { margin-top: 18px; padding: 6px 16px; border-radius: 18px; background: var(--panel); border: 1px solid var(--line); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06); }
+.order li { display: grid; grid-template-columns: 58px 1fr; gap: 10px; align-items: baseline; padding: 10px 0; border-bottom: 1px solid var(--line); }
+.order li:last-child { border-bottom: 0; }
+.order .k { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); }
+.order .v { font-size: 15.5px; line-height: 1.35; color: var(--ink); }
+.order .v span { color: var(--ink-3); }
+.order .v .arrow { color: var(--accent-2); padding: 0 2px; }
+
+/* section heads */
+.sec { margin-top: 26px; display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+.sec h2 { font-family: var(--font-display); font-weight: 500; font-size: 22px; letter-spacing: -0.02em; }
+.sec span { font-size: 13px; color: var(--ink-3); white-space: nowrap; }
+.sec span.is-note { color: var(--warn); }
+
+/* matches */
+.match { margin-top: 10px; }
+.match li { display: grid; grid-template-columns: 18px 1fr auto; gap: 10px; align-items: center; min-height: 34px; padding: 6px 0; border-bottom: 1px solid var(--line); }
+.match li:last-child { border-bottom: 0; }
+.match .ic { width: 18px; height: 18px; display: grid; place-items: center; }
+.match .ic svg { width: 18px; height: 18px; }
+.match .ic .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--warn); box-shadow: 0 0 0 4px rgba(245, 176, 74, 0.14); }
+.match .a { font-size: 14.5px; color: var(--ink-2); line-height: 1.3; }
+.match .g { font-size: 14.5px; color: var(--ink); text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.match .n { grid-column: 2 / 4; margin-top: -2px; font-size: 13px; color: var(--ink-3); }
+
+/* alternatives */
+.alts { margin-top: 12px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.alt { display: flex; flex-direction: column; gap: 6px; padding: 14px 14px 12px; border-radius: 18px; background: var(--panel); border: 1px solid var(--line); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05); min-width: 0; }
+.alt .tag { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); }
+.alt .tot { font-size: 22px; font-weight: 500; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+.alt .tot small { font-size: 13px; font-weight: 400; letter-spacing: 0; color: var(--ink-3); margin-left: 3px; }
+.alt .what { font-size: 14px; color: var(--ink); line-height: 1.3; }
+.alt .chg { font-size: 13px; color: var(--ink-3); line-height: 1.3; flex: 1; }
+.alt .chg .dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--warn); margin-right: 6px; vertical-align: 1px; }
+.alt .delta { font-size: 13px; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.alt button { margin-top: 6px; height: 38px; border-radius: 999px; border: 1px solid var(--line-2); background: transparent; font-size: 14px; font-weight: 500; cursor: pointer; touch-action: manipulation; transition: background 0.2s, border-color 0.2s; }
+.alt button:active { background: rgba(255, 255, 255, 0.06); }
+.alt button:disabled { opacity: 0.45; cursor: default; }
+
+/* undo and scope */
+.terms { margin-top: 22px; display: flex; flex-direction: column; gap: 2px; }
+.terms li { display: grid; grid-template-columns: 22px 1fr; gap: 12px; align-items: start; padding: 10px 0; }
+.terms svg { width: 20px; height: 20px; margin-top: 1px; }
+.terms p { font-size: 14.5px; color: var(--ink-2); line-height: 1.4; }
+.terms p b { font-weight: 500; color: var(--ink); }
+
+/* footer with the two answers */
+.foot { position: fixed; z-index: 5; left: 0; right: 0; bottom: 0; padding: 14px 16px calc(env(safe-area-inset-bottom, 0px) + 16px); background: linear-gradient(180deg, rgba(2, 4, 11, 0), rgba(2, 4, 11, 0.92) 28%, #02040b); }
+.foot-in { max-width: 398px; margin: 0 auto; }
+.btns { display: grid; grid-template-columns: 1fr 1.55fr; gap: 10px; }
+.btn { position: relative; height: 56px; border-radius: 999px; font-size: 16.5px; font-weight: 500; cursor: pointer; touch-action: manipulation; user-select: none; -webkit-user-select: none; white-space: nowrap; }
+.btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.btn-quiet { background: rgba(255, 255, 255, 0.02); border: 1px solid var(--line-2); color: var(--ink); }
+.btn-quiet:active { background: rgba(255, 255, 255, 0.07); }
+.btn-yes { border: 0; color: #f4f6fb; background: linear-gradient(var(--cta-top), var(--cta-bottom)); box-shadow: 0 14px 40px rgba(61, 123, 255, 0.36), 0 0 0 1px rgba(122, 167, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.14); animation: sweep 5.5s linear infinite; }
+.btn-yes::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.5px; background: conic-gradient(from var(--edge-angle), var(--edge-1), var(--edge-2), var(--edge-3), var(--edge-1)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; }
+.btn-yes:active { transform: translateY(1px); }
+@keyframes sweep { to { --edge-angle: 570deg; } }
+.btn:disabled { opacity: 0.5; cursor: default; animation: none; }
+.foot .err { margin-bottom: 10px; font-size: 14px; color: var(--warn); text-align: center; }
+.foot .line { display: flex; align-items: center; justify-content: center; gap: 10px; height: 56px; border-radius: 999px; border: 1px solid var(--line); background: rgba(255, 255, 255, 0.03); font-size: 15px; color: var(--ink-2); }
+.foot .line i { width: 8px; height: 8px; border-radius: 50%; background: var(--accent-2); box-shadow: 0 0 10px var(--accent-2); animation: pulse 1.4s ease-in-out infinite; }
+.foot .line.is-ok i { background: var(--ok); box-shadow: 0 0 10px var(--ok); animation: none; }
+.foot .line.is-quiet i { background: var(--ink-3); box-shadow: none; animation: none; }
+@keyframes pulse { 50% { opacity: 0.35; } }
+
+/* outcome panel (after the answer) */
+.outcome { margin-top: 20px; padding: 18px 18px 16px; border-radius: 20px; position: relative; background: linear-gradient(180deg, #0f1934, #0a1124); animation: rise 0.9s var(--ease) both; }
+.outcome::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.5px; background: conic-gradient(from 200deg, var(--edge-1), var(--edge-2), var(--edge-3), #f5b04a 62%, var(--edge-1)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; opacity: 0.85; }
+.outcome.is-quiet { background: var(--panel); }
+.outcome.is-quiet::before { background: var(--line-2); opacity: 1; }
+@keyframes rise { from { opacity: 0; transform: translateY(10px); } }
+.oc-k { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-2); }
+.oc-k::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: currentColor; box-shadow: 0 0 10px currentColor; }
+.outcome.is-paid .oc-k { color: var(--ok); }
+.outcome.is-quiet .oc-k { color: var(--ink-3); }
+.outcome.is-quiet .oc-k::before { box-shadow: none; }
+.outcome h1 { margin-top: 10px; font-family: var(--font-display); font-weight: 500; font-size: 38px; line-height: 1.02; letter-spacing: -0.035em; }
+.outcome h1 em { font-style: normal; background: var(--lit); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.outcome p { margin-top: 8px; font-size: 15px; color: var(--ink-2); }
+.rc { margin-top: 14px; display: grid; grid-template-columns: auto 1fr; gap: 8px 14px; font-size: 14.5px; }
+.rc dt { color: var(--ink-3); }
+.rc dd { color: var(--ink); text-align: right; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.rc .mono { font-family: var(--font-mono); font-size: 13.5px; }
+.rc a { color: #9cc0ff; text-decoration: none; border-bottom: 1px solid rgba(156, 192, 255, 0.4); }
+
+/* empty and loading */
+.empty { margin-top: 26px; text-align: center; }
+.empty h1 { font-family: var(--font-display); font-weight: 500; font-size: 32px; letter-spacing: -0.03em; }
+.empty p { margin: 10px auto 0; max-width: 300px; font-size: 15px; color: var(--ink-2); }
+.empty .listen { margin-top: 18px; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: var(--ink-3); }
+.empty .listen i { width: 7px; height: 7px; border-radius: 50%; background: var(--accent-2); box-shadow: 0 0 10px var(--accent-2); animation: pulse 1.6s ease-in-out infinite; }
+.pic.is-faded { opacity: 0.55; }
+
+@media (min-width: 520px) {
+  body { padding: 24px 0; }
+  .card { border-radius: 36px; border: 1px solid var(--line); background: rgba(255, 255, 255, 0.012); padding-top: 24px; margin-top: 12px; }
+  .foot { left: 50%; right: auto; width: 430px; transform: translateX(-50%); border-radius: 0 0 36px 36px; }
+}
+body.is-frame { padding: 0 !important; }
+body.is-frame .card { border: 0; border-radius: 0; background: none; margin-top: 0; }
+body.is-frame .foot { left: 0; right: 0; width: auto; transform: none; border-radius: 0; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition-duration: 0.01ms !important; } }
+</style>
+</head>
+<body>
+<div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+<main class="card" id="card" aria-live="polite"></main>
+<footer class="foot" id="foot"></footer>
+
+<script>
+(() => {
+  'use strict';
+  const P = new URLSearchParams(location.search);
+  const flag = (k) => P.has(k) && P.get(k) !== '0' && P.get(k) !== 'false';
+  const SIM = flag('sim');
+  const FRAME = flag('frame') || window.parent !== window;
+  const FORCE_PENDING = P.get('state') === 'pending';
+  const PINNED = P.get('order');
+  if (FRAME) document.body.classList.add('is-frame');
+
+  // ---- the demo mission (SPEC "Demo mission"), checked line by line against the order
+  const MISSION = {
+    people: ['Asha Rao', 'Leo Marin', 'Mei Tan', 'Sam Okoye'],
+    route: 'gateway-elephanta', date: '2026-11-07',
+    leaveFrom: '09:00', leaveTo: '10:00', backFrom: '14:00',
+    upperUnder: 4, boarding: 'jetty-4', helpFor: 'Sam',
+  };
+  // catalogue labels (shop/data.mjs); /ferry/api/routes overrides them when it answers
+  const L = {
+    places: { 'gateway-elephanta': ['Gateway of India', 'Elephanta'], 'gateway-mandwa': ['Gateway of India', 'Mandwa'] },
+    classes: { economy: 'Economy', 'upper-deck': 'Upper deck', 'upper-deck-guide': 'Upper deck with guide' },
+    board: { 'jetty-1': 'Jetty 1', 'jetty-4': 'Jetty 4' },
+    stepFree: { 'jetty-4': true },
+    prices: { economy: 2.6, 'upper-deck': 3.2, 'upper-deck-guide': 4.8 },
+  };
+
+  // ---- state
+  let orderId = PINNED || null;
+  let order = null;
+  let status = 'loading'; // loading | empty | pending | sending | approved | declined | paid | refunded | expired | notfound | error
+  let receipt = null;
+  let chosen = null;      // alternative chosen, if any
+  let paying = false;     // 402 seen after the yes
+  let error = '';
+  let expiresAt = null;
+  const RANK = { loading: 0, empty: 0, notfound: 0, error: 0, pending: 1, sending: 2, approved: 3, declined: 3, expired: 3, paid: 4, refunded: 5 };
+
+  const $ = (s) => document.querySelector(s);
+  const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const money = (v) => { const n = Number(v); return Number.isFinite(n) ? n.toFixed(2) : (v == null ? '' : String(v)); };
+  const mins = (hhmm) => { const m = String(hhmm || '').match(/(\d{1,2}):(\d{2})/); return m ? Number(m[1]) * 60 + Number(m[2]) : null; };
+  const norm = (s) => String(s || '').toLowerCase().replace(/\s+/g, ' ').trim();
+  const shortHash = (h) => (h && h.length > 20 ? `${h.slice(0, 10)}…${h.slice(-6)}` : h || '');
+  function fmtDate(iso, long) {
+    const m = String(iso || '').match(/^(\d{4})-(\d{2})-(\d{2})/);
+    if (!m) return iso || '';
+    const d = new Date(Date.UTC(+m[1], +m[2] - 1, +m[3]));
+    return d.toLocaleDateString('en-GB', { weekday: long ? 'long' : 'short', day: 'numeric', month: long ? 'long' : 'short', timeZone: 'UTC' });
+  }
+  const names = (list) => list.length <= 1 ? (list[0] || '') : `${list.slice(0, -1).join(', ')} and ${list[list.length - 1]}`;
+  const statusOf = (o) => ({ awaiting_approval: 'pending', approved: 'approved', declined: 'declined', paid: 'paid', refunded: 'refunded', expired: 'expired' })[o && o.status] || 'pending';
+  function setStatus(next, force) {
+    if (force || RANK[next] >= RANK[status] || status === 'loading' || status === 'empty' || status === 'notfound' || status === 'error') status = next;
+  }
+
+  // ---- catalogue labels from the shop, if it answers
+  function learnLabels(data) {
+    const walk = (x, hint) => {
+      if (Array.isArray(x)) { x.forEach((y) => walk(y, hint)); return; }
+      if (!x || typeof x !== 'object') return;
+      for (const [k, v] of Object.entries(x)) if (v && typeof v === 'object') walk(v, k);
+      const id = x.id || x.key; const name = x.label || x.name || x.title;
+      if (!id) return;
+      const h = String(hint || '').toLowerCase();
+      if (/board|jett|pier|point/.test(h) || /^jetty/.test(id)) { if (name) L.board[id] = name; if (x.stepFree != null || x.step_free != null || x.accessible != null) L.stepFree[id] = !!(x.stepFree ?? x.step_free ?? x.accessible); else if (/step-free|step free/i.test(name || '') || /step-free|step free/i.test(x.note || x.description || '')) L.stepFree[id] = true; }
+      else if (/class|seat/.test(h) || L.classes[id]) { if (name) L.classes[id] = name; const p = Number(x.price ?? x.priceUsdc ?? x.unit ?? x.usdc); if (Number.isFinite(p) && p > 0) L.prices[id] = p; }
+      else if (/route/.test(h) || /-/.test(id) && (x.from || x.to)) { const from = x.from?.name || x.fromName || x.from; const to = x.to?.name || x.toName || x.to; if (typeof from === 'string' && typeof to === 'string') L.places[id] = [from, to]; }
+    };
+    try { walk(data, ''); } catch {}
+  }
+  const boardName = (id) => (L.board[id] || id || '').replace(/\s*\(.*\)$/, '');
+
+  // ---- what the card shows, derived from the order and its quote
+  function model(o) {
+    // the shop's order carries booking, lines, alternatives and checks itself; a quote object (sim, replay) may too
+    const q = { ...o, ...(o.quote || {}) };
+    if (o.booking && o.alternativeId) q.booking = o.booking; // an alternative was chosen: the order's booking is the new one
+    const b = q.booking || o.booking || {};
+    const pax = Array.isArray(b.passengers) ? b.passengers : [];
+    const total = money(o.total ?? q.total);
+    const [from, to] = L.places[b.route] || [b.route ? String(b.route) : 'Departure', ''];
+    const cls = L.classes[b.seatClass] || b.seatClass || '';
+    const seatLine = (q.lines || []).find((l) => /deck|economy|seat|class|ticket|adult/i.test(l.label || '')) || (q.lines || [])[0];
+    const paying = pax.filter((p) => !(Number(p.age) < 5)).length || pax.length;
+    let unit = seatLine && seatLine.unit != null ? Number(seatLine.unit) : null;
+    if (unit == null && paying) unit = Number(total) / paying;
+    const step = !!L.stepFree[b.boardingPoint];
+    const first = pax.map((p) => String(p.name || '').split(' ')[0]).filter(Boolean);
+    const assist = String(b.assistance || '').trim();
+    const canc = q.cancellation && typeof q.cancellation === 'object' ? q.cancellation : null;
+    const undo = canc && canc.short ? `${canc.short.replace(/^Free/, 'free')}, refund to the same wallet` : 'free cancellation until Fri 18:00, refund to the same wallet';
+    return { q, b, pax, total, from, to, cls, unit, step, first, assist, undo, inr: o.inrApprox ?? q.inrApprox, alts: alternatives(q, Number(total)), lane: o.lane != null ? String(o.lane) : null, agent: o.agent && o.agent.name };
+  }
+  function alternatives(q, base) {
+    const list = (q.alternatives || []).slice(0, 2).map((a) => {
+      const t = Number(a.total);
+      const text = `${a.label || ''} ${a.change || ''}`;
+      const k = String(a.kind || '').toLowerCase();
+      const kind = k === 'cheaper' || (Number.isFinite(t) && t < base - 0.004) ? 'Cheaper' : k === 'later' || /later|after|1[0-9]:[0-9]{2}/i.test(text) ? 'Later' : k === 'earlier' ? 'Earlier' : k === 'upgrade' ? 'Upgrade' : 'Other';
+      const delta = !Number.isFinite(t) ? '' : t < base - 0.004 ? `${(base - t).toFixed(2)} USDC less` : t > base + 0.004 ? `${(t - base).toFixed(2)} USDC more` : 'Same price';
+      let flag = '';
+      if (a.booking) { const off = checks(a.booking, Number(a.unit ?? NaN)).find((c) => !c.ok); if (off) flag = off.note || `${off.ask}: ${off.got}`; }
+      return { id: a.id, label: a.label || '', change: a.change || '', total: money(a.total), kind, delta, flag, booking: a.booking || null };
+    });
+    const order = { Cheaper: 0, Upgrade: 1, Later: 2, Earlier: 3, Other: 4 };
+    return list.sort((x, y) => order[x.kind] - order[y.kind]);
+  }
+  function checks(b, unit) {
+    const rows = [];
+    const pax = Array.isArray(b.passengers) ? b.passengers : [];
+    const got = pax.map((p) => norm(p.name));
+    const allIn = MISSION.people.every((n) => got.includes(norm(n)));
+    const first = pax.map((p) => String(p.name || '').split(' ')[0]).filter(Boolean);
+    rows.push({ ask: 'Four people', got: first.length ? first.join(', ') : 'No names', ok: pax.length === 4 && allIn, note: pax.length !== 4 ? `${pax.length} on the order, you asked for 4` : !allIn ? 'The names differ from yours' : '' });
+    const [, to] = L.places[b.route] || ['', b.route];
+    rows.push({ ask: 'Gateway of India to Elephanta', got: b.route === MISSION.route ? 'Return trip' : to || '?', ok: b.route === MISSION.route, note: b.route === MISSION.route ? '' : `Goes to ${to}` });
+    rows.push({ ask: 'Saturday 7 November', got: fmtDate(b.date), ok: b.date === MISSION.date, note: b.date === MISSION.date ? '' : 'Not the day you asked for' });
+    const dep = mins(b.departure);
+    const depOk = dep != null && dep >= mins(MISSION.leaveFrom) && dep <= mins(MISSION.leaveTo);
+    rows.push({ ask: 'Leave between 9 and 10', got: b.departure || '?', ok: depOk, note: depOk ? '' : `Leaves ${b.departure}, outside 9 to 10` });
+    const ret = mins(b.return);
+    const retOk = ret != null && ret >= mins(MISSION.backFrom);
+    rows.push({ ask: 'Back after 14:00', got: b.return ? `${b.return} boat` : '?', ok: retOk, note: retOk ? '' : `Back on the ${b.return} boat, before 14:00` });
+    const upper = L.prices['upper-deck'];
+    if (/^upper-deck/.test(b.seatClass || '')) {
+      const u = Number.isFinite(unit) ? unit : L.prices[b.seatClass];
+      const ok = Number.isFinite(u) && u < MISSION.upperUnder;
+      rows.push({ ask: 'Upper deck if under 4 USDC each', got: Number.isFinite(u) ? `${money(u)} each` : 'Upper deck', ok, note: ok ? '' : `Upper deck at ${money(u)} each, over 4` });
+    } else {
+      const ok = Number.isFinite(upper) && upper >= MISSION.upperUnder;
+      rows.push({ ask: 'Upper deck if under 4 USDC each', got: L.classes[b.seatClass] || b.seatClass || '?', ok, note: ok ? '' : Number.isFinite(upper) ? `Upper deck was ${money(upper)} each` : 'Not the upper deck' });
+    }
+    const sf = !!L.stepFree[b.boardingPoint];
+    rows.push({ ask: 'Step-free jetty', got: boardName(b.boardingPoint) || '?', ok: sf, note: sf ? '' : 'This jetty has steps' });
+    const help = /sam|cane|help|assist|board/i.test(String(b.assistance || ''));
+    rows.push({ ask: 'Help boarding for Sam', got: help ? 'Asked for' : 'Not asked', ok: help, note: help ? '' : 'No help requested on the order' });
+    rows.push({ ask: 'Ask before paying', got: 'Asking you now', ok: true, note: '' });
+    return rows;
+  }
+
+  // ---- the picture: Gateway of India, the route, the boat, Elephanta
+  function picture(m, faded) {
+    const out = m.b.departure || '';
+    const back = m.b.return || '';
+    const upper = /^upper-deck/.test(m.b.seatClass || '');
+    const n = Math.min(Math.max(m.pax.length, 0), 6);
+    const seats = Array.from({ length: n }, (_, i) => i);
+    const seatsUpper = seats.map((i) => `<circle cx="${10 + i * (16 / Math.max(1, n - 1 || 1))}" cy="-1.5" r="1.5" fill="#bfeeff" filter="url(#glow)"/>`).join('');
+    const seatsLower = seats.map((i) => `<rect x="${8.5 + i * 4.4}" y="5.5" width="2.4" height="2.4" rx="0.6" fill="#bfeeff" filter="url(#glow)"/>`).join('');
+    const jetty = boardName(m.b.boardingPoint).replace(/^gateway\s+/i, '').replace(/^./, (c) => c.toUpperCase());
+    const outText = `Out ${out}${jetty ? ` · ${jetty}` : ''}`;
+    const outW = Math.round(outText.length * 5.5 + 18);
+    const backW = Math.round(`Back ${back}`.length * 5.6 + 18);
+    return `<div class="pic${faded ? ' is-faded' : ''}" aria-label="Ferry from ${esc(m.from)} to ${esc(m.to)}">
+<svg viewBox="0 0 358 152" role="img" aria-hidden="true">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b1838"/><stop offset="1" stop-color="#060c1f"/></linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b1a3d"/><stop offset="1" stop-color="#040815"/></linearGradient>
+    <linearGradient id="stone" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#22366b"/><stop offset="1" stop-color="#101b3a"/></linearGradient>
+    <linearGradient id="hill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1a2d5c"/><stop offset="1" stop-color="#0b1430"/></linearGradient>
+    <linearGradient id="route" x1="0" x2="1"><stop offset="0" stop-color="#7aa7ff"/><stop offset="1" stop-color="#45d4ff"/></linearGradient>
+    <linearGradient id="hull" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e9f0ff"/><stop offset="1" stop-color="#9fb6ea"/></linearGradient>
+    <radialGradient id="sun" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#5a8fff" stop-opacity="0.55"/><stop offset="1" stop-color="#5a8fff" stop-opacity="0"/></radialGradient>
+    <filter id="glow" x="-200%" y="-200%" width="500%" height="500%"><feGaussianBlur stdDeviation="1.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="soft" x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation="2.4"/></filter>
+  </defs>
+  <rect width="358" height="96" fill="url(#sky)"/>
+  <ellipse cx="200" cy="96" rx="150" ry="34" fill="url(#sun)"/>
+  <rect y="96" width="358" height="56" fill="url(#sea)"/>
+  <line x1="0" y1="96.5" x2="358" y2="96.5" stroke="rgba(170,195,255,0.22)" stroke-width="0.8"/>
+  <g stroke="rgba(150,180,255,0.16)" stroke-width="0.8" stroke-linecap="round">
+    <path d="M14 106h10M48 112h14M126 104h8M300 106h12M330 114h10M20 124h12M150 138h10M270 128h14M318 140h10M66 142h12"/>
+  </g>
+  <!-- Gateway of India -->
+  <g stroke="rgba(170,195,255,0.55)" stroke-width="0.8" fill="url(#stone)" stroke-linejoin="round">
+    <path d="M24 96V50h11v46z"/>
+    <path d="M79 96V50h11v46z"/>
+    <path d="M35 96V56h44v40z"/>
+    <path d="M24 50q5.5-9 11 0M79 50q5.5-9 11 0" fill="none"/>
+    <path d="M40 56v-7h34v7" />
+    <path d="M47 49q10-15 20 0" />
+  </g>
+  <path d="M50 96V74q7-10 14 0v22z" fill="#050a19" stroke="rgba(170,195,255,0.4)" stroke-width="0.8"/>
+  <g fill="none" stroke="rgba(170,195,255,0.35)" stroke-width="0.7">
+    <path d="M27.5 70v-6q2-3 4 0v6M82.5 70v-6q2-3 4 0v6M39 72v-6q2.2-3 4.4 0v6M70.6 72v-6q2.2-3 4.4 0v6"/>
+    <path d="M35 62h44"/>
+  </g>
+  <!-- jetty -->
+  <g stroke="rgba(170,195,255,0.5)" stroke-width="0.9" stroke-linecap="round">
+    <path d="M90 99h28"/><path d="M96 99v5M104 99v5M112 99v5"/>
+  </g>
+  <!-- Elephanta -->
+  <path d="M236 97c10-14 20-24 34-25c8-11 22-17 36-11c12 4 20 14 30 21c8 5 16 9 22 11v4z" fill="url(#hill)" stroke="rgba(170,195,255,0.5)" stroke-width="0.8" stroke-linejoin="round"/>
+  <g fill="rgba(120,200,190,0.55)">
+    <circle cx="262" cy="76" r="2.2"/><circle cx="268" cy="73" r="2.6"/><circle cx="286" cy="64" r="2.4"/><circle cx="293" cy="61" r="2.8"/><circle cx="301" cy="60" r="2.2"/><circle cx="318" cy="66" r="2.5"/><circle cx="326" cy="71" r="2.1"/>
+  </g>
+  <path d="M296 97v-7q4-5 8 0v7z" fill="#050a19" stroke="rgba(170,195,255,0.35)" stroke-width="0.7"/>
+  <path d="M232 99h14" stroke="rgba(170,195,255,0.45)" stroke-width="0.9" stroke-linecap="round"/>
+  <!-- route -->
+  <path d="M118 101C150 128 204 128 238 101" fill="none" stroke="url(#route)" stroke-width="4" opacity="0.35" filter="url(#soft)"/>
+  <path class="route" d="M118 101C150 128 204 128 238 101" fill="none" stroke="url(#route)" stroke-width="1.4" stroke-linecap="round"/>
+  <circle cx="118" cy="101" r="2.4" fill="#7aa7ff" filter="url(#glow)"/>
+  <circle cx="238" cy="101" r="2.4" fill="#45d4ff" filter="url(#glow)"/>
+  <!-- boat -->
+  <g transform="translate(158 103) scale(1.2)">
+    <g class="boat">
+      <path d="M-6 13q-4 1-8 0M-5 16q-5 1-10 0" stroke="rgba(170,210,255,0.4)" stroke-width="0.7" fill="none" stroke-linecap="round"/>
+      <path d="M0 10h38l-5 7.5H4.5z" fill="url(#hull)"/>
+      <path d="M6 10V4h24v6" fill="#1b2c5c" stroke="rgba(200,220,255,0.7)" stroke-width="0.7"/>
+      <path d="M8 4V0.5h20V4" fill="none" stroke="rgba(200,220,255,0.6)" stroke-width="0.6"/>
+      <path d="M8 0.5h20" stroke="rgba(200,220,255,0.75)" stroke-width="0.7"/>
+      ${upper ? seatsUpper : seatsLower}
+    </g>
+  </g>
+  <!-- labels -->
+  <g font-family="Geist, system-ui, sans-serif" font-size="10" fill="#a1abc0">
+    <text x="57" y="24" text-anchor="middle">${esc(m.from)}</text>
+    <text x="297" y="40" text-anchor="middle">${esc(m.to)}</text>
+  </g>
+  <g font-family="Geist, system-ui, sans-serif" font-size="10.5">
+    ${out ? `<rect x="12" y="128" width="${outW}" height="16" rx="8" fill="rgba(61,123,255,0.16)" stroke="rgba(122,167,255,0.45)" stroke-width="0.7"/>
+    <text x="21" y="139.5" fill="#dfe8ff">Out <tspan font-weight="500">${esc(out)}</tspan>${jetty ? `<tspan fill="#a1abc0"> · ${esc(jetty)}</tspan>` : ''}</text>` : ''}
+    ${back ? `<rect x="${346 - backW}" y="128" width="${backW}" height="16" rx="8" fill="rgba(69,212,255,0.12)" stroke="rgba(69,212,255,0.4)" stroke-width="0.7"/>
+    <text x="${346 - backW + 9}" y="139.5" fill="#dfe8ff">Back <tspan font-weight="500">${esc(back)}</tspan></text>` : ''}
+  </g>
+</svg></div>`;
+  }
+
+  // ---- icons
+  const ICON = {
+    agent: '<svg viewBox="0 0 16 16" fill="none" stroke="#bcd2ff" stroke-width="1.3" stroke-linecap="round"><rect x="3" y="5" width="10" height="8" rx="2.5"/><path d="M8 2.5V5M6 9h.01M10 9h.01"/></svg>',
+    check: '<svg viewBox="0 0 18 18"><circle cx="9" cy="9" r="8" fill="rgba(61,123,255,0.18)" stroke="rgba(122,167,255,0.55)" stroke-width="1"/><path d="M5.6 9.3l2.2 2.2 4.6-4.8" fill="none" stroke="#bcd2ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    undo: '<svg viewBox="0 0 20 20" fill="none" stroke="#9fb6ea" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7.5 5L4 8.5 7.5 12"/><path d="M4.5 8.5h7.2a4.3 4.3 0 010 8.6H8"/></svg>',
+    scope: '<svg viewBox="0 0 20 20" fill="none" stroke="#9fb6ea" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="7.2"/><path d="M10 6v4.2l2.8 1.8"/></svg>',
+  };
+
+  // ---- render
+  function render() {
+    const card = $('#card'), foot = $('#foot');
+    const badge = SIM ? '<span class="badge is-sim">Simulation</span>' : '<span class="badge">Test network</span>';
+    if (status === 'loading' || status === 'empty' || status === 'notfound' || status === 'error' || !order) {
+      const msg = status === 'loading' ? ['Looking for a request', 'One moment.']
+        : status === 'notfound' ? ['This request is gone', 'The shop no longer has this order. Ask your agent for a new one.']
+        : status === 'error' ? ['Shop not reachable', 'Check that this phone is on the same network as the shop. Trying again.']
+        : ['Nothing to approve', 'When your agent asks before it pays, the request shows up here.'];
+      card.innerHTML = `<div class="top"><div class="from"><span class="av">${ICON.agent}</span><span>Your agent</span></div>${badge}</div>
+        ${picture({ b: { departure: '', return: '', seatClass: 'upper-deck' }, pax: [], from: 'Gateway of India', to: 'Elephanta' }, true)}
+        <div class="empty"><h1>${msg[0]}</h1><p>${msg[1]}</p>${status === 'loading' ? '' : '<p class="listen"><i></i>Listening for your agent</p>'}</div>`;
+      foot.innerHTML = '';
+      return;
+    }
+    const m = chosen && chosen.booking && RANK[status] >= 3 ? model({ ...order, quote: { ...(order.quote || {}), booking: chosen.booking, lines: [] }, lines: [], booking: chosen.booking, alternativeId: chosen.id, total: chosen.total, inrApprox: Math.round(Number(chosen.total) * 88) }) : model(order);
+    const fromRace = m.lane == null || m.lane === '1';
+    const who = m.agent ? esc(m.agent) : fromRace ? 'your agent' : 'an agent';
+    const net = SIM ? badge : receipt && (receipt.mode === 'ledger') ? '<span class="badge">Local test ledger</span>' : '<span class="badge">Test network</span>';
+    const payTotal = chosen ? chosen.total : m.total;
+    let html = `<div class="top"><div class="from"><span class="av">${ICON.agent}</span><span>Request from <b>${who}</b></span></div>${net}</div>`;
+    html += picture(m);
+
+    if (status === 'pending' || status === 'sending') {
+      html += `<section class="ask"><h1>Pay <em>${esc(m.total)} USDC</em></h1>
+        <p class="to">to <b>Harbour Line</b>${m.inr ? `<span>approx. ${Number(m.inr).toLocaleString('en-IN')} INR</span>` : ''}</p></section>`;
+    } else {
+      html += outcome(m, payTotal);
+    }
+
+    // the order in four lines
+    const tickets = m.pax.length;
+    html += `<ul class="order">
+      <li><span class="k">Trip</span><span class="v">${esc(m.from)}<span class="arrow"> → </span>${esc(m.to)}, return</span></li>
+      <li><span class="k">When</span><span class="v">${esc(fmtDate(m.b.date))} · out ${esc(m.b.departure || '?')} · back ${esc(m.b.return || '?')}</span></li>
+      <li><span class="k">Seats</span><span class="v">${tickets} × ${esc(m.cls.toLowerCase() || 'seat')}${Number.isFinite(m.unit) ? ` <span>· ${money(m.unit)} each</span>` : ''}</span></li>
+      <li><span class="k">Board</span><span class="v">${esc(boardName(m.b.boardingPoint) || '?')}${m.step ? ', step-free' : ''}${m.assist ? ` <span>· ${esc(helpLine(m))}</span>` : ''}</span></li>
+    </ul>`;
+
+    if (status === 'pending' || status === 'sending') {
+      if (fromRace) {
+        const rows = checks(m.b, m.unit);
+        const off = rows.filter((r) => !r.ok).length;
+        html += `<div class="sec"><h2>${off ? 'Check before you say yes' : 'This matches your request'}</h2><span class="${off ? 'is-note' : ''}">${off ? `${off} ${off === 1 ? 'point differs' : 'points differ'}` : `${rows.length} of ${rows.length} points`}</span></div>
+          <ul class="match">${rows.map((r) => `<li><span class="ic">${r.ok ? ICON.check : '<span class="dot" title="Differs from your request"></span>'}</span><span class="a">${esc(r.ask)}</span><span class="g">${esc(r.got)}</span>${!r.ok && r.note ? `<span class="n">${esc(r.note)}</span>` : ''}</li>`).join('')}</ul>`;
+      } else {
+        html += `<div class="sec"><h2>From an agent outside the race</h2></div>`;
+      }
+      if (m.alts.length) {
+        html += `<div class="sec"><h2>Or choose instead</h2><span>side by side</span></div>
+          <div class="alts">${m.alts.map((a) => `<div class="alt"><span class="tag">${esc(a.kind)}</span>
+            <span class="tot">${esc(a.total)}<small>USDC</small></span>
+            <span class="what">${esc(a.label)}</span>
+            <span class="chg">${a.flag ? `<span class="dot"></span>${esc(a.flag)}` : esc(a.change)}</span>
+            <span class="delta">${esc(a.delta)}</span>
+            <button type="button" data-alt="${esc(a.id)}" ${status === 'sending' ? 'disabled' : ''}>Choose</button></div>`).join('')}</div>`;
+      }
+    }
+
+    const nothingPaid = status === 'declined' || status === 'expired';
+    html += `<ul class="terms">
+      ${nothingPaid ? '' : `<li>${ICON.undo}<p><b>How to undo:</b> ${esc(m.undo)}.</p></li>`}
+      ${status === 'pending' || status === 'sending' ? `<li>${ICON.scope}<p><b>What this yes covers:</b> this order only. It expires in <span class="num" data-expires>10 minutes</span>.</p></li>` : ''}
+    </ul>`;
+    card.innerHTML = html;
+
+    // footer
+    if (status === 'pending' || status === 'sending') {
+      const busy = status === 'sending';
+      foot.innerHTML = `<div class="foot-in">${error ? `<p class="err">${esc(error)}</p>` : ''}<div class="btns">
+        <button class="btn btn-quiet" type="button" data-act="no" ${busy ? 'disabled' : ''}>Not now</button>
+        <button class="btn btn-yes" type="button" data-act="yes" ${busy ? 'disabled' : ''}>${busy ? 'Sending your answer' : `Yes, pay ${esc(m.total)} USDC`}</button></div></div>`;
+    } else {
+      const line = status === 'approved' ? ['', paying ? 'The agent is paying with x402' : 'The agent is about to pay']
+        : status === 'paid' ? ['is-ok', 'Paid. You can close this.']
+        : status === 'refunded' ? ['is-ok', 'Refunded to the same wallet']
+        : status === 'expired' ? ['is-quiet', 'Expired. Nothing was paid.']
+        : ['is-quiet', 'Nothing was paid'];
+      foot.innerHTML = `<div class="foot-in"><div class="line ${line[0]}"><i></i>${esc(line[1])}</div></div>`;
+    }
+    tickExpiry();
+  }
+  function helpLine(m) {
+    const a = m.assist;
+    const who = (m.first.find((n) => new RegExp(`\\b${n}\\b`, 'i').test(a))) || '';
+    return who ? `help boarding for ${who}` : 'help boarding asked';
+  }
+  function outcome(m, payTotal) {
+    if (status === 'approved') {
+      return `<section class="outcome"><span class="oc-k">You said yes</span>
+        <h1>Paying <em>${esc(payTotal)} USDC</em></h1>
+        <p>${chosen ? `You chose: ${esc(chosen.label)}. ` : ''}${paying ? 'The shop asked for the payment (HTTP 402). Your agent signed it and is waiting for the network.' : 'Your agent has your yes for this order and is paying now.'}</p></section>`;
+    }
+    if (status === 'paid' || status === 'refunded') {
+      const r = receipt || {};
+      const ledger = r.mode === 'ledger' || /^ledger-/.test(r.txHash || '');
+      const tx = r.txHash ? (ledger ? esc(r.txHash) : esc(shortHash(r.txHash))) : '';
+      const link = !ledger && r.explorerUrl ? `<a href="${esc(r.explorerUrl)}" target="_blank" rel="noopener">View on Arbiscan</a>` : '';
+      const amount = money(r.amount ?? payTotal);
+      return `<section class="outcome is-paid"><span class="oc-k">${status === 'refunded' ? 'Refunded' : 'Paid'}</span>
+        <h1>${status === 'refunded' ? 'Refunded' : 'Paid'} <em>${esc(amount)} USDC</em></h1>
+        <p>${status === 'refunded' ? 'The money went back to the same wallet.' : 'Your tickets are booked. Your agent has the receipt.'}</p>
+        <dl class="rc">
+          ${r.ref ? `<dt>Reference</dt><dd>${esc(r.ref)}</dd>` : ''}
+          <dt>Tickets</dt><dd>${(r.tickets && r.tickets.length) || m.pax.length}</dd>
+          <dt>Network</dt><dd>${ledger ? 'Local test ledger' : SIM ? 'Simulation, not on chain' : 'Arbitrum Sepolia, test network'}</dd>
+          ${tx ? `<dt>Transaction</dt><dd class="mono">${tx}</dd>` : ''}
+          ${link ? `<dt>Explorer</dt><dd>${link}</dd>` : ''}
+        </dl></section>`;
+    }
+    const t = status === 'expired' ? ['Expired', 'This request expired', 'Nothing was paid. Ask your agent for a new quote if you still want the trip.']
+      : ['Not now', 'Nothing was paid', 'Your agent knows you said not now. It will not pay for this order.'];
+    return `<section class="outcome is-quiet"><span class="oc-k">${t[0]}</span><h1>${t[1]}</h1><p>${t[2]}</p></section>`;
+  }
+
+  // ---- expiry countdown
+  function tickExpiry() {
+    const el = document.querySelector('[data-expires]');
+    if (!el) return;
+    if (!expiresAt) { el.textContent = '10 minutes'; return; }
+    const left = expiresAt - Date.now();
+    if (left <= 0) {
+      if (status === 'pending' && !SIM && !FORCE_PENDING) { status = 'expired'; render(); }
+      el.textContent = 'less than a second';
+      return;
+    }
+    const s = Math.ceil(left / 1000);
+    el.textContent = s >= 60 ? `${Math.floor(s / 60)} min ${String(s % 60).padStart(2, '0')} s` : `${s} s`;
+  }
+  setInterval(tickExpiry, 1000);
+
+  // ---- answers
+  document.addEventListener('click', (e) => {
+    const b = e.target.closest('button');
+    if (!b || b.disabled) return;
+    if (b.dataset.act === 'yes') decide('yes');
+    else if (b.dataset.act === 'no') decide('no');
+    else if (b.dataset.alt) decide('yes', b.dataset.alt);
+  });
+  async function decide(decision, alternativeId) {
+    if (status !== 'pending' || !order) return;
+    const m = model(order);
+    const alt = alternativeId ? m.alts.find((a) => a.id === alternativeId) : null;
+    error = '';
+    status = 'sending';
+    render();
+    if (SIM) {
+      await new Promise((r) => setTimeout(r, 500));
+      chosen = alt; status = decision === 'yes' ? 'approved' : 'declined'; render();
+      if (decision === 'yes' && !FRAME) setTimeout(() => { receipt = { ref: 'HL-SIM01', amount: alt ? alt.total : m.total, mode: 'testnet', txHash: '' }; status = 'paid'; render(); }, 2600);
+      return;
+    }
+    try {
+      const body = alternativeId ? { decision, alternativeId } : { decision };
+      const r = await fetch(`/ferry/api/orders/${encodeURIComponent(order.orderId)}/approve`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) });
+      if (!r.ok) {
+        let msg = '';
+        try { const j = await r.json(); msg = j.error || j.message || ''; } catch {}
+        if (r.status === 404) throw new Error('The shop no longer has this order.');
+        if (r.status === 409 || r.status === 410) { await refresh(); if (status !== 'pending') return; }
+        throw new Error(msg || `The shop answered ${r.status}.`);
+      }
+      const o = await r.json().catch(() => null);
+      chosen = alt;
+      status = decision === 'yes' ? 'approved' : 'declined';
+      if (o && o.status) { const s = statusOf(o); if (RANK[s] > RANK[status]) status = s; if (o.receipt) receipt = o.receipt; }
+      render();
+    } catch (err) {
+      status = 'pending';
+      error = err && err.message && !/fetch|network/i.test(err.message) ? err.message : 'Could not reach the shop. Try again.';
+      render();
+    }
+  }
+
+  // ---- loading orders
+  async function getJSON(url) {
+    const r = await fetch(url, { cache: 'no-store' });
+    if (!r.ok) { const e = new Error(String(r.status)); e.status = r.status; throw e; }
+    return r.json();
+  }
+  async function loadOrder(id, ev) {
+    orderId = id;
+    let o = null;
+    try {
+      o = await getJSON(`/ferry/api/orders/${encodeURIComponent(id)}`);
+      if (o && o.order && !o.orderId) o = o.order;
+      if (o && !o.quote && o.quoteId) { try { o.quote = await getJSON(`/ferry/api/quotes/${encodeURIComponent(o.quoteId)}`); } catch {} }
+    } catch (err) {
+      if (!ev) { if (err.status === 404) { status = 'notfound'; render(); return; } status = 'error'; render(); return; }
+    }
+    if (!o) o = { orderId: id, total: ev.total, status: 'awaiting_approval', approveUrl: ev.approveUrl, lane: ev.lane };
+    if (!o.quote && ev && ev.quote) o.quote = ev.quote;
+    if (o.lane == null && ev && ev.lane != null) o.lane = ev.lane;
+    setOrder(o, true);
+  }
+  function setOrder(o, fresh) {
+    if (fresh) { chosen = null; receipt = null; paying = false; error = ''; status = 'loading'; }
+    order = o;
+    orderId = o.orderId || orderId;
+    const q = o.quote || {};
+    const exp = q.expiresAt || o.expiresAt;
+    expiresAt = exp ? (typeof exp === 'number' ? exp : Date.parse(exp)) : null;
+    if (!Number.isFinite(expiresAt)) expiresAt = null;
+    if (o.receipt) receipt = o.receipt;
+    setStatus(FORCE_PENDING ? 'pending' : statusOf(o), fresh);
+    if (status === 'pending' && expiresAt && expiresAt < Date.now() && !SIM && !FORCE_PENDING) status = 'expired';
+    render();
+  }
+  async function refresh() {
+    if (!orderId || SIM || FORCE_PENDING) return;
+    try {
+      let o = await getJSON(`/ferry/api/orders/${encodeURIComponent(orderId)}`);
+      if (o && o.order && !o.orderId) o = o.order;
+      if (!o) return;
+      const s = statusOf(o);
+      if (o.receipt) receipt = o.receipt;
+      if (!order.quote && o.quote) order.quote = o.quote;
+      if (o.alternativeId && !chosen) { const a = model(order).alts.find((x) => x.id === o.alternativeId); if (a) chosen = a; }
+      if (RANK[s] > RANK[status] && status !== 'sending') { status = s; render(); }
+    } catch (err) {
+      if (err.status === 404 && status === 'pending') { status = 'notfound'; render(); }
+    }
+  }
+  async function findLatest() {
+    let st;
+    try { st = await getJSON('/race/state'); } catch { status = 'error'; render(); return; }
+    const pend = Array.isArray(st.pending) ? st.pending : [];
+    const pick = pend.filter((o) => String(o.lane) === '1').pop() || pend.filter((o) => o.lane == null || o.channel === 'agent').pop() || pend[pend.length - 1];
+    if (pick) { pick.quote ? setOrder(pick, true) : loadOrder(pick.orderId, pick); return; }
+    // fall back to the race's own events: the last request nobody has answered yet
+    const evs = Array.isArray(st.events) ? st.events : [];
+    const answered = new Set(evs.filter((e) => /^order\.(approved|declined|paid|refunded)$/.test(e.type)).map((e) => e.orderId));
+    const ask = evs.filter((e) => e.type === 'order.awaiting_approval' && !answered.has(e.orderId)).pop();
+    if (ask) { loadOrder(ask.orderId, ask); return; }
+    status = 'empty'; render();
+  }
+
+  // ---- events (SSE on the phone; postMessage from the board when framed)
+  function onEvent(ev) {
+    if (!ev || !ev.type) return;
+    if (ev.type === 'race.reset') { if (!PINNED && !FRAME) { order = null; orderId = null; status = 'empty'; render(); } return; }
+    if (ev.type === 'order.awaiting_approval') {
+      if (PINNED && ev.orderId !== PINNED) return;
+      if (ev.orderId === orderId && order) return;
+      const lane = ev.lane != null ? String(ev.lane) : null;
+      const curLane = order && order.lane != null ? String(order.lane) : null;
+      const settled = !order || RANK[status] >= 3 || status === 'empty' || status === 'notfound' || status === 'error';
+      const better = lane === '1' && curLane && curLane !== '1';
+      if (settled || better) loadOrder(ev.orderId, ev);
+      return;
+    }
+    if (!order || (ev.orderId && ev.orderId !== orderId)) return;
+    switch (ev.type) {
+      case 'order.approved': if (RANK[status] < 3) { status = 'approved'; if (ev.alternativeId && !chosen) chosen = model(order).alts.find((a) => a.id === ev.alternativeId) || null; render(); } break;
+      case 'order.declined': if (RANK[status] < 3) { status = 'declined'; render(); } break;
+      case 'order.payment_required': if (status === 'approved') { paying = true; render(); } break;
+      case 'order.paid': receipt = { ...(receipt || {}), ...ev }; status = 'paid'; render(); if (!SIM && !FORCE_PENDING) setTimeout(refresh, 400); break;
+      case 'order.refunded': status = 'refunded'; render(); break;
+    }
+  }
+  addEventListener('message', (e) => {
+    const d = e.data;
+    if (!d || typeof d !== 'object' || e.source !== window.parent) return;
+    if (d.type === 'yescard.order' && d.order) { setOrder(d.order, true); return; }
+    if (d.type === 'event' && d.event) onEvent(d.event);
+    else if (d.type === 'race.reset') { if (SIM || FORCE_PENDING) return; }
+  });
+  function follow() {
+    let es;
+    const open = () => {
+      es = new EventSource('/events');
+      es.onmessage = (m) => { try { onEvent(JSON.parse(m.data)); } catch {} };
+      es.onopen = () => { if (status === 'error') { orderId && order ? refresh() : findLatest(); } };
+      es.onerror = () => { if (es.readyState === EventSource.CLOSED) setTimeout(open, 2500); };
+    };
+    open();
+  }
+
+  // ---- boot
+  async function boot() {
+    render();
+    if (SIM) {
+      if (!FRAME) { const { simOrder } = await import('/board/sim.js'); setOrder(simOrder(), true); }
+      return; // in the board, the simulation sends the order by postMessage
+    }
+    fetch('/ferry/api/routes', { cache: 'no-store' }).then((r) => (r.ok ? r.json() : null)).then((d) => { if (d) { learnLabels(d); if (order) render(); } }).catch(() => {});
+    if (FORCE_PENDING) { if (orderId) loadOrder(orderId, { total: '', approveUrl: '' }); return; }
+    if (orderId) await loadOrder(orderId); else await findLatest();
+    if (!FRAME) follow();
+    setInterval(() => {
+      if (document.hidden) return;
+      if (status === 'pending' || status === 'approved' || status === 'sending') refresh();
+      else if (status === 'error' || (status === 'empty' && FRAME)) (orderId ? loadOrder(orderId) : findLatest());
+    }, FRAME ? 2000 : 3000);
+  }
+  boot();
+})();
+</script>
+</body>
+</html>

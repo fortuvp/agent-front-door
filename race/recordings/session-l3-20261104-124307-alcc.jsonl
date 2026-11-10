@@ -1,0 +1,56 @@
+{"t":1793776387982,"type":"web.view","step":"home","label":"Opened the Harbour Line website","value":"/ferry/?lane=3","valueLen":14,"lane":"3","sessionId":"l3-20261104-124307-alcc"}
+{"t":1793776396962,"type":"web.click","step":"home","field":"cookie.necessary","label":"Cookies: only necessary","lane":"3","sessionId":"l3-20261104-124307-alcc"}
+{"t":1793776397860,"type":"web.click","step":"home","field":"nav.book","label":"Book tickets","lane":"3","sessionId":"l3-20261104-124307-alcc"}
+{"t":1793776397860,"type":"web.step","step":"auth","label":"Sign in","lane":"3","sessionId":"l3-20261104-124307-alcc"}
+{"t":1793776399309,"type":"web.click","step":"auth","field":"auth.tab","label":"Sign in tab","value":"signin","valueLen":6,"lane":"3","sessionId":"l3-20261104-124307-alcc"}
+{"t":1793776400093,"type":"web.click","step":"auth","field":"auth.signin","label":"Sign in","lane":"3","sessionId":"l3-20261104-124307-alcc"}
+{"t":1793776400093,"type":"web.submit","step":"auth","field":"auth.signin","label":"Signed in","lane":"3","sessionId":"l3-20261104-124307-alcc"}
+{"t":1793776400093,"type":"web.step","step":"trip","label":"Trip","lane":"3","sessionId":"l3-20261104-124307-alcc"}
+{"t":1793776402893,"type":"web.click","step":"trip","field":"trip.route.toggle","label":"Open the route list","lane":"3","sessionId":"l3-20261104-124307-alcc"}
+{"t":1793776406810,"type":"web.click","step":"trip","field":"trip.route.pick","label":"Route: Gateway of India to Elephanta Island","value":"gateway-elephanta","valueLen":17,"lane":"3","sessionId":"l3-20261104-124307-alcc"}
+{"t":1793776407409,"type":"web.click","step":"trip","field":"trip.date.toggle","label":"Open the calendar","lane":"3","sessionId":"l3-20261104-124307-alcc"}
+{"t":1793776409392,"type":"web.click","step":"trip","field":"trip.date.pick","label":"Date: Sat 7 Nov","value":"2026-11-07","valueLen":10,"lane":"3","sessionId":"l3-20261104-124307-alcc"}
+{"t":1793776411631,"type":"web.click","step":"trip","field":"trip.out","label":"Leave at 10:00","value":"10:00","valueLen":5,"lane":"3","sessionId":"l3-20261104-124307-alcc"}
+{"t":1793776416812,"type":"web.click","step":"trip","field":"trip.ret","label":"Return at 17:00","value":"17:00","valueLen":5,"lane":"3","sessionId":"l3-20261104-124307-alcc"}
+{"t":1793776418113,"type":"web.click","step":"trip","field":"trip.next","label":"Continue to passengers","lane":"3","sessionId":"l3-20261104-124307-alcc"}
+{"t":1793776418113,"type":"web.submit","step":"trip","field":"trip.next","label":"Trip chosen: Sat 7 Nov, 10:00 and back at 17:00","lane":"3","sessionId":"l3-20261104-124307-alcc"}
+{"t":1793776418114,"type":"web.step","step":"passengers","label":"Passengers","lane":"3","sessionId":"l3-20261104-124307-alcc"}
+{"t":1793776420361,"type":"web.click","step":"passengers","field":"step.goto","label":"Go back to Trip","value":"trip","valueLen":4,"lane":"3","sessionId":"l3-20261104-124307-alcc"}
+{"t":1793776420361,"type":"web.step","step":"trip","label":"Trip","lane":"3","sessionId":"l3-20261104-124307-alcc"}
+{"t":1793776422903,"type":"web.click","step":"trip","field":"trip.out","label":"Leave at 11:30","value":"11:30","valueLen":5,"lane":"3","sessionId":"l3-20261104-124307-alcc"}
+{"t":1793776424861,"type":"web.click","step":"trip","field":"trip.next","label":"Continue to passengers","lane":"3","sessionId":"l3-20261104-124307-alcc"}
+{"t":1793776424861,"type":"web.submit","step":"trip","field":"trip.next","label":"Trip chosen: Sat 7 Nov, 11:30 and back at 17:00","lane":"3","sessionId":"l3-20261104-124307-alcc"}
+{"t":1793776424861,"type":"web.step","step":"passengers","label":"Passengers","lane":"3","sessionId":"l3-20261104-124307-alcc"}
+{"t":1793776430041,"type":"web.field","step":"passengers","field":"pax.0.name","label":"Passenger 1 · Full name","value":"Fortunato","valueLen":9,"keys":[[1793776429104,"F"],[1793776429216,"Fo"],[1793776429319,"For"],[1793776429463,"Fort"],[1793776429513,"Fortu"],[1793776429628,"Fortun"],[1793776429694,"Fortuna"],[1793776429817,"Fortunat"],[1793776429917,"Fortunato"]],"lane":"3","sessionId":"l3-20261104-124307-alcc"}
+{"t":1793776431414,"type":"web.field","step":"passengers","field":"pax.0.age","label":"Passenger 1 · Age","value":"32","valueLen":2,"keys":[[1793776431060,"3"],[1793776431133,"32"]],"lane":"3","sessionId":"l3-20261104-124307-alcc"}
+{"t":1793776432876,"type":"web.click","step":"passengers","field":"pax.idtype.toggle","label":"Passenger 1 · open ID types","value":"0","valueLen":1,"lane":"3","sessionId":"l3-20261104-124307-alcc"}
+{"t":1793776433509,"type":"web.click","step":"passengers","field":"pax.idtype.pick","label":"Passenger 1 · ID type: Passport","value":"0:passport","valueLen":10,"lane":"3","sessionId":"l3-20261104-124307-alcc"}
+{"t":1793776438210,"type":"web.field","step":"passengers","field":"pax.0.idNumber","label":"Passenger 1 · ID number","value":"a122345","valueLen":7,"keys":[[1793776435078,"a"],[1793776435359,"a1"],[1793776435450,"a12"],[1793776435514,"a122"],[1793776435702,"a1223"],[1793776435728,"a12234"],[1793776435959,"a122345"]],"lane":"3","sessionId":"l3-20261104-124307-alcc"}
+{"t":1793776438311,"type":"web.click","step":"passengers","field":"pax.class","label":"Seats: Economy","value":"economy","valueLen":7,"lane":"3","sessionId":"l3-20261104-124307-alcc"}
+{"t":1793776444692,"type":"web.click","step":"passengers","field":"pax.board","label":"Boarding: Gateway jetty 4","value":"jetty-4","valueLen":7,"lane":"3","sessionId":"l3-20261104-124307-alcc"}
+{"t":1793776450310,"type":"web.field","step":"passengers","field":"pax.assist","label":"Special assistance","value":"no","valueLen":2,"keys":[[1793776449145,"n"],[1793776449248,"no"]],"lane":"3","sessionId":"l3-20261104-124307-alcc"}
+{"t":1793776450360,"type":"web.click","step":"passengers","field":"pax.next","label":"Check the price","lane":"3","sessionId":"l3-20261104-124307-alcc"}
+{"t":1793776450360,"type":"web.error","step":"passengers","field":"pax.0.name","label":"Enter a first and a last name.","lane":"3","sessionId":"l3-20261104-124307-alcc"}
+{"t":1793776450360,"type":"web.error","step":"passengers","field":"pax.0.idNumber","label":"A passport number is one letter and 7 digits, like A1234567.","lane":"3","sessionId":"l3-20261104-124307-alcc"}
+{"t":1793776459094,"type":"web.field","step":"passengers","field":"pax.0.idNumber","label":"Passenger 1 · ID number","value":"A1223454","valueLen":8,"keys":[[1793776455369,"A122345"],[1793776457399,"A1223454"]],"lane":"3","sessionId":"l3-20261104-124307-alcc"}
+{"t":1793776461745,"type":"web.field","step":"passengers","field":"pax.0.name","label":"Passenger 1 · Full name","value":"Fortunato A","valueLen":11,"keys":[[1793776459352,"Fortunato "],[1793776460330,"Fortunato A"]],"lane":"3","sessionId":"l3-20261104-124307-alcc"}
+{"t":1793776461844,"type":"web.click","step":"passengers","field":"pax.next","label":"Check the price","lane":"3","sessionId":"l3-20261104-124307-alcc"}
+{"t":1793776461844,"type":"web.submit","step":"passengers","field":"pax.next","label":"Asked for the price","lane":"3","sessionId":"l3-20261104-124307-alcc"}
+{"t":1793776461852,"type":"web.step","step":"review","label":"Review","lane":"3","sessionId":"l3-20261104-124307-alcc"}
+{"t":1793776468010,"type":"web.click","step":"review","field":"review.terms","label":"Accept the conditions of carriage","lane":"3","sessionId":"l3-20261104-124307-alcc"}
+{"t":1793776469726,"type":"web.click","step":"review","field":"review.next","label":"Continue to payment","lane":"3","sessionId":"l3-20261104-124307-alcc"}
+{"t":1793776469726,"type":"web.submit","step":"review","field":"review.next","label":"Accepted the price, 2.60 USDC","lane":"3","sessionId":"l3-20261104-124307-alcc"}
+{"t":1793776469726,"type":"web.step","step":"pay","label":"Pay","lane":"3","sessionId":"l3-20261104-124307-alcc"}
+{"t":1793776479810,"type":"web.field","step":"pay","field":"pay.expiry","label":"Expiry date","value":"01 / 01","valueLen":7,"keys":[[1793776477677,"0"],[1793776477818,"01"],[1793776477999,"01 / 0"],[1793776478149,"01 / 01"]],"lane":"3","sessionId":"l3-20261104-124307-alcc"}
+{"t":1793776482243,"type":"web.field","step":"pay","field":"pay.cvc","label":"Security code","value":"111","valueLen":3,"keys":[[1793776479969,"1"],[1793776480132,"11"],[1793776480249,"111"],[1793776480446,"1111"],[1793776481018,"111"]],"lane":"3","sessionId":"l3-20261104-124307-alcc"}
+{"t":1793776484563,"type":"web.field","step":"pay","field":"pay.name","label":"Name on card","value":"Fortunato","valueLen":9,"keys":[[1793776482752,"F"],[1793776482844,"Fo"],[1793776482961,"For"],[1793776483117,"Fort"],[1793776483165,"Fortu"],[1793776483280,"Fortun"],[1793776483359,"Fortuna"],[1793776483485,"Fortunat"],[1793776483596,"Fortunato"]],"lane":"3","sessionId":"l3-20261104-124307-alcc"}
+{"t":1793776484726,"type":"web.field","step":"pay","field":"pay.number","label":"Card number","value":"4242 4242 4242 4242","valueLen":19,"keys":[[1793776476444,"4242 4242 4242 4242"]],"lane":"3","sessionId":"l3-20261104-124307-alcc"}
+{"t":1793776484726,"type":"web.click","step":"pay","field":"pay.submit","label":"Pay 2.60 USDC","lane":"3","sessionId":"l3-20261104-124307-alcc"}
+{"t":1793776484727,"type":"web.error","step":"pay","field":"pay.expiry","label":"This card has expired.","lane":"3","sessionId":"l3-20261104-124307-alcc"}
+{"t":1793776489866,"type":"web.field","step":"pay","field":"pay.expiry","label":"Expiry date","value":"01 / 32","valueLen":7,"keys":[[1793776487805,"01 / 0"],[1793776487953,"01"],[1793776488765,"01 / 3"],[1793776488820,"01 / 32"]],"lane":"3","sessionId":"l3-20261104-124307-alcc"}
+{"t":1793776489943,"type":"web.click","step":"pay","field":"pay.submit","label":"Pay 2.60 USDC","lane":"3","sessionId":"l3-20261104-124307-alcc"}
+{"t":1793776491549,"type":"web.submit","step":"pay","field":"pay.submit","label":"Paid with the card ending 4242","value":"o-6h5wea","valueLen":8,"lane":"3","sessionId":"l3-20261104-124307-alcc"}
+{"t":1793776491551,"type":"web.step","step":"ticket","label":"Ticket","lane":"3","sessionId":"l3-20261104-124307-alcc"}
+{"t":1793776491551,"type":"web.done","step":"ticket","label":"Booked, reference HL-J5N528","value":"HL-J5N528","valueLen":9,"lane":"3","sessionId":"l3-20261104-124307-alcc"}
+{"t":1793776513210,"type":"web.click","step":"ticket","field":"nav.home","label":"Home","lane":"3","sessionId":"l3-20261104-124307-alcc"}
+{"t":1793776513210,"type":"web.step","step":"home","label":"Home","lane":"3","sessionId":"l3-20261104-124307-alcc"}

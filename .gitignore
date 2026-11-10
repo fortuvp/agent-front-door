@@ -1,0 +1,11 @@
+node_modules/
+.secrets/
+.env.local
+.DS_Store
+race/recordings/session-*.jsonl.tmp
+deck/shots/
+server/state/
+
+# Fact-check ledger with internal team sources: stays local, never published
+docs/CLAIMS.md
+docs/LINES.md

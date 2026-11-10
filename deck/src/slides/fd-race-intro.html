@@ -1,0 +1,120 @@
+<section class="slide" data-id="fd-race-intro" data-title="A race" data-chapter="Now · Your agent reads the docs">
+  <h2 class="ri-title"><span class="ln"><span>A <em>race.</em></span></span></h2>
+  <p class="ri-lead fade-in" style="--d:1">One mission. Three ways in.</p>
+
+  <div class="ri-mission">
+    <p class="ri-mlabel">The mission, the same in every lane</p>
+    <ul class="ri-chips">
+      <li style="--c:0"><b>4 ferry tickets</b>, Harbour Line</li>
+      <li style="--c:1">Gateway of India to Elephanta</li>
+      <li style="--c:2">Sat 7 Nov, leave 9 to 10</li>
+      <li style="--c:3">Back after 14:00</li>
+      <li style="--c:4">Upper deck if under 4 USDC each</li>
+      <li style="--c:5">Step-free jetty</li>
+      <li style="--c:6">Help boarding for Sam</li>
+      <li style="--c:7" class="is-key">Ask me before paying</li>
+    </ul>
+  </div>
+
+  <div class="ri-lanes">
+    <div class="ri-lane" style="--lc: var(--ri-l1); --r: 0">
+      <b class="ri-n">1</b>
+      <div class="ri-who"><p><b>Agent</b> · agent door</p><small>Claude Code with a CLI. Live.</small></div>
+      <ol class="ri-track" style="--k: 4">
+        <li><i></i><span>Discover</span></li><li><i></i><span>Price</span></li><li><i></i><span>Permission</span></li><li><i></i><span>Pay</span></li>
+      </ol>
+      <span class="ri-count">4 steps</span>
+    </div>
+    <div class="ri-lane" style="--lc: var(--ri-l2); --r: 1">
+      <b class="ri-n">2</b>
+      <div class="ri-who"><p><b>Agent</b> · human door</p><small>An agent on the website. Recorded.</small></div>
+      <ol class="ri-track is-web" style="--k: 7">
+        <li class="is-hard"><i></i><span>Cookies</span></li><li class="is-hard"><i></i><span>Account</span></li><li class="is-hard"><i></i><span>Trip</span></li><li class="is-hard"><i></i><span>Passengers</span></li><li><i></i><span>Review</span></li><li class="is-hard"><i></i><span>Pay</span></li><li><i></i><span>Ticket</span></li>
+      </ol>
+      <span class="ri-count">7 screens</span>
+    </div>
+    <div class="ri-lane" style="--lc: var(--ri-l3); --r: 2">
+      <b class="ri-n">3</b>
+      <div class="ri-who"><p><b>Me</b> · human door</p><small>Me, typing. Live.</small></div>
+      <ol class="ri-track is-web" style="--k: 7">
+        <li class="is-hard"><i></i><span>Cookies</span></li><li class="is-hard"><i></i><span>Account</span></li><li class="is-hard"><i></i><span>Trip</span></li><li class="is-hard"><i></i><span>Passengers</span></li><li><i></i><span>Review</span></li><li class="is-hard"><i></i><span>Pay</span></li><li><i></i><span>Ticket</span></li>
+      </ol>
+      <span class="ri-count">7 screens</span>
+    </div>
+  </div>
+
+  <div class="ri-form">
+    <p class="ri-form-h">A form <em>nothing can autofill.</em></p>
+    <p class="ri-form-d">A cookie banner, an emailed sign-up code, a hand-made calendar, every passenger by hand, a card form.</p>
+  </div>
+
+  <p class="footnote">Harbour Line is a made-up ferry company. Every name and ID number in the race is made up.</p>
+
+  <i data-step="1" hidden></i><i data-step="2" hidden></i>
+  <aside class="notes">
+    <p><b>[0:45]</b></p>
+    <p>On entry: "A race." and the mission. "Let's test this. One mission: four ferry tickets to Elephanta this Saturday, with a few rules. Upper deck only if it is under 4 USDC each, the step-free jetty, help for Sam, who uses a cane. And: ask me before you pay."</p>
+    <p>Press: the three lanes. "Three ways in. Lane one: an agent, Claude Code, on the agent door: a Markdown page and a command line. Four steps. Lane two: an agent on the website, the door made for people. Recorded before the talk, real speed. Lane three: me, on the same website, typing live."</p>
+    <p>Press: the hard parts of the website light up. "And the website works the way most real ones do: a cookie banner, a sign-up code by email, a hand-made calendar, every passenger by hand. A form nothing can autofill. Let's go."</p>
+    <p>Careful: say once that Harbour Line and every name and ID in the race are made up. Lane 2 is a recording: do not call it live. The website is our own build, made slow on purpose to look like a real booking site; do not say it is a real operator's site.</p>
+  </aside>
+</section>
+<style>
+.slide[data-id="fd-race-intro"] { --ri-l1: var(--accent); --ri-l2: #1aa3c4; --ri-l3: #a274ff; padding: 0; display: block; }
+.slide[data-id="fd-race-intro"] .ri-title { position: absolute; left: var(--margin-x); top: 104px; margin: 0; font: 500 120px/1 var(--font-display); letter-spacing: -0.045em; color: var(--headline); }
+.slide[data-id="fd-race-intro"] .ri-lead { position: absolute; left: 640px; top: 166px; font: 400 44px/1.1 var(--font-body); letter-spacing: -0.015em; color: var(--ink-2); }
+
+/* the mission */
+.slide[data-id="fd-race-intro"] .ri-mission { position: absolute; left: var(--margin-x); right: var(--margin-x); top: 290px; }
+.slide[data-id="fd-race-intro"] .ri-mlabel { font: 500 22px/1 var(--font-body); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-4); margin-bottom: 20px; opacity: 0; transition: opacity 0.9s var(--ease) 0.6s; }
+.slide[data-id="fd-race-intro"].is-in .ri-mlabel { opacity: 1; }
+.slide[data-id="fd-race-intro"] .ri-chips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 14px 12px; width: 1660px; }
+.slide[data-id="fd-race-intro"] .ri-chips li { padding: 12px 22px 13px; border-radius: 999px; border: 1px solid var(--line-2); background: rgba(255, 255, 255, 0.03); font: 400 29px/1 var(--font-body); color: var(--ink-2); white-space: nowrap; opacity: 0; transform: translateY(16px); filter: blur(5px); transition: opacity 0.8s var(--ease), transform 1s var(--ease), filter 0.8s var(--ease); transition-delay: calc(0.75s + var(--c) * 0.07s); }
+.slide[data-id="fd-race-intro"] .ri-chips li b { color: var(--ink); font-weight: 500; }
+.slide[data-id="fd-race-intro"] .ri-chips li.is-key { color: var(--ink); border-color: rgba(61, 123, 255, 0.6); background: rgba(61, 123, 255, 0.14); box-shadow: 0 0 30px -8px rgba(61, 123, 255, 0.9); }
+.slide[data-id="fd-race-intro"].is-in .ri-chips li { opacity: 1; transform: none; filter: none; }
+
+/* the three lanes */
+.slide[data-id="fd-race-intro"] .ri-lanes { position: absolute; left: var(--margin-x); right: var(--margin-x); top: 500px; }
+.slide[data-id="fd-race-intro"] .ri-lane { position: relative; height: 118px; display: grid; grid-template-columns: 52px 520px 1fr; column-gap: 28px; align-items: center; border-top: 1px solid var(--line); opacity: 0; transform: translateY(26px); filter: blur(7px); transition: opacity 0.9s var(--ease), transform 1.1s var(--ease), filter 0.9s var(--ease); transition-delay: calc(var(--r) * 0.22s); }
+.slide[data-id="fd-race-intro"] .ri-lane:last-child { border-bottom: 1px solid var(--line); }
+.slide[data-id="fd-race-intro"].b1 .ri-lane { opacity: 1; transform: none; filter: none; }
+.slide[data-id="fd-race-intro"] .ri-n { width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; font: 500 26px/1 var(--font-body); color: var(--ink); border: 1.5px solid var(--lc); background: color-mix(in srgb, var(--lc) 18%, transparent); box-shadow: 0 0 22px -4px var(--lc); }
+.slide[data-id="fd-race-intro"] .ri-who p { font: 400 40px/1 var(--font-display); letter-spacing: -0.02em; color: var(--ink-3); white-space: nowrap; }
+.slide[data-id="fd-race-intro"] .ri-who p b { font-weight: 500; color: var(--ink); }
+.slide[data-id="fd-race-intro"] .ri-who small { display: block; margin-top: 12px; font: 400 28px/1 var(--font-body); color: var(--ink-3); white-space: nowrap; }
+
+/* tracks: the same spacing per step in every lane, so lane 1 is visibly shorter */
+.slide[data-id="fd-race-intro"] .ri-track { --gap: 124px; position: relative; list-style: none; margin: 0; padding: 0; height: 80px; width: calc((var(--k) - 1) * var(--gap)); margin-left: 34px; align-self: center; }
+.slide[data-id="fd-race-intro"] .ri-track::before { content: ""; position: absolute; left: 0; right: 0; top: 18px; height: 2px; background: linear-gradient(90deg, var(--lc), color-mix(in srgb, var(--lc) 45%, transparent)); transform: scaleX(0); transform-origin: left; transition: transform 1.4s cubic-bezier(0.65, 0, 0.35, 1); transition-delay: calc(0.35s + var(--r) * 0.22s); }
+.slide[data-id="fd-race-intro"].b1 .ri-track::before { transform: none; }
+.slide[data-id="fd-race-intro"] .ri-track li { position: absolute; top: 0; width: 0; display: flex; flex-direction: column; align-items: center; }
+.slide[data-id="fd-race-intro"] .ri-track li:nth-child(1) { left: 0; } .slide[data-id="fd-race-intro"] .ri-track li:nth-child(2) { left: var(--gap); }
+.slide[data-id="fd-race-intro"] .ri-track li:nth-child(3) { left: calc(2 * var(--gap)); } .slide[data-id="fd-race-intro"] .ri-track li:nth-child(4) { left: calc(3 * var(--gap)); }
+.slide[data-id="fd-race-intro"] .ri-track li:nth-child(5) { left: calc(4 * var(--gap)); } .slide[data-id="fd-race-intro"] .ri-track li:nth-child(6) { left: calc(5 * var(--gap)); }
+.slide[data-id="fd-race-intro"] .ri-track li:nth-child(7) { left: calc(6 * var(--gap)); }
+.slide[data-id="fd-race-intro"] .ri-track i { position: relative; width: 16px; height: 16px; margin-top: 11px; border-radius: 50%; background: var(--bg); border: 2px solid var(--lc); box-sizing: border-box; transform: scale(0); transition: transform 0.7s var(--ease-snap), background 0.8s var(--ease), box-shadow 0.8s var(--ease); }
+.slide[data-id="fd-race-intro"] .ri-track:not(.is-web) i { background: var(--lc); box-shadow: 0 0 14px var(--lc); }
+.slide[data-id="fd-race-intro"] .ri-track li:nth-child(2) i { transition-delay: 0.1s; } .slide[data-id="fd-race-intro"] .ri-track li:nth-child(3) i { transition-delay: 0.2s; }
+.slide[data-id="fd-race-intro"] .ri-track li:nth-child(4) i { transition-delay: 0.3s; } .slide[data-id="fd-race-intro"] .ri-track li:nth-child(5) i { transition-delay: 0.4s; }
+.slide[data-id="fd-race-intro"] .ri-track li:nth-child(6) i { transition-delay: 0.5s; } .slide[data-id="fd-race-intro"] .ri-track li:nth-child(7) i { transition-delay: 0.6s; }
+.slide[data-id="fd-race-intro"].b1 .ri-track i { transform: none; }
+.slide[data-id="fd-race-intro"] .ri-track span { margin-top: 16px; font: 500 22px/1 var(--font-body); color: var(--ink-3); white-space: nowrap; opacity: 0; transition: opacity 0.8s var(--ease) 0.9s, color 0.8s var(--ease); }
+.slide[data-id="fd-race-intro"].b1 .ri-track span { opacity: 1; }
+.slide[data-id="fd-race-intro"] .ri-track:not(.is-web) span { color: var(--ink); }
+.slide[data-id="fd-race-intro"] .ri-count { position: absolute; right: 0; top: 50%; transform: translateY(-50%); font: 500 26px/1 var(--font-mono); letter-spacing: 0.02em; color: var(--ink-3); opacity: 0; transition: opacity 0.8s var(--ease); transition-delay: calc(1.2s + var(--r) * 0.22s); }
+.slide[data-id="fd-race-intro"].b1 .ri-count { opacity: 1; }
+
+/* step 2: the hard parts of the website light up */
+.slide[data-id="fd-race-intro"].b2 .ri-track li.is-hard i { background: var(--hot); border-color: var(--hot); box-shadow: 0 0 0 6px rgba(245, 176, 74, 0.16), 0 0 18px rgba(245, 176, 74, 0.85); }
+.slide[data-id="fd-race-intro"].b2 .ri-track li.is-hard span { color: var(--hot); }
+.slide[data-id="fd-race-intro"] .ri-form { position: absolute; left: var(--margin-x); right: var(--margin-x); top: 884px; display: flex; flex-direction: column; gap: 12px; opacity: 0; transform: translateY(18px); filter: blur(6px); transition: opacity 0.9s var(--ease) 0.3s, transform 1.1s var(--ease) 0.3s, filter 0.9s var(--ease) 0.3s; }
+.slide[data-id="fd-race-intro"].b2 .ri-form { opacity: 1; transform: none; filter: none; }
+.slide[data-id="fd-race-intro"] .ri-form-h { font: 500 44px/1 var(--font-display); letter-spacing: -0.025em; color: var(--ink); }
+.slide[data-id="fd-race-intro"] .ri-form-h em { color: var(--hot); background: none; -webkit-text-fill-color: currentColor; }
+.slide[data-id="fd-race-intro"] .ri-form-d { font: 400 30px/1.2 var(--font-body); color: var(--ink-2); }
+.slide[data-id="fd-race-intro"] .footnote { bottom: 44px; }
+  .slide[data-id="fd-race-intro"] .footnote { font-size: 22px; }
+  /* same side margin as the slides around it (120px) */
+  .slide[data-id="fd-race-intro"] { --margin-x: 120px; }
+</style>

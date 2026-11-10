@@ -1,0 +1,570 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+  /* Served at /talk (no trailing slash): resolve fonts and links inside /talk/. */
+  (function () {
+    var p = location.pathname;
+    if (/\/talk$/.test(p)) {
+      var b = document.createElement("base");
+      b.href = p + "/";
+      document.head.appendChild(b);
+    }
+  })();
+</script>
+<title>Your Next Customer Won't Click</title>
+<meta name="description" content="A Devcon 8 talk on designing for humans and agents. The agent's channel is getting wider. The human's is getting narrower. Design what crosses the narrow one.">
+<link rel="alternate" type="text/markdown" href="talk.md" title="The talk as Markdown, for agents">
+<link rel="help" type="text/plain" href="llms.txt" title="llms.txt">
+<meta name="color-scheme" content="dark">
+<style>
+@font-face { font-family: "Urbanist"; font-weight: 500; font-style: normal; font-display: swap;
+  src: url("fonts/urbanist-latin-500-normal.woff2") format("woff2"), url("/talk/fonts/urbanist-latin-500-normal.woff2") format("woff2"), url("/door/fonts/urbanist-latin-500-normal.woff2") format("woff2"); }
+@font-face { font-family: "Geist"; font-weight: 400; font-style: normal; font-display: swap;
+  src: url("fonts/geist-latin-400-normal.woff2") format("woff2"), url("/talk/fonts/geist-latin-400-normal.woff2") format("woff2"), url("/door/fonts/geist-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "Geist"; font-weight: 500; font-style: normal; font-display: swap;
+  src: url("fonts/geist-latin-500-normal.woff2") format("woff2"), url("/talk/fonts/geist-latin-500-normal.woff2") format("woff2"), url("/door/fonts/geist-latin-500-normal.woff2") format("woff2"); }
+@font-face { font-family: "Geist Mono"; font-weight: 400; font-style: normal; font-display: swap;
+  src: url("fonts/geist-mono-latin-400-normal.woff2") format("woff2"), url("/talk/fonts/geist-mono-latin-400-normal.woff2") format("woff2"), url("/door/fonts/geist-mono-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "Geist Mono"; font-weight: 500; font-style: normal; font-display: swap;
+  src: url("fonts/geist-mono-latin-500-normal.woff2") format("woff2"), url("/talk/fonts/geist-mono-latin-500-normal.woff2") format("woff2"), url("/door/fonts/geist-mono-latin-500-normal.woff2") format("woff2"); }
+
+/* Luminous Data · dark (the deck's look; CurateVision dark tokens) */
+:root {
+  color-scheme: dark;
+  --bg: #02040b;
+  --bg-2: #0c111d;
+  --surface: rgba(12, 17, 29, 0.72);
+  --raised: rgba(255, 255, 255, 0.045);
+  --recess: rgba(0, 0, 0, 0.32);
+  --ink: #f4f6fb;
+  --ink-2: #c3cad8;
+  --ink-3: #a1abc0;
+  --ink-4: #7a849e;
+  --accent: #3d7bff;
+  --accent-2: #45d4ff;
+  --violet: #9b7bff;
+  --amber: #f5b04a;
+  --line: rgba(255, 255, 255, 0.08);
+  --line-2: rgba(255, 255, 255, 0.14);
+  --aurora-a: #1b2fff;
+  --aurora-b: #0a7cff;
+  --aurora-c: #5b2bff;
+  --lit: linear-gradient(180deg, #c9daff 0%, #7aa7ff 45%, #3d7bff 100%);
+  --edge: conic-gradient(from 210deg, #7aa7ff, #45d4ff, #9b7bff, #f5b04a 62%, #7aa7ff);
+  --font-display: "Urbanist", "Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body: "Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --gutter: clamp(16px, 4.69vw, 56px);
+  --max: 1180px;
+  --radius: 18px;
+}
+* { box-sizing: border-box; }
+html { background: var(--bg); -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; min-height: 100vh; background: var(--bg); color: var(--ink);
+  font-family: var(--font-body); font-size: 16px; line-height: 1.55;
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+  overflow-x: hidden; position: relative;
+}
+a { color: inherit; text-decoration-color: rgba(122, 167, 255, 0.5); text-underline-offset: 3px; }
+a:hover { color: #fff; text-decoration-color: var(--accent-2); }
+a:focus-visible { outline: 2px solid var(--accent-2); outline-offset: 3px; border-radius: 6px; }
+em { font-style: normal; background: var(--lit); -webkit-background-clip: text; background-clip: text; color: transparent; padding-right: 0.04em; }
+code, .mono { font-family: var(--font-mono); }
+
+/* aurora at the top only, scrolling away with the page */
+.aurora { position: absolute; inset: 0 0 auto 0; height: 980px; overflow: hidden; pointer-events: none; z-index: 0;
+  -webkit-mask-image: linear-gradient(#000 30%, transparent 96%); mask-image: linear-gradient(#000 30%, transparent 96%); }
+.aurora i { position: absolute; display: block; }
+.aurora i:nth-child(1) { width: 1500px; height: 1500px; left: -620px; top: -1020px;
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--aurora-b) 34%, transparent), color-mix(in srgb, var(--aurora-a) 14%, transparent) 48%, transparent 74%);
+  animation: drift-a 48s cubic-bezier(.65, 0, .35, 1) infinite alternate; }
+.aurora i:nth-child(2) { width: 2700px; height: 440px; left: -520px; top: -250px; transform: rotate(-9deg);
+  background: linear-gradient(90deg, transparent 6%, color-mix(in srgb, var(--aurora-a) 36%, transparent) 28%, color-mix(in srgb, var(--aurora-b) 42%, transparent) 50%, color-mix(in srgb, var(--aurora-c) 18%, transparent) 76%, transparent 94%);
+  -webkit-mask-image: radial-gradient(closest-side, #000, rgba(0, 0, 0, .5) 55%, transparent); mask-image: radial-gradient(closest-side, #000, rgba(0, 0, 0, .5) 55%, transparent);
+  animation: drift-b 40s cubic-bezier(.65, 0, .35, 1) infinite alternate; }
+.aurora i:nth-child(3) { width: 1300px; height: 1300px; right: -560px; top: -900px;
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--aurora-c) 22%, transparent), color-mix(in srgb, var(--aurora-a) 10%, transparent) 50%, transparent 75%);
+  animation: drift-c 56s cubic-bezier(.65, 0, .35, 1) infinite alternate; }
+@keyframes drift-a { to { transform: translate3d(90px, 40px, 0) scale(1.06); } }
+@keyframes drift-b { from { transform: rotate(-9deg); } to { transform: translate3d(60px, 20px, 0) rotate(-6deg) scale(1.05); } }
+@keyframes drift-c { to { transform: translate3d(-80px, 50px, 0) scale(1.05); } }
+.grain { position: absolute; inset: 0 0 auto 0; height: 980px; pointer-events: none; z-index: 0; opacity: 0.06; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='160' height='160' filter='url(%23n)'/></svg>"); }
+
+.wrap { position: relative; z-index: 1; max-width: calc(var(--max) + 2 * var(--gutter)); margin: 0 auto; padding: 0 var(--gutter); }
+
+/* top bar */
+.bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 22px 0; flex-wrap: wrap; }
+.label { font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); }
+.doors { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.doors .label { margin-right: 4px; }
+.pill { display: inline-flex; align-items: center; gap: 8px; height: 34px; padding: 0 14px; border-radius: 999px; border: 1px solid var(--line-2);
+  font-family: var(--font-mono); font-size: 13px; color: var(--ink); text-decoration: none; background: rgba(255, 255, 255, 0.02);
+  transition: background 0.3s var(--ease), border-color 0.3s var(--ease); }
+.pill:hover { background: var(--raised); border-color: rgba(255, 255, 255, 0.3); }
+.pill .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent-2); box-shadow: 0 0 10px var(--accent-2); }
+
+/* hero */
+.hero { padding: clamp(40px, 9vw, 104px) 0 clamp(28px, 5vw, 48px); }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 500; margin: 0; color: var(--ink); }
+h1 { font-size: clamp(44px, 8.4vw, 104px); line-height: 0.98; letter-spacing: -0.045em; max-width: 12ch; }
+.sub { margin: 22px 0 0; font-size: clamp(18px, 2.2vw, 24px); color: var(--ink-2); max-width: 40ch; line-height: 1.4; }
+.byline { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 14px; color: var(--ink-3); }
+.byline b { color: var(--ink); font-weight: 500; }
+
+/* panels */
+.panel { position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05); }
+.featured::before { content: ""; position: absolute; inset: -1px; padding: 1px; border-radius: inherit; background: var(--edge); opacity: 0.75;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; }
+
+/* thesis figure */
+.thesis { padding: clamp(20px, 3.4vw, 40px); }
+.thesis-lines { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px 28px; margin-bottom: clamp(16px, 3vw, 28px); }
+.thesis-lines p { margin: 0; font-family: var(--font-display); font-weight: 500; font-size: clamp(22px, 2.6vw, 32px); line-height: 1.1; letter-spacing: -0.03em; color: var(--ink-2); }
+.thesis-lines p:last-child { color: var(--ink); }
+.thesis-lines .n { display: block; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; color: var(--ink-4); margin-bottom: 10px; }
+.channels { display: block; width: 100%; height: auto; }
+.channels .t { font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.08em; fill: var(--ink-3); }
+.channels .t-big { font-family: var(--font-mono); font-size: 14px; letter-spacing: 0.04em; fill: var(--ink-2); }
+.channels .axis { font-family: var(--font-mono); font-size: 13px; fill: var(--ink-4); letter-spacing: 0.06em; }
+.flow { stroke-dasharray: 2 12; animation: flow 9s linear infinite; }
+@keyframes flow { to { stroke-dashoffset: -140; } }
+.legend { display: none; margin: 16px 0 0; padding: 0; list-style: none; font-size: 14px; color: var(--ink-2); }
+.legend li { display: flex; gap: 10px; align-items: baseline; padding: 6px 0; border-top: 1px solid var(--line); }
+.legend li span:first-child { font-family: var(--font-mono); font-size: 12px; color: var(--ink-4); min-width: 88px; }
+
+/* sections */
+section { padding: clamp(48px, 8vw, 96px) 0 0; }
+.kicker { display: flex; align-items: baseline; gap: 14px; margin-bottom: 18px; }
+.kicker .num { font-family: var(--font-mono); font-size: 13px; color: var(--accent-2); }
+h2 { font-size: clamp(32px, 4.8vw, 56px); line-height: 1.02; letter-spacing: -0.04em; max-width: 18ch; }
+.lead { margin: 18px 0 0; max-width: 58ch; color: var(--ink-2); font-size: 17px; }
+.split { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(20px, 4vw, 48px); align-items: start; margin-top: clamp(24px, 4vw, 40px); }
+.points { margin: 0; padding: 0; list-style: none; }
+.points li { padding: 14px 0; border-top: 1px solid var(--line); color: var(--ink-2); }
+.points li:first-child { border-top: 0; padding-top: 0; }
+.points b { color: var(--ink); font-weight: 500; }
+.fig { padding: clamp(18px, 2.6vw, 28px); }
+.fig + .fig { margin-top: 16px; }
+.fig h3 { font-family: var(--font-body); font-size: 15px; font-weight: 500; color: var(--ink); letter-spacing: 0; }
+.src { margin-top: 14px; font-size: 12px; color: var(--ink-4); line-height: 1.45; }
+.src a { color: var(--ink-3); }
+
+/* bars */
+.bars { margin-top: 16px; display: grid; gap: 12px; }
+.bar-row { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 4px 14px; align-items: center; }
+.bar-row .k { font-size: 13px; color: var(--ink-3); }
+.track { position: relative; height: 26px; border-radius: 999px; background: var(--recess); box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.4); overflow: hidden; }
+.fill { position: absolute; inset: 0 auto 0 0; border-radius: 999px; min-width: 6px;
+  background: linear-gradient(90deg, rgba(61, 123, 255, 0.35), #3d7bff 70%, #7aa7ff); box-shadow: 0 0 18px rgba(61, 123, 255, 0.45); }
+.fill.soft { background: linear-gradient(90deg, rgba(122, 167, 255, 0.18), rgba(122, 167, 255, 0.45)); box-shadow: none; }
+.fill.cyan { background: linear-gradient(90deg, rgba(69, 212, 255, 0.35), #45d4ff); box-shadow: 0 0 18px rgba(69, 212, 255, 0.45); }
+.bar-row .v { grid-column: 2; font-size: 13px; color: var(--ink-2); font-variant-numeric: tabular-nums; margin-top: -2px; }
+.bar-row .v b { font-family: var(--font-body); font-weight: 500; color: var(--ink); font-size: 15px; }
+
+/* dot grid */
+.dots { display: grid; grid-template-columns: repeat(20, 1fr); gap: 6px; margin-top: 18px; max-width: 460px; }
+.dots i { aspect-ratio: 1; border-radius: 50%; background: rgba(255, 255, 255, 0.09); }
+.dots i.on { background: #45d4ff; box-shadow: 0 0 10px #45d4ff; }
+.big { font-family: var(--font-body); font-weight: 500; font-size: clamp(40px, 6vw, 64px); line-height: 1; letter-spacing: -0.045em; font-variant-numeric: tabular-nums; margin-top: 10px; }
+.big small { font-size: 0.32em; letter-spacing: 0; color: var(--ink-3); font-weight: 400; margin-left: 10px; }
+
+/* compare */
+.compare { margin-top: 16px; display: grid; gap: 18px; }
+.metric .mk { display: flex; justify-content: space-between; font-size: 13px; color: var(--ink-3); margin-bottom: 8px; }
+.metric .pair { display: grid; gap: 6px; }
+.metric .row { display: grid; grid-template-columns: 74px minmax(0, 1fr) 92px; gap: 10px; align-items: center; font-size: 13px; }
+.metric .row span:first-child { color: var(--ink-4); }
+.metric .row span:last-child { text-align: right; color: var(--ink); font-variant-numeric: tabular-nums; font-weight: 500; }
+.metric .track { height: 12px; }
+
+/* two doors */
+.twodoors { display: grid; grid-template-columns: 1fr 1fr; margin-top: clamp(24px, 4vw, 40px); }
+.door { padding: clamp(20px, 3vw, 32px); }
+.door + .door { border-left: 1px solid var(--line); }
+.door .size { font-family: var(--font-body); font-weight: 500; font-size: clamp(36px, 5vw, 56px); letter-spacing: -0.045em; line-height: 1; margin: 14px 0 6px; font-variant-numeric: tabular-nums; }
+.door p { margin: 0; color: var(--ink-3); font-size: 14px; }
+.cmd { grid-column: 1 / -1; border-top: 1px solid var(--line); padding: 16px clamp(20px, 3vw, 32px); font-family: var(--font-mono); font-size: 13px; color: var(--ink-2);
+  white-space: pre-wrap; overflow-wrap: anywhere; background: rgba(0, 0, 0, 0.22); border-radius: 0 0 var(--radius) var(--radius); }
+.cmd .p { color: var(--accent-2); user-select: none; }
+
+/* dial */
+.dial { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin-top: clamp(24px, 4vw, 40px); }
+.notch { padding: 20px; display: flex; flex-direction: column; gap: 14px; }
+.notch .step { font-family: var(--font-mono); font-size: 12px; color: var(--ink-4); letter-spacing: 0.06em; }
+.notch h3 { font-size: 26px; letter-spacing: -0.03em; line-height: 1.05; }
+.split-bar { display: flex; flex-direction: column; height: 150px; border-radius: 12px; overflow: hidden; border: 1px solid var(--line); background: var(--recess); }
+.split-bar .a { background: linear-gradient(180deg, rgba(61, 123, 255, 0.55), rgba(27, 47, 255, 0.28)); display: flex; align-items: flex-start; padding: 8px 10px; font-family: var(--font-mono); font-size: 11px; color: rgba(244, 246, 251, 0.85); }
+.split-bar .h { margin-top: auto; background: linear-gradient(180deg, rgba(244, 246, 251, 0.9), rgba(195, 202, 216, 0.7)); display: flex; align-items: center; padding: 0 10px; font-family: var(--font-mono); font-size: 11px; color: #0b1220; min-height: 24px; }
+.notch .crosses { font-size: 14px; color: var(--ink); }
+.notch .crosses span { display: block; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-4); margin-bottom: 4px; font-weight: 500; }
+.notch .story { font-size: 13px; color: var(--ink-3); border-top: 1px solid var(--line); padding-top: 12px; margin-top: auto; }
+
+/* checklist */
+.checklist { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: clamp(24px, 4vw, 40px); }
+.col { padding: clamp(20px, 2.6vw, 28px); }
+.col h3 { font-size: 26px; letter-spacing: -0.03em; line-height: 1.05; }
+.col ol { list-style: none; margin: 18px 0 0; padding: 0; counter-reset: c; }
+.col li { counter-increment: c; position: relative; padding: 12px 0 12px 34px; border-top: 1px solid var(--line); color: var(--ink-2); font-size: 15px; }
+.col li::before { content: counter(c, decimal-leading-zero); position: absolute; left: 0; top: 14px; font-family: var(--font-mono); font-size: 11px; color: var(--accent-2); }
+.col li b { color: var(--ink); font-weight: 500; }
+.col li code { display: block; margin-top: 4px; font-size: 12px; color: var(--ink-3); overflow-wrap: anywhere; }
+
+/* replay figure */
+.replay { margin-top: 18px; }
+.replay .row { display: grid; grid-template-columns: 92px minmax(0, 1fr); gap: 10px; align-items: center; font-size: 12px; color: var(--ink-3); margin-top: 8px; }
+.replay .track { height: 10px; }
+
+/* sources */
+.sources { margin: clamp(20px, 3vw, 28px) 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 0 32px; }
+.sources li { padding: 12px 0; border-top: 1px solid var(--line); font-size: 14px; color: var(--ink-3); }
+.sources li a { color: var(--ink); }
+.sources li span { display: block; font-size: 12px; color: var(--ink-4); margin-top: 2px; }
+
+footer { margin-top: clamp(56px, 8vw, 96px); padding: 28px 0 48px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; font-size: 14px; color: var(--ink-3); }
+footer b { color: var(--ink); font-weight: 500; }
+
+/* tablet and phone */
+@media (max-width: 960px) {
+  .split { grid-template-columns: 1fr; }
+  .dial { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .checklist { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .thesis-lines { grid-template-columns: 1fr; gap: 10px; }
+  .channels .t, .channels .t-big, .channels .axis { display: none; }
+  .legend { display: block; }
+  .twodoors { grid-template-columns: 1fr; }
+  .door + .door { border-left: 0; border-top: 1px solid var(--line); }
+  .dial { grid-template-columns: 1fr; }
+  .split-bar { height: 110px; }
+  .sources { grid-template-columns: 1fr; }
+  .bar-row { grid-template-columns: 1fr; }
+  .bar-row .v { grid-column: 1; }
+  .metric .row { grid-template-columns: 58px minmax(0, 1fr) 76px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .aurora i, .flow { animation: none; }
+}
+</style>
+</head>
+<body>
+<div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+<div class="grain" aria-hidden="true"></div>
+
+<div class="wrap">
+  <header class="bar">
+    <span class="label">Devcon 8 · Agentic Hub · Mumbai</span>
+    <nav class="doors" aria-label="The same talk for agents">
+      <span class="label">For agents</span>
+      <a class="pill" href="talk.md" type="text/markdown"><span class="dot" aria-hidden="true"></span>talk.md</a>
+      <a class="pill" href="llms.txt" type="text/plain">llms.txt</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <span class="label">Designing for humans and agents</span>
+      <h1>Your next customer won't <em>click.</em></h1>
+      <p class="sub">A talk about the two doors every product now has: one for people, one for the agents working for them.</p>
+      <div class="byline">
+        <span><b>Fortunato Cinquepalmi</b> · Product Lead, Kleros</span>
+        <span>Wednesday 4 November 2026, 15:00 IST</span>
+      </div>
+    </div>
+
+    <!-- thesis -->
+    <div class="panel featured thesis" id="thesis">
+      <div class="thesis-lines">
+        <p><span class="n">01</span>The agent's channel is getting <em>wider.</em></p>
+        <p><span class="n">02</span>The human's is getting narrower.</p>
+        <p><span class="n">03</span>Design what <em>crosses</em> the narrow one.</p>
+      </div>
+      <svg class="channels" viewBox="0 0 1100 390" role="img" aria-label="Two channels drawn as light. The agent's channel widens from left to right and carries pages, prices, payments and receipts. The human's channel narrows from left to right and carries three things: the mission, a yes, and the receipt.">
+        <defs>
+          <linearGradient id="g-wide" x1="0" x2="1" y1="0" y2="0">
+            <stop offset="0" stop-color="#3d7bff" stop-opacity="0.10"/>
+            <stop offset="0.55" stop-color="#3d7bff" stop-opacity="0.34"/>
+            <stop offset="1" stop-color="#45d4ff" stop-opacity="0.50"/>
+          </linearGradient>
+          <linearGradient id="g-narrow" x1="0" x2="1" y1="0" y2="0">
+            <stop offset="0" stop-color="#f4f6fb" stop-opacity="0.85"/>
+            <stop offset="1" stop-color="#7aa7ff" stop-opacity="0.55"/>
+          </linearGradient>
+          <filter id="glow" x="-10%" y="-60%" width="120%" height="220%"><feGaussianBlur stdDeviation="16"/></filter>
+          <filter id="glow-s" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="5"/></filter>
+        </defs>
+
+        <text class="t" x="40" y="132">THE AGENT'S CHANNEL</text>
+        <path d="M40,168 C380,160 700,88 1060,30 L1060,250 C700,232 380,210 40,202 Z" fill="url(#g-wide)" filter="url(#glow)" opacity="0.9"/>
+        <path d="M40,168 C380,160 700,88 1060,30 L1060,250 C700,232 380,210 40,202 Z" fill="url(#g-wide)" stroke="rgba(122,167,255,0.35)" stroke-width="1"/>
+        <g fill="none" stroke="rgba(201,218,255,0.42)" stroke-width="1.2">
+          <path class="flow" d="M40,173 C380,166 700,106 1060,58"/>
+          <path class="flow" d="M40,179 C380,174 700,128 1060,92" style="animation-duration:11s"/>
+          <path class="flow" d="M40,185 C380,182 700,150 1060,128" style="animation-duration:8s"/>
+          <path class="flow" d="M40,190 C380,190 700,172 1060,164" style="animation-duration:12s"/>
+          <path class="flow" d="M40,195 C380,198 700,194 1060,198" style="animation-duration:10s"/>
+          <path class="flow" d="M40,199 C380,205 700,214 1060,230" style="animation-duration:13s"/>
+        </g>
+        <text class="t-big" x="1040" y="268" text-anchor="end">pages · prices · payments · receipts</text>
+
+        <text class="t" x="40" y="300">THE HUMAN'S CHANNEL</text>
+        <path d="M40,318 C380,320 700,323 1060,325 L1060,328 C700,328 380,331 40,334 Z" fill="url(#g-narrow)" filter="url(#glow-s)" opacity="0.8"/>
+        <path d="M40,318 C380,320 700,323 1060,325 L1060,328 C700,328 380,331 40,334 Z" fill="url(#g-narrow)"/>
+        <g>
+          <circle cx="350" cy="325" r="11" fill="#45d4ff" opacity="0.35" filter="url(#glow-s)"/>
+          <circle cx="350" cy="325" r="5.5" fill="#f4f6fb"/>
+          <text class="t-big" x="350" y="302" text-anchor="middle">the mission</text>
+          <circle cx="650" cy="326" r="11" fill="#45d4ff" opacity="0.2" filter="url(#glow-s)"/>
+          <circle cx="650" cy="326" r="5" fill="none" stroke="#f4f6fb" stroke-width="1.5" stroke-dasharray="3 3"/>
+          <text class="t-big" x="650" y="302" text-anchor="middle">a yes, where you want one</text>
+          <circle cx="930" cy="327" r="11" fill="#45d4ff" opacity="0.35" filter="url(#glow-s)"/>
+          <circle cx="930" cy="327" r="5.5" fill="#f4f6fb"/>
+          <text class="t-big" x="930" y="302" text-anchor="middle">the receipt</text>
+        </g>
+
+        <line x1="40" x2="1060" y1="364" y2="364" stroke="rgba(255,255,255,0.10)"/>
+        <text class="axis" x="40" y="386">THEN</text>
+        <text class="axis" x="550" y="386" text-anchor="middle">NOW</text>
+        <text class="axis" x="1060" y="386" text-anchor="end">ALREADY STARTING</text>
+      </svg>
+      <ul class="legend">
+        <li><span>Wide band</span><span>The agent's channel: pages, prices, payments, receipts. It widens over time.</span></li>
+        <li><span>Thin line</span><span>The human's channel: the mission, a yes where you want one, the receipt. It narrows over time.</span></li>
+      </ul>
+    </div>
+
+    <!-- two doors -->
+    <section id="two-doors" aria-labelledby="h-doors">
+      <div class="kicker"><span class="num">00</span><span class="label">Same link, two doors</span></div>
+      <h2 id="h-doors">This page has a twin <em>for agents.</em></h2>
+      <p class="lead">Agents get the same talk as plain text: the thesis, the checklist and the sources, without the design. On the talk's server, this address answers Markdown to any client that asks for it. As static files, the text sits next to this page as talk.md.</p>
+      <div class="panel twodoors">
+        <div class="door">
+          <span class="label">For people · HTML</span>
+          <div class="size" id="size-html">39 KB</div>
+          <p>This page as HTML, without its fonts.</p>
+        </div>
+        <div class="door">
+          <span class="label">For agents · Markdown</span>
+          <div class="size" id="size-md">5.8 KB</div>
+          <p><a href="talk.md" type="text/markdown">talk.md</a>, the whole talk as text.</p>
+        </div>
+        <div class="cmd"><span class="p">$ </span><span id="curl">curl -H "Accept: text/markdown" &lt;this page's address&gt;</span></div>
+      </div>
+    </section>
+
+    <!-- part 1 -->
+    <section id="then" aria-labelledby="h-then">
+      <div class="kicker"><span class="num">01</span><span class="label">Then · You read the page</span></div>
+      <h2 id="h-then">One door, built for <em>eyes.</em></h2>
+      <div class="split">
+        <ul class="points">
+          <li>A website is a menu, a cookie banner and a sign-up form. It was built for a person looking at a screen.</li>
+          <li>An agent gets the same page as tag soup: wrappers, scripts and navigation, with the content somewhere inside.</li>
+          <li><b>The same link can open two doors.</b> A browser gets the page. An agent that asks for Markdown gets the text.</li>
+        </ul>
+        <div class="panel fig">
+          <h3>The same blog post, counted in tokens</h3>
+          <div class="bars">
+            <div class="bar-row"><span class="k">As a web page</span><div class="track"><div class="fill soft" style="width:100%"></div></div><span class="v"><b>16,180</b> tokens</span></div>
+            <div class="bar-row"><span class="k">As Markdown</span><div class="track"><div class="fill" style="width:19.5%"></div></div><span class="v"><b>3,150</b> tokens, about 80% less</span></div>
+          </div>
+          <p class="src">Cloudflare measured its own launch post. <a href="https://blog.cloudflare.com/markdown-for-agents/">Markdown for Agents</a>, 12 Feb 2026.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- part 2 -->
+    <section id="now" aria-labelledby="h-now">
+      <div class="kicker"><span class="num">02</span><span class="label">Now · Your agent reads the docs</span></div>
+      <h2 id="h-now">Agents come in through the <em>docs.</em></h2>
+      <div class="split">
+        <ul class="points">
+          <li><b>Today's agent customers are builders' agents.</b> They read docs and llms.txt files before they read a homepage.</li>
+          <li><b>For agents, the format changes the result.</b> A person does not care whether text sits in a PDF, a doc or a PNG. An agent does.</li>
+          <li><b>Powerful models can use your website. That doesn't mean they should.</b> A screen agent takes many steps to do what an API does in a few calls.</li>
+          <li>A command line takes flags, not forms. Give the agent a door it can walk through, and keep the screen for the moment a person decides.</li>
+        </ul>
+        <div>
+          <div class="panel fig">
+            <h3>llms.txt files in May 2026</h3>
+            <div class="big">97% <small>got no requests at all</small></div>
+            <div class="dots" role="img" aria-label="100 dots, 3 lit: 3 in 100 llms.txt files got any request in May 2026">
+              <i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+              <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+              <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+              <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+              <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+            </div>
+            <p class="src">Lit: the 3 in 100 that were read at all. Among AI bots, Claude Code was one of the top fetchers of those files. About 38,000 sites with a valid file. <a href="https://ahrefs.com/blog/llmstxt-study/">Ahrefs</a>, 15 Jun 2026.</p>
+          </div>
+          <div class="panel fig">
+            <h3>Same admin task, two doors</h3>
+            <div class="compare">
+              <div class="metric">
+                <div class="mk"><span>Steps or calls</span></div>
+                <div class="pair">
+                  <div class="row"><span>Screen</span><div class="track"><div class="fill soft" style="width:100%"></div></div><span>53 steps</span></div>
+                  <div class="row"><span>API</span><div class="track"><div class="fill cyan" style="width:15.1%"></div></div><span>8 calls</span></div>
+                </div>
+              </div>
+              <div class="metric">
+                <div class="mk"><span>Input tokens</span></div>
+                <div class="pair">
+                  <div class="row"><span>Screen</span><div class="track"><div class="fill soft" style="width:100%"></div></div><span>551k</span></div>
+                  <div class="row"><span>API</span><div class="track"><div class="fill cyan" style="width:2.2%"></div></div><span>12k</span></div>
+                </div>
+              </div>
+              <div class="metric">
+                <div class="mk"><span>Time</span></div>
+                <div class="pair">
+                  <div class="row"><span>Screen</span><div class="track"><div class="fill soft" style="width:100%"></div></div><span>~17 min</span></div>
+                  <div class="row"><span>API</span><div class="track"><div class="fill cyan" style="width:2%"></div></div><span>20 s</span></div>
+                </div>
+              </div>
+            </div>
+            <p class="src">Through the screen the agent only finished once it was given a 14-step walkthrough. Averages of 3 screen runs and 5 API runs. <a href="https://reflex.dev/blog/computer-use-is-45x-more-expensive-than-structured-apis/">Reflex</a>, 27 Apr 2026.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- part 3 -->
+    <section id="already" aria-labelledby="h-already">
+      <div class="kicker"><span class="num">03</span><span class="label">Already starting · The agent acts on its own</span></div>
+      <h2 id="h-already">At each step, less has to <em>cross</em> to you.</h2>
+      <p class="lead">Four settings on one dial. The blue part is what the agent handles. The white part is what still reaches the person.</p>
+      <div class="dial">
+        <div class="panel notch">
+          <span class="step">1 / 4</span>
+          <h3>Ask</h3>
+          <div class="split-bar" aria-hidden="true"><div class="a" style="flex:0 1 22%">agent</div><div class="h" style="flex:1 1 auto">you</div></div>
+          <p class="crosses"><span>What crosses</span>Every step. The agent finds; you decide.</p>
+          <p class="story">The agent reads and compares. You still click through the order yourself.</p>
+        </div>
+        <div class="panel notch">
+          <span class="step">2 / 4</span>
+          <h3>Approve</h3>
+          <div class="split-bar" aria-hidden="true"><div class="a" style="flex:0 1 58%">agent</div><div class="h" style="flex:1 1 auto">you</div></div>
+          <p class="crosses"><span>What crosses</span>One card to say yes to.</p>
+          <p class="story">An AI juror wrote a verdict headed "Refund buyer", then cast the vote that pays the seller. Check the action, not the explanation.</p>
+        </div>
+        <div class="panel notch">
+          <span class="step">3 / 4</span>
+          <h3>Set rules</h3>
+          <div class="split-bar" aria-hidden="true"><div class="a" style="flex:0 1 78%">agent</div><div class="h" style="flex:1 1 auto">you</div></div>
+          <p class="crosses"><span>What crosses</span>The rules up front, the receipt after.</p>
+          <p class="story">Permission isn't yes or no: none, agent attestation, signed delegation, human confirmation. Tools read only until you pass <code>--execute</code>.</p>
+        </div>
+        <div class="panel notch">
+          <span class="step">4 / 4</span>
+          <h3>On its own</h3>
+          <div class="split-bar" aria-hidden="true"><div class="a" style="flex:0 1 90%">agent</div><div class="h" style="flex:1 1 auto">you</div></div>
+          <p class="crosses"><span>What crosses</span>The mission and the receipt.</p>
+          <p class="story">Trust is earned in steps: watch the first cases closely, then check less often.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- checklist -->
+    <section id="checklist" aria-labelledby="h-check">
+      <div class="kicker"><span class="num">04</span><span class="label">Leave knowing</span></div>
+      <h2 id="h-check">The <em>checklist.</em></h2>
+      <div class="checklist">
+        <div class="panel col">
+          <span class="label">For the agent</span>
+          <h3>What the agent should get</h3>
+          <ol>
+            <li><b>Discover.</b> A Markdown page at the same address, an llms.txt, a skill file. <code>Link: &lt;/llms.txt&gt;; rel="alternate"</code></li>
+            <li><b>Price.</b> The price in the reply, not behind a form. <code>HTTP 402 + payment terms</code></li>
+            <li><b>Permission.</b> A request the human can say yes to, and a way to wait for the answer. <code>approve link · wait</code></li>
+            <li><b>Pay.</b> A receipt it can show: what, how much, to whom. <code>receipt · transaction</code></li>
+            <li><b>A CLI that takes flags, not forms.</b> JSON on request, exit codes that mean something, read-only until told to act.</li>
+          </ol>
+        </div>
+        <div class="panel col featured">
+          <span class="label">For the person</span>
+          <h3>What the human should see</h3>
+          <ol>
+            <li><b>A picture</b> of what is being bought.</li>
+            <li><b>The total</b> in one line, with the currency.</li>
+            <li><b>What it matches</b> from the request, point by point, with any difference flagged quietly.</li>
+            <li><b>Two alternatives side by side.</b> Side by side, people choose differently. Agents pick the first offer 60 to 100% of the time in a simulated market. Show the options, not only the pick.</li>
+            <li><b>How to undo it.</b></li>
+            <li><b>What this yes covers:</b> this order only, for a limited time.</li>
+          </ol>
+        </div>
+        <div class="panel col">
+          <span class="label">For both</span>
+          <h3>Where trust is earned</h3>
+          <ol>
+            <li><b>Before:</b> the mission and its fence. Budget, limits, an end date.</li>
+            <li><b>During:</b> a yes, only where you want one. Record who said it, the person or the agent.</li>
+            <li><b>After:</b> the receipt, and a ruling in plain words if it goes wrong. Under Visa's rules the cardholder answers for the agent's purchase "as if the Cardholder initiated" it.</li>
+            <li><b>Recourse at the speed agents trade.</b> 88 real consumer disputes replayed with AI jurors:
+              <div class="replay" role="img" aria-label="Typical time to a decision: 48.9 hours with human jurors, 9.8 minutes with AI jurors, drawn to scale">
+                <div class="row"><span>People 48.9 h</span><div class="track"><div class="fill soft" style="width:100%"></div></div></div>
+                <div class="row"><span>AI 9.8 min</span><div class="track"><div class="fill cyan" style="width:0.33%"></div></div></div>
+              </div>
+              <code>72 of 88 rulings the same · drawn to scale</code></li>
+          </ol>
+          <p class="src">At full autonomy the middle crossing fades. The other two never do. People stay as the expensive exit, on appeal (being built).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- sources -->
+    <section id="sources" aria-labelledby="h-src">
+      <div class="kicker"><span class="num">05</span><span class="label">Sources</span></div>
+      <h2 id="h-src">Where the numbers come from</h2>
+      <ul class="sources">
+        <li><a href="https://blog.cloudflare.com/markdown-for-agents/">Cloudflare, Markdown for Agents</a><span>12 Feb 2026 · 16,180 vs 3,150 tokens</span></li>
+        <li><a href="https://ahrefs.com/blog/llmstxt-study/">Ahrefs, llms.txt study</a><span>15 Jun 2026 · May 2026 data, about 38,000 sites</span></li>
+        <li><a href="https://reflex.dev/blog/computer-use-is-45x-more-expensive-than-structured-apis/">Reflex, computer use vs structured APIs</a><span>27 Apr 2026 · 53 steps vs 8 calls</span></li>
+        <li><a href="https://arxiv.org/abs/2510.25779">Microsoft, Magentic Marketplace</a><span>27 Oct 2025 · section 5.4, first-proposal bias</span></li>
+        <li><a href="https://www.cmu.edu/dietrich/sds/docs/loewenstein/PrefRevJoint.pdf">Hsee, Loewenstein, Blount, Bazerman</a><span>Psychological Bulletin, 1999 · joint vs separate evaluation</span></li>
+        <li><a href="https://usa.visa.com/dam/VCOM/download/about-visa/visa-rules-public.pdf">Visa Core Rules</a><span>18 Apr 2026 edition · section 4.1.24.10</span></li>
+        <li><a href="https://scout-app.kleros.io/llms.txt">Kleros Scout, agent instructions</a><span>live · a product with both doors</span></li>
+        <li><a href="https://www.youtube.com/watch?v=gdtKyEL8EJM&amp;t=2531s">Kleros live stream</a><span>9 Sep 2026 · file formats and agents</span></li>
+        <li>Replay of 88 disputes<span>Kleros V2 on Arbitrum One, AI-juror replays in court 34 · our analysis, Oct 2026</span></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <span>Next at the Agentic Hub: <b>Harish Kotra</b> · Can an Agent Buy From You?</span>
+    <span>A static page. Its Markdown twin is <a href="talk.md" type="text/markdown">talk.md</a>. No sign-up, no offer.</span>
+  </footer>
+</div>
+
+<script>
+  /* Show the real size of each door when the files can be fetched; keep the printed sizes otherwise. */
+  (function () {
+    function kb(n) { return (n / 1024 < 10 ? (n / 1024).toFixed(1) : Math.round(n / 1024)) + " KB"; }
+    function size(url, accept) {
+      return fetch(url, { headers: { Accept: accept }, cache: "no-store" })
+        .then(function (r) { if (!r.ok) throw new Error(r.status); return r.arrayBuffer(); })
+        .then(function (b) { return b.byteLength; });
+    }
+    if (location.protocol === "file:") return;
+    var here = location.href.split("#")[0];
+    var md = new URL("talk.md", document.baseURI).href;
+    var curl = document.getElementById("curl");
+    curl.textContent = "curl " + md;
+    /* Does this address answer Markdown itself (the talk's server does, static hosting does not)? */
+    fetch(here, { headers: { Accept: "text/markdown" }, cache: "no-store" })
+      .then(function (r) { if ((r.headers.get("content-type") || "").indexOf("text/markdown") === 0) curl.textContent = 'curl -H "Accept: text/markdown" ' + here; })
+      .catch(function () {});
+    size(here, "text/html").then(function (n) { document.getElementById("size-html").textContent = kb(n); }).catch(function () {});
+    size(md, "text/markdown").then(function (n) { document.getElementById("size-md").textContent = kb(n); }).catch(function () {});
+  })();
+</script>
+</body>
+</html>

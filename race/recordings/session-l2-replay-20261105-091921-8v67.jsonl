@@ -1,0 +1,29 @@
+{"t":1793850561996,"type":"web.view","step":"home","label":"Opened the Harbour Line website","value":"/ferry/?lane=2&replay=lane2-ferry.json","valueLen":38,"lane":"2","sessionId":"l2-replay-20261105-091921-8v67"}
+{"t":1793850571485,"type":"web.click","step":"home","field":"cookie.necessary","label":"Cookies: only necessary","lane":"2","sessionId":"l2-replay-20261105-091921-8v67"}
+{"t":1793850575694,"type":"web.click","step":"home","field":"nav.book","label":"Book tickets","lane":"2","sessionId":"l2-replay-20261105-091921-8v67"}
+{"t":1793850575695,"type":"web.step","step":"auth","label":"Sign in","lane":"2","sessionId":"l2-replay-20261105-091921-8v67"}
+{"t":1793850592141,"type":"web.field","step":"auth","field":"auth.email","label":"Email address","value":"lane2.agent@harbour-line.test","valueLen":29,"keys":[[1793850592139,"lane2.agent@harbour-line.test"]],"lane":"2","sessionId":"l2-replay-20261105-091921-8v67"}
+{"t":1793850592144,"type":"web.field","step":"auth","field":"auth.password","label":"Password","value":"Ferry2026demo","valueLen":13,"keys":[[1793850592143,"Ferry2026demo"]],"lane":"2","sessionId":"l2-replay-20261105-091921-8v67"}
+{"t":1793851662982,"type":"web.field","step":"auth","field":"auth.password2","label":"Repeat password","value":"Ferry2026demo","valueLen":13,"keys":[[1793850592145,"Ferry2026demo"]],"lane":"2","sessionId":"l2-replay-20261105-091921-8v67"}
+{"t":1793852304081,"type":"web.click","step":"auth","field":"auth.terms","label":"Accept the terms","lane":"2","sessionId":"l2-replay-20261105-091921-8v67"}
+{"t":1793852304325,"type":"web.click","step":"auth","field":"auth.terms","label":"Accept the terms","lane":"2","sessionId":"l2-replay-20261105-091921-8v67"}
+{"t":1793852304334,"type":"web.click","step":"auth","field":"auth.terms","label":"Accept the terms","lane":"2","sessionId":"l2-replay-20261105-091921-8v67"}
+{"t":1793852304344,"type":"web.click","step":"auth","field":"auth.create","label":"Create account","lane":"2","sessionId":"l2-replay-20261105-091921-8v67"}
+{"t":1793852304346,"type":"web.submit","step":"auth","field":"auth.create","label":"Created an account","lane":"2","sessionId":"l2-replay-20261105-091921-8v67"}
+{"t":1793852304431,"type":"web.click","step":"auth","field":"toast.close","label":"Close the message","lane":"2","sessionId":"l2-replay-20261105-091921-8v67"}
+{"t":1793852304448,"type":"web.field","step":"auth","field":"auth.code","label":"Email code","value":"813074","valueLen":6,"keys":[[1793852304443,"813074"]],"lane":"2","sessionId":"l2-replay-20261105-091921-8v67"}
+{"t":1793852304456,"type":"web.click","step":"auth","field":"auth.verify","label":"Verify code","lane":"2","sessionId":"l2-replay-20261105-091921-8v67"}
+{"t":1793852304457,"type":"web.submit","step":"auth","field":"auth.verify","label":"Email code accepted","lane":"2","sessionId":"l2-replay-20261105-091921-8v67"}
+{"t":1793852304457,"type":"web.step","step":"trip","label":"Trip","lane":"2","sessionId":"l2-replay-20261105-091921-8v67"}
+{"t":1793852304470,"type":"web.click","step":"trip","field":"trip.route.toggle","label":"Open the route list","lane":"2","sessionId":"l2-replay-20261105-091921-8v67"}
+{"t":1793852304480,"type":"web.click","step":"trip","field":"trip.route.pick","label":"Route: Gateway of India to Elephanta Island","value":"gateway-elephanta","valueLen":17,"lane":"2","sessionId":"l2-replay-20261105-091921-8v67"}
+{"t":1793852304488,"type":"web.click","step":"trip","field":"trip.date.toggle","label":"Open the calendar","lane":"2","sessionId":"l2-replay-20261105-091921-8v67"}
+{"t":1793852304497,"type":"web.click","step":"trip","field":"trip.date.pick","label":"Date: Sat 7 Nov","value":"2026-11-07","valueLen":10,"lane":"2","sessionId":"l2-replay-20261105-091921-8v67"}
+{"t":1793852304662,"type":"web.click","step":"trip","field":"trip.out","label":"Leave at 09:30","value":"09:30","valueLen":5,"lane":"2","sessionId":"l2-replay-20261105-091921-8v67"}
+{"t":1793852304676,"type":"web.click","step":"trip","field":"trip.ret","label":"Return at 14:00","value":"14:00","valueLen":5,"lane":"2","sessionId":"l2-replay-20261105-091921-8v67"}
+{"t":1793852304685,"type":"web.click","step":"trip","field":"trip.next","label":"Continue to passengers","lane":"2","sessionId":"l2-replay-20261105-091921-8v67"}
+{"t":1793852304685,"type":"web.submit","step":"trip","field":"trip.next","label":"Trip chosen: Sat 7 Nov, 09:30 and back at 14:00","lane":"2","sessionId":"l2-replay-20261105-091921-8v67"}
+{"t":1793852304685,"type":"web.step","step":"passengers","label":"Passengers","lane":"2","sessionId":"l2-replay-20261105-091921-8v67"}
+{"t":1793852304732,"type":"web.click","step":"passengers","field":"pax.inc","label":"Add a passenger","lane":"2","sessionId":"l2-replay-20261105-091921-8v67"}
+{"t":1793852304744,"type":"web.click","step":"passengers","field":"pax.inc","label":"Add a passenger","lane":"2","sessionId":"l2-replay-20261105-091921-8v67"}
+{"t":1793852306904,"type":"web.click","step":"passengers","field":"pax.inc","label":"Add a passenger","lane":"2","sessionId":"l2-replay-20261105-091921-8v67"}

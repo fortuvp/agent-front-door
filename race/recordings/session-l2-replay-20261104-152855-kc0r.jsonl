@@ -1,0 +1,14 @@
+{"t":1793786335130,"type":"web.view","step":"home","label":"Opened the Harbour Line website","value":"/ferry/?lane=2&replay=lane2-ferry.json","valueLen":38,"lane":"2","sessionId":"l2-replay-20261104-152855-kc0r"}
+{"t":1793786855274,"type":"web.click","step":"home","field":"cookie.necessary","label":"Cookies: only necessary","lane":"2","sessionId":"l2-replay-20261104-152855-kc0r"}
+{"t":1793786859316,"type":"web.click","step":"home","field":"nav.book","label":"Book tickets","lane":"2","sessionId":"l2-replay-20261104-152855-kc0r"}
+{"t":1793786859316,"type":"web.step","step":"auth","label":"Sign in","lane":"2","sessionId":"l2-replay-20261104-152855-kc0r"}
+{"t":1793786875255,"type":"web.field","step":"auth","field":"auth.email","label":"Email address","value":"lane2.agent@harbour-line.test","valueLen":29,"keys":[[1793786875255,"lane2.agent@harbour-line.test"]],"lane":"2","sessionId":"l2-replay-20261104-152855-kc0r"}
+{"t":1793787488027,"type":"web.field","step":"auth","field":"auth.password","label":"Password","value":"Ferry2026demo","valueLen":13,"keys":[[1793787405362,"Ferry2026demo"]],"lane":"2","sessionId":"l2-replay-20261104-152855-kc0r"}
+{"t":1793787626144,"type":"web.field","step":"auth","field":"auth.password2","label":"Repeat password","value":"Ferry2026demo","valueLen":13,"keys":[[1793787565433,"Ferry2026demo"]],"lane":"2","sessionId":"l2-replay-20261104-152855-kc0r"}
+{"t":1793787908619,"type":"web.click","step":"auth","field":"auth.terms","label":"Accept the terms","lane":"2","sessionId":"l2-replay-20261104-152855-kc0r"}
+{"t":1793788226733,"type":"web.click","step":"auth","field":"auth.terms","label":"Accept the terms","lane":"2","sessionId":"l2-replay-20261104-152855-kc0r"}
+{"t":1793788744457,"type":"web.click","step":"auth","field":"auth.terms","label":"Accept the terms","lane":"2","sessionId":"l2-replay-20261104-152855-kc0r"}
+{"t":1793788745517,"type":"web.click","step":"auth","field":"auth.create","label":"Create account","lane":"2","sessionId":"l2-replay-20261104-152855-kc0r"}
+{"t":1793788745517,"type":"web.submit","step":"auth","field":"auth.create","label":"Created an account","lane":"2","sessionId":"l2-replay-20261104-152855-kc0r"}
+{"t":1793788746434,"type":"web.click","step":"auth","field":"toast.close","label":"Close the message","lane":"2","sessionId":"l2-replay-20261104-152855-kc0r"}
+{"t":1793788749058,"type":"web.field","step":"auth","field":"auth.code","label":"Email code","value":"813074","valueLen":6,"keys":[[1793788747436,"813074"]],"lane":"2","sessionId":"l2-replay-20261104-152855-kc0r"}

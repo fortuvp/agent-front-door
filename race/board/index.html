@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en" data-look="curate">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Race board</title>
+<meta name="description" content="Three lanes, one mission: an agent on the agent door, an agent on the human door, and a person on the human door.">
+<link rel="preload" href="/board/fonts/geist-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/board/fonts/urbanist-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/board/board.css">
+</head>
+<body>
+<div class="stage" id="stage">
+  <div class="world aurora"><i></i><i></i><i></i></div>
+  <div class="world grain"></div>
+
+  <header class="head" id="head">
+    <h1>The <em>race</em></h1>
+    <div class="mission">
+      <p class="mission-label"><span>The mission, the same in every lane</span><span class="outside" id="outside" hidden></span></p>
+      <ul class="mission-chips" id="mission-chips" title="Book Harbour Line ferry tickets for four: Gateway of India to Elephanta on Saturday 7 November, leaving between 9 and 10, back after 14:00, upper deck if it is under 4 USDC a person, boarding at the step-free jetty. Passengers: Asha Rao, Leo Marin, Mei Tan, Sam Okoye. Sam uses a cane: ask for help boarding. Ask me before you pay.">
+        <li><b>4 tickets</b>, Harbour Line</li>
+        <li>Gateway of India to Elephanta</li>
+        <li>Sat 7 Nov</li>
+        <li>Leave 9 to 10</li>
+        <li>Back after 14:00</li>
+        <li>Upper deck if under 4 USDC each</li>
+        <li>Step-free jetty</li>
+        <li>Help boarding for Sam</li>
+        <li><b>Ask before paying</b></li>
+      </ul>
+    </div>
+    <div class="head-right">
+      <span class="mode-badge" id="mode-badge">Live</span>
+      <div class="clock" id="clock"><span>Since start</span><b id="clock-num">00:00.0</b></div>
+    </div>
+  </header>
+
+  <main class="lanes">
+    <!-- Lane 1 · agent on the agent door -->
+    <section class="lane is-idle" data-lane="1" id="lane-1">
+      <div class="lane-top">
+        <div class="lane-name"><span class="n">1</span><b>Agent</b><span>· agent door</span></div>
+        <span class="lane-tag">Claude Code · CLI and HTTP</span>
+      </div>
+      <div class="lane-figures">
+        <b class="timer" data-timer>00:00.0</b>
+        <div class="stats">
+          <div class="stat is-zero" data-stat="steps"><b>0</b><span>Steps</span></div>
+        </div>
+      </div>
+      <p class="status" data-status><span>Ready</span></p>
+      <ol class="track4" id="track4">
+        <li class="rail" aria-hidden="true"><i></i></li>
+        <li data-k="discover"><span class="dot"></span><span class="lbl">Discover</span><span class="at"></span></li>
+        <li data-k="price"><span class="dot"></span><span class="lbl">Price</span><span class="at"></span></li>
+        <li data-k="permission"><span class="dot"></span><span class="lbl">Permission</span><span class="at"></span></li>
+        <li data-k="pay"><span class="dot"></span><span class="lbl">Pay</span><span class="at"></span></li>
+      </ol>
+      <div class="tokens is-empty" id="tokens">
+        <span class="t-lbl">Tokens</span>
+        <span class="t-bar"><i class="in" style="width:0"></i><i class="out" style="width:0"></i></span>
+        <span class="t-num">none yet</span>
+      </div>
+      <div class="body">
+        <div class="feed" id="feed">
+          <div class="feed-head"><span>What the agent sees</span><span id="feed-count"></span></div>
+          <ul class="feed-list" id="feed-list"><li class="feed-empty no-anim">Nothing yet. The agent starts at the door.</li></ul>
+        </div>
+        <div class="moment" id="moment">
+          <div class="phone" id="phone" style="--ps:0.6">
+            <span class="island"></span>
+            <div class="screen"><iframe id="phone-frame" title="The yes card, as it shows on the phone" src="about:blank"></iframe></div>
+          </div>
+          <div class="wait" id="wait">
+            <h3>Waiting for your yes</h3>
+            <b class="w-timer" id="wait-timer">00:00.0</b>
+            <p id="wait-line">The agent asked before paying. It sent the order to your phone and stopped.</p>
+            <p class="w-url" id="wait-url"></p>
+          </div>
+        </div>
+        <div class="receipt" id="receipt"></div>
+      </div>
+    </section>
+
+    <!-- Lane 2 · agent on the human door (recorded) -->
+    <section class="lane is-idle" data-lane="2" id="lane-2">
+      <div class="lane-top">
+        <div class="lane-name"><span class="n">2</span><b>Agent</b><span>· human door</span></div>
+        <span class="lane-tag is-rec">Recorded before the talk, real speed</span>
+      </div>
+      <div class="lane-figures">
+        <b class="timer" data-timer>00:00.0</b>
+        <div class="stats">
+          <div class="stat is-zero" data-stat="errors"><b>0</b><span>Errors</span></div>
+          <div class="stat is-zero" data-stat="steps"><b>0</b><span>Steps</span></div>
+        </div>
+      </div>
+      <p class="status" data-status><span>Ready</span></p>
+      <ol class="track7" data-track7></ol>
+      <div class="body">
+        <div class="site">
+          <div class="site-bar"><span class="lock"></span><span class="url" data-url>/ferry/</span></div>
+          <div class="site-view" data-view><iframe id="frame-2" title="Harbour Line website, driven by a recorded agent" src="about:blank" tabindex="-1"></iframe><div class="shield"></div></div>
+          <div class="site-done" data-done></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lane 3 · you on the human door (live, type here) -->
+    <section class="lane is-idle" data-lane="3" id="lane-3">
+      <div class="lane-top">
+        <div class="lane-name"><span class="n">3</span><b>You</b><span>· human door</span></div>
+        <span class="lane-tag">Live, typed by hand</span>
+      </div>
+      <div class="lane-figures">
+        <b class="timer" data-timer>00:00.0</b>
+        <div class="stats">
+          <div class="stat is-zero" data-stat="errors"><b>0</b><span>Errors</span></div>
+          <div class="stat is-zero" data-stat="steps"><b>0</b><span>Steps</span></div>
+        </div>
+      </div>
+      <p class="status" data-status><span>Ready</span></p>
+      <ol class="track7" data-track7></ol>
+      <div class="body">
+        <div class="site">
+          <div class="site-bar"><span class="lock"></span><span class="url" data-url>/ferry/</span></div>
+          <div class="site-view" data-view><iframe id="frame-3" title="Harbour Line website, for you to fill in" src="about:blank"></iframe></div>
+          <div class="site-done" data-done></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section class="results" id="results" aria-live="polite"></section>
+  <div class="keys" id="keys"><span><kbd>S</kbd>start</span><span><kbd>R</kbd>reset</span><span><kbd>D</kbd>results</span><span><kbd>F</kbd>full screen</span></div>
+  <div class="toast" id="toast"></div>
+</div>
+<script type="module" src="/board/board.js"></script>
+</body>
+</html>

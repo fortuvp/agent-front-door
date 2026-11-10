@@ -1,0 +1,6 @@
+{
+  "talkMd": "../door/talk.md",
+  "talkHtmlSize": "../door/index.html",
+  "raceLatest": "../race/recordings/race-latest.json",
+  "lane2Rec": "../race/recordings/lane2-ferry.json"
+}

@@ -1,0 +1,116 @@
+<section class="slide" data-id="fd-race-backup" data-title="The race, recorded (backup)" data-chapter="Backup">
+  <div class="rr-top">
+    <span class="label">Backup · The race</span>
+    <span class="rr-src" data-src-chip><i></i><span data-src-text>Placeholder</span></span>
+  </div>
+  <h2 class="rr-title rb-title"><span class="ln"><span>The race, <em>recorded.</em></span></span></h2>
+
+  <div class="rr-table" data-table>
+    <div class="rr-head">
+      <span>Lane</span><span>Time, on one scale</span><span class="r">Time</span><span class="r">Steps</span><span class="r">Tokens</span>
+    </div>
+    <div class="rr-rows" data-rows>
+      <div class="rr-row" style="--lc: var(--rr-l1); --r: 0">
+        <div class="rr-who"><b class="rr-n">1</b><span><b>Agent</b><small>agent door</small></span></div>
+        <div class="rr-bar is-empty"><i class="rr-track"></i></div>
+        <div class="rr-c rr-time is-na">–</div><div class="rr-c is-na">–</div><div class="rr-c is-na">–</div>
+      </div>
+      <div class="rr-row" style="--lc: var(--rr-l2); --r: 1">
+        <div class="rr-who"><b class="rr-n">2</b><span><b>Agent</b><small>human door</small></span></div>
+        <div class="rr-bar is-empty"><i class="rr-track"></i></div>
+        <div class="rr-c rr-time is-na">–</div><div class="rr-c is-na">–</div><div class="rr-c is-na">–</div>
+      </div>
+      <div class="rr-row" style="--lc: var(--rr-l3); --r: 2">
+        <div class="rr-who"><b class="rr-n">3</b><span><b>Me</b><small>human door</small></span></div>
+        <div class="rr-bar is-empty"><i class="rr-track"></i></div>
+        <div class="rr-c rr-time is-na">–</div><div class="rr-c is-na">–</div><div class="rr-c is-na">–</div>
+      </div>
+    </div>
+    <div class="rr-ph" data-ph><b>Placeholder:</b> rehearsal numbers go here<small data-ph-note>No race has been recorded on this laptop yet.</small></div>
+  </div>
+
+  <!-- lane 1, step by step -->
+  <div class="rb-steps" data-steps>
+    <p class="rb-lbl">Lane 1, step by step</p>
+    <ol class="rb-line">
+      <li data-k="discover"><i></i><b>Discover</b><span>–</span></li>
+      <li data-k="price"><i></i><b>Price</b><span>–</span></li>
+      <li data-k="permission"><i></i><b>Asks me</b><span>–</span></li>
+      <li data-k="yes" class="is-me"><i></i><b>My yes</b><span>–</span></li>
+      <li data-k="pay"><i></i><b>Paid</b><span>–</span></li>
+    </ol>
+  </div>
+
+  <p class="footnote" data-foot>Filled in from the race recorded on this laptop. Harbour Line and every name in it are made up.</p>
+
+  <aside class="notes">
+    <p><b>[1:00]</b></p>
+    <p>Use this slide only if the live board fails (blank, frozen, or the model call never comes back). Everything is shown at once, no presses.</p>
+    <p>"The live board is not playing along, so here is the race from our rehearsal." Read the label top right: it says when it was recorded. "Lane one, the agent on the agent door: done in this time, and most of it was waiting for my yes. Lane two, an agent on the website. Lane three, me." Then the line at the bottom: "It found the door, got the price, asked me, and paid within seconds of my yes."</p>
+    <p>If it says Placeholder, there is no rehearsal recording on this laptop. Skip the numbers: "The point is the shape: the agent asks, then waits for a person." Go on to fd-race-result only if it shows numbers.</p>
+    <p>Careful: say "in our rehearsal" and give the time on the label; these are not today's live numbers. One race, one laptop, not a benchmark. If the payment line says local test ledger, say that, not "on chain".</p>
+  </aside>
+</section>
+<style>
+section.slide[data-id="fd-race-backup"] .rb-title { top: 166px; }
+section.slide[data-id="fd-race-backup"] .rr-table { top: 316px; }
+/* a backup shows everything at once */
+section.slide[data-id="fd-race-backup"].is-in .rr-fill { transform: none; }
+section.slide[data-id="fd-race-backup"].is-in .rr-c { opacity: 1; transform: none; }
+section.slide[data-id="fd-race-backup"].is-in :is(.rr-wait, .rr-wait-edge) { opacity: 1; }
+section.slide[data-id="fd-race-backup"].is-in .rr-ann { opacity: 1; transform: none; }
+section.slide[data-id="fd-race-backup"] .rr-ph { top: 240px; }
+
+section.slide[data-id="fd-race-backup"] .rb-steps { position: absolute; left: var(--margin-x); right: var(--margin-x); top: 776px; opacity: 0; transition: opacity 1s var(--ease) 1s; }
+section.slide[data-id="fd-race-backup"].is-in .rb-steps { opacity: 1; }
+section.slide[data-id="fd-race-backup"].is-ph .rb-steps { opacity: 0.45; }
+section.slide[data-id="fd-race-backup"] .rb-lbl { font: 500 22px/1 var(--font-body); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-4); }
+section.slide[data-id="fd-race-backup"] .rb-line { position: relative; list-style: none; margin: 26px 0 0; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); }
+section.slide[data-id="fd-race-backup"] .rb-line::before { content: ""; position: absolute; left: 9px; right: calc(20% - 9px); top: 9px; height: 2px; background: linear-gradient(90deg, var(--accent), rgba(61, 123, 255, 0.35)); }
+section.slide[data-id="fd-race-backup"] .rb-line li { position: relative; display: flex; flex-direction: column; gap: 10px; }
+section.slide[data-id="fd-race-backup"] .rb-line i { width: 20px; height: 20px; border-radius: 50%; box-sizing: border-box; background: var(--accent); box-shadow: 0 0 14px rgba(61, 123, 255, 0.8); margin-bottom: 4px; }
+section.slide[data-id="fd-race-backup"] .rb-line li.is-me i { background: var(--hot); box-shadow: 0 0 0 6px rgba(245, 176, 74, 0.16), 0 0 16px rgba(245, 176, 74, 0.8); }
+section.slide[data-id="fd-race-backup"] .rb-line b { font: 500 32px/1 var(--font-display); letter-spacing: -0.015em; color: var(--ink); }
+section.slide[data-id="fd-race-backup"] .rb-line li.is-me b { color: var(--hot); }
+section.slide[data-id="fd-race-backup"] .rb-line span { font: 500 26px/1 var(--font-body); font-variant-numeric: tabular-nums; color: var(--ink-3); }
+section.slide[data-id="fd-race-backup"].is-ph .rb-line li i { background: none; border: 2px dashed var(--line-2); box-shadow: none; }
+section.slide[data-id="fd-race-backup"].is-ph .rb-line li.is-me b { color: var(--ink); }
+section.slide[data-id="fd-race-backup"] .footnote { bottom: 40px; max-width: 1640px; }
+  section.slide[data-id="fd-race-backup"] .label, section.slide[data-id="fd-race-backup"] .footnote { font-size: 22px; }
+  /* same side margin as the slides around it (120px) */
+  section.slide[data-id="fd-race-backup"] { --margin-x: 120px; }
+</style>
+<script>
+window.DECK_SLIDE_HOOKS["fd-race-backup"] = {
+  enter(slide, api) {
+    const token = (slide._rbToken = {});
+    const original = slide._rbRows ?? (slide._rbRows = slide.querySelector("[data-rows]").innerHTML);
+    const FD = window.FDRace;
+    if (!FD) return;
+    FD.load(api, { live: false }).then((res) => {
+      if (slide._rbToken !== token) return;
+      const s = res.summary && res.summary.anyDone ? res.summary : null;
+      slide.classList.toggle("is-ph", !s);
+      slide.classList.toggle("is-live", !!s && res.source === "live");
+      slide.classList.toggle("is-rec", !!s && res.source !== "live");
+      slide.querySelector("[data-src-text]").textContent = s ? FD.label(res) : "Placeholder";
+      if (!s) {
+        slide.querySelector("[data-rows]").innerHTML = original;
+        slide.querySelector("[data-ph-note]").textContent = res.testOnly ? "So far this laptop has only server tests, not a race." : "No race has been recorded on this laptop yet.";
+        slide.querySelectorAll(".rb-line span").forEach((el) => { el.textContent = "–"; });
+        return;
+      }
+      s.lane2RecMs = FD.lane2RecMs(api);
+      slide.querySelector("[data-rows]").innerHTML = FD.rows(s);
+      slide.querySelectorAll(".rb-line li").forEach((li) => {
+        const ms = s.track[li.dataset.k];
+        li.querySelector("span").textContent = ms == null ? "–" : `at ${FD.fmt(ms)}`;
+      });
+      const where = res.source === "live" ? `Our race on this laptop, today at ${s.when.hm} IST.` : `Our rehearsal on this laptop, ${s.when.text}.`;
+      const pay = s.pay ? ` Lane 1 paid ${s.pay.amount} USDC on the ${s.pay.label}.` : "";
+      slide.querySelector("[data-foot]").textContent = `${where} Times from the start of the race.${pay} Tokens as reported by Claude Code, input plus output.`;
+    });
+  },
+  leave(slide) { slide._rbToken = null; },
+};
+</script>

@@ -1,0 +1,25 @@
+{"t":1793821828946,"lane":"sys","type":"race.start","t0":1793821828946,"replay":"lane2-ferry.json"}
+{"t":1793821829004,"lane":"1","type":"agent.say","text":"Starting. Mission received."}
+{"t":1793821837600,"lane":"2","type":"web.click","step":"home","field":"cookie.necessary","label":"Cookies: only necessary","sessionId":"l2-replay-20261105-012027-g6uz"}
+{"t":1793821841908,"lane":"2","type":"web.click","step":"home","field":"nav.book","label":"Book tickets","sessionId":"l2-replay-20261105-012027-g6uz"}
+{"t":1793821841909,"lane":"2","type":"web.step","step":"auth","label":"Sign in","sessionId":"l2-replay-20261105-012027-g6uz"}
+{"t":1793821815712,"lane":"2","type":"web.view","step":"home","label":"Opened the Harbour Line website","valueLen":38,"sessionId":"l2-replay-20261105-012015-91ky"}
+{"t":1793821815717,"lane":"3","type":"web.view","step":"home","label":"Opened the Harbour Line website","valueLen":14,"sessionId":"l3-20261105-012015-5h7y"}
+{"t":1793821815513,"lane":"2","type":"web.view","step":"home","label":"Opened the Harbour Line website","valueLen":38,"sessionId":"l2-replay-20261105-012015-aytr"}
+{"t":1793821815514,"lane":"3","type":"web.view","step":"home","label":"Opened the Harbour Line website","valueLen":14,"sessionId":"l3-20261105-012015-exlt"}
+{"t":1793821815712,"lane":"2","type":"web.view","step":"home","label":"Opened the Harbour Line website","valueLen":38,"sessionId":"l2-replay-20261105-012015-91ky"}
+{"t":1793821825145,"lane":"2","type":"web.click","step":"home","field":"cookie.necessary","label":"Cookies: only necessary","sessionId":"l2-replay-20261105-012015-91ky"}
+{"t":1793821829142,"lane":"2","type":"web.click","step":"home","field":"nav.book","label":"Book tickets","sessionId":"l2-replay-20261105-012015-91ky"}
+{"t":1793821829142,"lane":"2","type":"web.step","step":"auth","label":"Sign in","sessionId":"l2-replay-20261105-012015-91ky"}
+{"t":1793821815717,"lane":"3","type":"web.view","step":"home","label":"Opened the Harbour Line website","valueLen":14,"sessionId":"l3-20261105-012015-5h7y"}
+{"t":1793821815514,"lane":"3","type":"web.view","step":"home","label":"Opened the Harbour Line website","valueLen":14,"sessionId":"l3-20261105-012015-exlt"}
+{"t":1793821815513,"lane":"2","type":"web.view","step":"home","label":"Opened the Harbour Line website","valueLen":38,"sessionId":"l2-replay-20261105-012015-aytr"}
+{"t":1793821825145,"lane":"2","type":"web.click","step":"home","field":"cookie.necessary","label":"Cookies: only necessary","sessionId":"l2-replay-20261105-012015-aytr"}
+{"t":1793821829143,"lane":"2","type":"web.click","step":"home","field":"nav.book","label":"Book tickets","sessionId":"l2-replay-20261105-012015-aytr"}
+{"t":1793821829143,"lane":"2","type":"web.step","step":"auth","label":"Sign in","sessionId":"l2-replay-20261105-012015-aytr"}
+{"t":1793821844248,"lane":"2","type":"web.view","step":"home","label":"Opened the Harbour Line website","valueLen":38,"sessionId":"l2-replay-20261105-012044-e52c"}
+{"t":1793821844293,"lane":"2","type":"web.click","step":"home","field":"cookie.necessary","label":"Cookies: only necessary","sessionId":"l2-replay-20261105-012044-e52c"}
+{"t":1793821844299,"lane":"2","type":"web.click","step":"home","field":"nav.book","label":"Book tickets","sessionId":"l2-replay-20261105-012044-e52c"}
+{"t":1793821844299,"lane":"2","type":"web.step","step":"auth","label":"Sign in","sessionId":"l2-replay-20261105-012044-e52c"}
+{"t":1793821844243,"lane":"3","type":"web.view","step":"home","label":"Opened the Harbour Line website","valueLen":14,"sessionId":"l3-20261105-012044-p8p0"}
+{"t":1793821848147,"lane":"sys","type":"race.reset"}

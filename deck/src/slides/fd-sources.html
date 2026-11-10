@@ -1,0 +1,45 @@
+<section class="slide" data-id="fd-sources" data-title="Sources" data-chapter="Backup">
+  <div class="sr-top">
+    <h2 class="sr-head"><span class="ln"><span><em>Sources.</em></span></span></h2>
+    <p class="sr-lead fade-in">Every number in the talk, and where it comes from. Main links: <b>/talk.md</b>, under Sources.</p>
+  </div>
+
+  <ol class="sr-list fade-in" style="--d:1">
+    <li><p>Cloudflare: 16,180 tokens as HTML, 3,150 as Markdown</p><span>blog.cloudflare.com/markdown-for-agents · Feb 2026</span></li>
+    <li><p>Sizes of /talk and of the Harbour Line page</p><span>measured on this laptop · 4 Nov 2026</span></li>
+    <li><p>34 projects · 134 of 142 commits co-written</p><span>my own recount · commits 17 Oct to 3 Nov 2026</span></li>
+    <li><p>Claude Code, a top reader of llms.txt · 97% got no requests</p><span>ahrefs.com/blog/llmstxt-study · Jun 2026, May data</span></li>
+    <li><p>“For agents the difference is huge”</p><span>Kleros live stream · 9 Sep 2026 · at 42:11</span></li>
+    <li><p>The QR worked for people, not for agents</p><span>fortuvp.github.io/ask/condo and condo.txt · Oct 2026</span></li>
+    <li><p>Side by side changes the winner</p><span>Hsee and others · Psychological Bulletin · 1999</span></li>
+    <li><p>First offer picked 60–100% of the time, simulated</p><span>Microsoft, Magentic Marketplace · arXiv:2510.25779, 5.4</span></li>
+    <li><p>Race times, steps and tokens</p><span>our rehearsal recording · 4 Nov 2026</span></li>
+    <li><p>Screen: 53 steps, 551k tokens · API: 8 calls, 12k tokens</p><span>reflex.dev/blog, computer use vs APIs · Apr 2026</span></li>
+    <li><p>An AI juror wrote “Refund buyer”, voted “Pay seller”</p><span>Kleros V2 testnet · court 8, dispute 76 · Aug 2026</span></li>
+    <li><p>Four permission settings · read-only until --execute</p><span>my own prototypes · Aug and Nov 2026</span></li>
+    <li><p>A colleague no longer checks their juror’s votes</p><span>Kleros live stream · 26 Aug 2026 · at 1:15:53</span></li>
+    <li><p>Visa: no dispute reason for “my agent got it wrong”</p><span>Visa Core Rules, ch. 11 · read 22 Oct 2026</span></li>
+    <li><p>“As if the Cardholder initiated” it</p><span>Visa Core Rules 4.1.24.10 · April 2026 edition</span></li>
+    <li><p>88 disputes: 48.9 hours to 9.8 minutes · 72 of 88 matched</p><span>Kleros V2, Arbitrum One · court 34 replays · Oct 2026</span></li>
+    <li><p>People as the exit, on appeal: being built</p><span>KIP-93, forum.kleros.io · kleros-v2 PR #2592, draft</span></li>
+  </ol>
+
+  <aside class="notes">
+    <p><b>[0:00]</b></p>
+    <p>Backup. Only show this if someone asks where a number comes from. "Every number in the talk is on this slide. The links are in the talk's Markdown, at /talk.md, under Sources. Point your agent at it."</p>
+    <p>Careful: the laptop counts, the commit count, the page sizes and the race numbers are my own measurements, not studies. The Microsoft figure is from a simulated market. The Visa quote was read in the rulebook on 22 Oct (the PDF blocks downloads today). The human appeal path is being built, not live.</p>
+  </aside>
+</section>
+<style>
+  section.slide[data-id="fd-sources"] { display: block; padding: 0; gap: 0; }
+  .slide[data-id="fd-sources"] .sr-top { position: absolute; left: 136px; right: 136px; top: 92px; display: flex; align-items: flex-end; gap: 56px; }
+  .slide[data-id="fd-sources"] .sr-head { margin: 0; font: 500 88px/1 var(--font-display); letter-spacing: -0.04em; white-space: nowrap; }
+  .slide[data-id="fd-sources"] .sr-lead { margin: 0 0 8px; font: 400 28px/1.3 var(--font-body); color: var(--ink-3); }
+  .slide[data-id="fd-sources"] .sr-lead b { font-family: var(--font-mono); font-weight: 400; color: var(--accent-2); }
+
+  .slide[data-id="fd-sources"] .sr-list { position: absolute; left: 136px; right: 136px; top: 236px; bottom: 56px; margin: 0; padding: 0; list-style: none; counter-reset: sr; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: repeat(9, 1fr); grid-auto-flow: column; column-gap: 64px; }
+  .slide[data-id="fd-sources"] .sr-list li { counter-increment: sr; position: relative; padding: 12px 0 0 52px; border-top: 1px solid var(--line); min-width: 0; }
+  .slide[data-id="fd-sources"] .sr-list li::before { content: counter(sr, decimal-leading-zero); position: absolute; left: 0; top: 15px; font: 400 22px/1 var(--font-mono); color: var(--ink-4); }
+  .slide[data-id="fd-sources"] .sr-list p { margin: 0; font: 400 25px/1.25 var(--font-body); color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .slide[data-id="fd-sources"] .sr-list span { display: block; margin-top: 6px; font: 400 22px/1.25 var(--font-mono); color: var(--ink-3); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+</style>

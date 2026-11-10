@@ -1,0 +1,31 @@
+{"t":1793850562822,"lane":"sys","type":"race.start","t0":1793850562822,"replay":"lane2-ferry.json"}
+{"t":1793850563000,"lane":"1","type":"agent.say","text":"Starting. Mission received."}
+{"t":1793850571485,"lane":"2","type":"web.click","step":"home","field":"cookie.necessary","label":"Cookies: only necessary","sessionId":"l2-replay-20261105-091921-8v67"}
+{"t":1793850575694,"lane":"2","type":"web.click","step":"home","field":"nav.book","label":"Book tickets","sessionId":"l2-replay-20261105-091921-8v67"}
+{"t":1793850575695,"lane":"2","type":"web.step","step":"auth","label":"Sign in","sessionId":"l2-replay-20261105-091921-8v67"}
+{"t":1793850592141,"lane":"2","type":"web.field","step":"auth","field":"auth.email","label":"Email address","valueLen":29,"sessionId":"l2-replay-20261105-091921-8v67"}
+{"t":1793850592144,"lane":"2","type":"web.field","step":"auth","field":"auth.password","label":"Password","valueLen":13,"sessionId":"l2-replay-20261105-091921-8v67"}
+{"t":1793851660075,"lane":"1","type":"agent.done","ok":false,"ms":1097099,"error":"stopped after 480 s"}
+{"t":1793851662982,"lane":"2","type":"web.field","step":"auth","field":"auth.password2","label":"Repeat password","valueLen":13,"sessionId":"l2-replay-20261105-091921-8v67"}
+{"t":1793852304081,"lane":"2","type":"web.click","step":"auth","field":"auth.terms","label":"Accept the terms","sessionId":"l2-replay-20261105-091921-8v67"}
+{"t":1793852304325,"lane":"2","type":"web.click","step":"auth","field":"auth.terms","label":"Accept the terms","sessionId":"l2-replay-20261105-091921-8v67"}
+{"t":1793852304334,"lane":"2","type":"web.click","step":"auth","field":"auth.terms","label":"Accept the terms","sessionId":"l2-replay-20261105-091921-8v67"}
+{"t":1793852304344,"lane":"2","type":"web.click","step":"auth","field":"auth.create","label":"Create account","sessionId":"l2-replay-20261105-091921-8v67"}
+{"t":1793852304346,"lane":"2","type":"web.submit","step":"auth","field":"auth.create","label":"Created an account","sessionId":"l2-replay-20261105-091921-8v67"}
+{"t":1793852304431,"lane":"2","type":"web.click","step":"auth","field":"toast.close","label":"Close the message","sessionId":"l2-replay-20261105-091921-8v67"}
+{"t":1793852304448,"lane":"2","type":"web.field","step":"auth","field":"auth.code","label":"Email code","valueLen":6,"sessionId":"l2-replay-20261105-091921-8v67"}
+{"t":1793852304456,"lane":"2","type":"web.click","step":"auth","field":"auth.verify","label":"Verify code","sessionId":"l2-replay-20261105-091921-8v67"}
+{"t":1793852304457,"lane":"2","type":"web.submit","step":"auth","field":"auth.verify","label":"Email code accepted","sessionId":"l2-replay-20261105-091921-8v67"}
+{"t":1793852304457,"lane":"2","type":"web.step","step":"trip","label":"Trip","sessionId":"l2-replay-20261105-091921-8v67"}
+{"t":1793852304470,"lane":"2","type":"web.click","step":"trip","field":"trip.route.toggle","label":"Open the route list","sessionId":"l2-replay-20261105-091921-8v67"}
+{"t":1793852304480,"lane":"2","type":"web.click","step":"trip","field":"trip.route.pick","label":"Route: Gateway of India to Elephanta Island","valueLen":17,"sessionId":"l2-replay-20261105-091921-8v67"}
+{"t":1793852304488,"lane":"2","type":"web.click","step":"trip","field":"trip.date.toggle","label":"Open the calendar","sessionId":"l2-replay-20261105-091921-8v67"}
+{"t":1793852304497,"lane":"2","type":"web.click","step":"trip","field":"trip.date.pick","label":"Date: Sat 7 Nov","valueLen":10,"sessionId":"l2-replay-20261105-091921-8v67"}
+{"t":1793852304662,"lane":"2","type":"web.click","step":"trip","field":"trip.out","label":"Leave at 09:30","valueLen":5,"sessionId":"l2-replay-20261105-091921-8v67"}
+{"t":1793852304676,"lane":"2","type":"web.click","step":"trip","field":"trip.ret","label":"Return at 14:00","valueLen":5,"sessionId":"l2-replay-20261105-091921-8v67"}
+{"t":1793852304685,"lane":"2","type":"web.click","step":"trip","field":"trip.next","label":"Continue to passengers","sessionId":"l2-replay-20261105-091921-8v67"}
+{"t":1793852304685,"lane":"2","type":"web.submit","step":"trip","field":"trip.next","label":"Trip chosen: Sat 7 Nov, 09:30 and back at 14:00","sessionId":"l2-replay-20261105-091921-8v67"}
+{"t":1793852304685,"lane":"2","type":"web.step","step":"passengers","label":"Passengers","sessionId":"l2-replay-20261105-091921-8v67"}
+{"t":1793852304732,"lane":"2","type":"web.click","step":"passengers","field":"pax.inc","label":"Add a passenger","sessionId":"l2-replay-20261105-091921-8v67"}
+{"t":1793852304744,"lane":"2","type":"web.click","step":"passengers","field":"pax.inc","label":"Add a passenger","sessionId":"l2-replay-20261105-091921-8v67"}
+{"t":1793852306904,"lane":"2","type":"web.click","step":"passengers","field":"pax.inc","label":"Add a passenger","sessionId":"l2-replay-20261105-091921-8v67"}

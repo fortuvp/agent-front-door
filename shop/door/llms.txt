@@ -1,0 +1,23 @@
+# Harbour Line
+
+> Harbour Line runs return ferries from the Gateway of India, Mumbai, to Elephanta Island and Mandwa. Agents can check departures, get a quote, book with their human's yes and pay with x402 (USDC on a test network). This is a demo shop.
+
+Prices are per person for a return trip, in USDC. Every order waits for the human's yes before it can be paid.
+
+## Docs
+
+- [Agent door](/ferry/?format=md): routes, prices, how to book, rules (Markdown; or send Accept: text/markdown to /ferry/)
+- [Skill: book a ferry with the ferry CLI](/ferry/SKILL.md): the booking flow step by step
+
+## API
+
+- [Routes](/ferry/api/routes): routes, boarding points, seat classes, prices (JSON)
+- [Departures](/ferry/api/departures?route=gateway-elephanta&date=2026-11-07): times, seats left and prices for one day (JSON)
+- Quote: POST /ferry/api/quote with a booking (JSON); the reply has the total and two alternatives
+- Book: POST /ferry/api/orders with {"quoteId", "channel": "agent"}; the reply has the approve link for your human
+- Order: GET /ferry/api/orders/<orderId> (add ?wait=25 to wait for the yes)
+- Pay: POST /ferry/api/orders/<orderId>/pay answers 402 with x402 payment requirements; retry with an X-PAYMENT header
+
+## Optional
+
+- [Website](/ferry/): the human door, with sign-up and a card form

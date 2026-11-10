@@ -1,0 +1,106 @@
+<section class="slide" data-id="fd-scout" data-title="Scout, readable by agents" data-chapter="Now · Your agent reads the docs">
+  <i data-step="1" hidden></i><i data-step="2" hidden></i><i data-step="3" hidden></i><i data-step="4" hidden></i>
+  <span class="label sc-kick fade-in">Kleros Scout · since June 2026</span>
+  <h2 class="title sc-title"><span class="ln"><span>I made Scout readable by <em>agents.</em></span></span></h2>
+
+  <!-- press 1 · the response header, as it comes back today -->
+  <div class="sc-term">
+    <div class="sc-bar"><i></i><i></i><i></i><span>Every page · response header</span></div>
+<pre class="sc-pre"><span class="sc-cmd"><span class="sc-ps">$</span> curl -sI https://scout-app.kleros.io</span>
+<span class="sc-dim">HTTP/2 200</span>
+<span class="sc-dim">content-type: text/html; charset=UTF-8</span>
+<span class="sc-lk"><span class="sc-k">link:</span> <b>&lt;/llms.txt&gt;</b>; rel="alternate"; type="text/plain";</span>
+<span class="sc-lk">      title="Scout agent instructions",</span>
+<span class="sc-lk">      <b>&lt;/llms-full.txt&gt;</b>; rel="help"; type="text/plain";</span>
+<span class="sc-lk">      title="Scout full agent context",</span>
+<span class="sc-lk">      <b>&lt;/scout-agent-context.md&gt;</b>; rel="help"; type="text/markdown";</span>
+<span class="sc-lk">      title="Scout agent context"</span></pre>
+    <p class="sc-note">Three plain-text files, named in the header of every page.</p>
+  </div>
+
+  <!-- press 2–3 · the Human / Agent toggle on the guide page -->
+  <div class="sc-guide">
+    <div class="sc-url">scout-app.kleros.io/guide</div>
+    <div class="sc-toggle"><span class="sc-iam">I am:</span><span class="sc-pill sc-human">Human</span><span class="sc-pill sc-agent">Agent</span></div>
+    <div class="sc-view sc-view-h">
+      <p class="sc-vh">Submitting an item</p>
+      <ol><li>Go to Kleros Scout.</li><li>Connect your crypto wallet.</li><li>Pick the registry from the “Lists” menu.</li><li>Check the policy, then submit…</li></ol>
+    </div>
+    <div class="sc-view sc-view-a">
+      <p class="sc-vh"><span class="sc-n">1</span>Paste this into your agent</p>
+      <p class="sc-meta">One line · works in any agent</p>
+      <p class="sc-prompt"><span>&gt;</span> Read https://scout-app.kleros.io/<br>llms-full.txt and follow it before interacting with Kleros Scout.</p>
+    </div>
+  </div>
+
+  <!-- press 4 -->
+  <p class="sc-close"><span>Every page now points agents to</span> <em>plain-text instructions.</em></p>
+
+  <p class="footnote sc-foot">Header: curl -sI https://scout-app.kleros.io, 4 Nov 2026, as returned, line breaks added.<br>Toggle: scout-app.kleros.io/guide, human steps shortened. Added in kleros/scout commit ac747d7, 26 Jun 2026.</p>
+
+  <aside class="notes">
+    <p><b>[0:45]</b></p>
+    <p>On entry: "Here is one I did myself. Scout is our registry of verified contracts. In June I made it readable by agents."</p>
+    <p>Press. "This is the header every Scout page sends back. It names three plain-text files: short instructions, the full context, and a Markdown version. An agent that only reads headers already knows where to go."</p>
+    <p>Press. "And the guide page asks one question: human, or agent? Human gets the steps."</p>
+    <p>Press. "Agent gets one line to paste into any agent: read this file and follow it."</p>
+    <p>Press. "Every page now points agents to plain-text instructions."</p>
+    <p>Careful: say "I added it in June", nothing about traffic or usage numbers, we have none. The header on the slide is exact; only the line breaks are mine. The human steps are shortened from the live page.</p>
+  </aside>
+</section>
+<style>
+  .slide[data-id="fd-scout"] { display: block; padding: 0; }
+  .slide[data-id="fd-scout"] .sc-kick { position: absolute; left: 120px; top: 92px; color: var(--ink-3); }
+  .slide[data-id="fd-scout"] .sc-title { position: absolute; left: 114px; top: 132px; margin: 0; font-size: 100px; line-height: 1.08; white-space: nowrap; max-width: none; }
+
+  /* terminal */
+  .slide[data-id="fd-scout"] .sc-term { position: absolute; left: 120px; top: 300px; width: 1020px; height: 520px; box-sizing: border-box; border-radius: 22px; border: 1px solid var(--card-border); background: linear-gradient(180deg, #0c111d, #070a13); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .06), 0 30px 80px rgba(0, 0, 0, .45); opacity: 0; transform: translateY(20px); transition: opacity 1s var(--ease), transform 1.2s var(--ease); }
+  .slide[data-id="fd-scout"].b1 .sc-term { opacity: 1; transform: none; }
+  .slide[data-id="fd-scout"] .sc-bar { display: flex; align-items: center; gap: 10px; height: 54px; padding: 0 24px; border-bottom: 1px solid var(--line); }
+  .slide[data-id="fd-scout"] .sc-bar i { width: 12px; height: 12px; border-radius: 50%; background: rgba(255, 255, 255, .12); }
+  .slide[data-id="fd-scout"] .sc-bar span { margin-left: 16px; font: 500 22px/1 var(--font-body); color: var(--ink-3); }
+  .slide[data-id="fd-scout"] .sc-pre { margin: 0; padding: 26px 34px 0; font: 400 23px/1.62 var(--font-mono); color: var(--ink-2); white-space: pre; }
+  .slide[data-id="fd-scout"] .sc-pre > span { display: inline-block; opacity: 0; transform: translateX(-8px); transition: opacity .7s var(--ease), transform .9s var(--ease); }
+  .slide[data-id="fd-scout"].b1 .sc-pre > span { opacity: 1; transform: none; }
+  .slide[data-id="fd-scout"].b1 .sc-pre > span:nth-child(2), .slide[data-id="fd-scout"].b1 .sc-pre > span:nth-child(3) { transition-delay: .5s; }
+  .slide[data-id="fd-scout"].b1 .sc-pre > span.sc-lk { transition-delay: .9s; }
+  .slide[data-id="fd-scout"] .sc-cmd { color: var(--ink); }
+  .slide[data-id="fd-scout"] .sc-ps { color: var(--accent-2); }
+  .slide[data-id="fd-scout"] .sc-dim { color: var(--ink-4); }
+  .slide[data-id="fd-scout"] .sc-lk { color: var(--ink-2); }
+  .slide[data-id="fd-scout"] .sc-k { color: #bfeeff; }
+  .slide[data-id="fd-scout"] .sc-lk b { font-weight: 500; color: #8be6ff; text-shadow: 0 0 14px rgba(69, 212, 255, .55); }
+  .slide[data-id="fd-scout"] .sc-note { position: absolute; left: 34px; bottom: 26px; margin: 0; font: 400 26px/1.3 var(--font-body); color: var(--ink-3); opacity: 0; transition: opacity 1s var(--ease) 1.4s; }
+  .slide[data-id="fd-scout"].b1 .sc-note { opacity: 1; }
+
+  /* guide page toggle */
+  .slide[data-id="fd-scout"] .sc-guide { position: absolute; left: 1200px; top: 300px; width: 600px; height: 520px; box-sizing: border-box; padding: 26px 34px; border-radius: 22px; border: 1px solid var(--card-border); background: #0c111d; box-shadow: inset 0 1px 0 rgba(255, 255, 255, .06); opacity: 0; transform: translateY(20px); transition: opacity 1s var(--ease), transform 1.2s var(--ease); }
+  .slide[data-id="fd-scout"].b2 .sc-guide { opacity: 1; transform: none; }
+  .slide[data-id="fd-scout"].b2 .sc-term { opacity: .62; }
+  .slide[data-id="fd-scout"].b4 .sc-term { opacity: 1; }
+  .slide[data-id="fd-scout"] .sc-url { font: 400 22px/1 var(--font-mono); color: var(--ink-4); padding-bottom: 22px; border-bottom: 1px solid var(--line); }
+  .slide[data-id="fd-scout"] .sc-toggle { display: flex; align-items: center; gap: 14px; margin: 28px 0 30px; }
+  .slide[data-id="fd-scout"] .sc-iam { font: 400 28px/1 var(--font-body); color: var(--ink-3); margin-right: 6px; }
+  .slide[data-id="fd-scout"] .sc-pill { padding: 14px 28px; border-radius: 14px; border: 1.5px solid var(--line-2); font: 500 30px/1 var(--font-body); color: var(--ink-3); transition: border-color 1s var(--ease), color 1s var(--ease), background-color 1s var(--ease), box-shadow 1s var(--ease); }
+  .slide[data-id="fd-scout"] .sc-human, .slide[data-id="fd-scout"].b3 .sc-agent { border-color: #7aa7ff; color: var(--ink); background: color-mix(in srgb, var(--accent) 18%, transparent); box-shadow: 0 0 24px color-mix(in srgb, var(--accent) 30%, transparent); }
+  .slide[data-id="fd-scout"].b3 .sc-human { border-color: var(--line-2); color: var(--ink-3); background: transparent; box-shadow: none; }
+  .slide[data-id="fd-scout"] .sc-view { position: absolute; left: 34px; right: 34px; top: 196px; transition: opacity .9s var(--ease), transform 1.1s var(--ease), filter .9s var(--ease); }
+  .slide[data-id="fd-scout"] .sc-view-a { opacity: 0; transform: translateY(16px); filter: blur(6px); }
+  .slide[data-id="fd-scout"].b3 .sc-view-h { opacity: 0; transform: translateY(-12px); filter: blur(6px); }
+  .slide[data-id="fd-scout"].b3 .sc-view-a { opacity: 1; transform: none; filter: none; transition-delay: .35s; }
+  .slide[data-id="fd-scout"] .sc-vh { margin: 0; display: flex; align-items: center; gap: 14px; font: 500 30px/1.2 var(--font-body); color: var(--ink); }
+  .slide[data-id="fd-scout"] .sc-view ol { margin: 18px 0 0; padding-left: 34px; font: 400 26px/1.5 var(--font-body); color: var(--ink-3); }
+  .slide[data-id="fd-scout"] .sc-n { display: inline-grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: color-mix(in srgb, var(--accent) 30%, transparent); border: 1px solid #7aa7ff; font: 500 22px/1 var(--font-mono); color: var(--ink); }
+  .slide[data-id="fd-scout"] .sc-meta { margin: 10px 0 0 54px; font: 400 22px/1.2 var(--font-body); color: var(--ink-3); }
+  .slide[data-id="fd-scout"] .sc-prompt { margin: 24px 0 0; padding: 20px 22px; border-radius: 14px; border: 1px solid color-mix(in srgb, var(--accent-2) 45%, transparent); background: rgba(69, 212, 255, .06); font: 400 22px/1.5 var(--font-mono); color: #d8f6ff; }
+  .slide[data-id="fd-scout"] .sc-prompt span { color: var(--accent-2); }
+
+  /* press 4 */
+  .slide[data-id="fd-scout"] .sc-close { position: absolute; left: 120px; top: 880px; margin: 0; font: 500 64px/1.1 var(--font-display); letter-spacing: -0.035em; white-space: nowrap; color: var(--ink); opacity: 0; transform: translateY(16px); filter: blur(6px); transition: opacity 1.2s var(--ease), transform 1.4s var(--ease), filter 1.2s var(--ease); }
+  .slide[data-id="fd-scout"] .sc-close span { color: var(--ink-2); }
+  .slide[data-id="fd-scout"].b4 .sc-close { opacity: 1; transform: none; filter: none; }
+
+  .slide[data-id="fd-scout"] .sc-foot { left: 120px; right: 120px; bottom: 34px; max-width: 1680px; font-size: 22px; line-height: 1.4; color: var(--ink-3); }
+  /* readable from the back of the booth: labels and sources at 22px or more */
+  .slide[data-id="fd-scout"] .label { font-size: 22px; }
+</style>

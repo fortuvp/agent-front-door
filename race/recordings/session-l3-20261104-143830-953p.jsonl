@@ -1,0 +1,7 @@
+{"t":1793783311007,"type":"web.view","step":"home","label":"Opened the Harbour Line website","value":"/ferry/?lane=3","valueLen":14,"lane":"3","sessionId":"l3-20261104-143830-953p"}
+{"t":1793783348743,"type":"web.click","step":"home","field":"cookie.necessary","label":"Cookies: only necessary","lane":"3","sessionId":"l3-20261104-143830-953p"}
+{"t":1793783349755,"type":"web.click","step":"home","field":"nav.book","label":"Book tickets","lane":"3","sessionId":"l3-20261104-143830-953p"}
+{"t":1793783349756,"type":"web.step","step":"auth","label":"Sign in","lane":"3","sessionId":"l3-20261104-143830-953p"}
+{"t":1793783359427,"type":"web.click","step":"auth","field":"auth.create","label":"Create account","lane":"3","sessionId":"l3-20261104-143830-953p"}
+{"t":1793783359427,"type":"web.submit","step":"auth","field":"auth.create","label":"Signed in","lane":"3","sessionId":"l3-20261104-143830-953p"}
+{"t":1793783359427,"type":"web.step","step":"trip","label":"Trip","lane":"3","sessionId":"l3-20261104-143830-953p"}

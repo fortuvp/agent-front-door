@@ -1,0 +1,26 @@
+{"t":1793788822876,"type":"web.view","step":"home","label":"Opened the Harbour Line website","value":"/ferry/?lane=3","valueLen":14,"lane":"3","sessionId":"l3-20261104-161022-vtwp"}
+{"t":1793788835052,"type":"web.click","step":"home","field":"cookie.necessary","label":"Cookies: only necessary","lane":"3","sessionId":"l3-20261104-161022-vtwp"}
+{"t":1793788836649,"type":"web.click","step":"home","field":"nav.book","label":"Book tickets","lane":"3","sessionId":"l3-20261104-161022-vtwp"}
+{"t":1793788836650,"type":"web.step","step":"auth","label":"Sign in","lane":"3","sessionId":"l3-20261104-161022-vtwp"}
+{"t":1793788842451,"type":"web.click","step":"auth","field":"auth.create","label":"Create account","lane":"3","sessionId":"l3-20261104-161022-vtwp"}
+{"t":1793788842451,"type":"web.submit","step":"auth","field":"auth.create","label":"Signed in","lane":"3","sessionId":"l3-20261104-161022-vtwp"}
+{"t":1793788842451,"type":"web.step","step":"trip","label":"Trip","lane":"3","sessionId":"l3-20261104-161022-vtwp"}
+{"t":1793788844133,"type":"web.click","step":"trip","field":"trip.route.toggle","label":"Open the route list","lane":"3","sessionId":"l3-20261104-161022-vtwp"}
+{"t":1793788844951,"type":"web.click","step":"trip","field":"trip.route.pick","label":"Route: Gateway of India to Elephanta Island","value":"gateway-elephanta","valueLen":17,"lane":"3","sessionId":"l3-20261104-161022-vtwp"}
+{"t":1793788845500,"type":"web.click","step":"trip","field":"trip.date.toggle","label":"Open the calendar","lane":"3","sessionId":"l3-20261104-161022-vtwp"}
+{"t":1793788846867,"type":"web.click","step":"trip","field":"trip.date.pick","label":"Date: Sat 7 Nov","value":"2026-11-07","valueLen":10,"lane":"3","sessionId":"l3-20261104-161022-vtwp"}
+{"t":1793788848785,"type":"web.click","step":"trip","field":"trip.out","label":"Leave at 09:30","value":"09:30","valueLen":5,"lane":"3","sessionId":"l3-20261104-161022-vtwp"}
+{"t":1793788849486,"type":"web.click","step":"trip","field":"trip.ret","label":"Return at 17:00","value":"17:00","valueLen":5,"lane":"3","sessionId":"l3-20261104-161022-vtwp"}
+{"t":1793788855501,"type":"web.click","step":"trip","field":"trip.next","label":"Continue to passengers","lane":"3","sessionId":"l3-20261104-161022-vtwp"}
+{"t":1793788855501,"type":"web.submit","step":"trip","field":"trip.next","label":"Trip chosen: Sat 7 Nov, 09:30 and back at 17:00","lane":"3","sessionId":"l3-20261104-161022-vtwp"}
+{"t":1793788855501,"type":"web.step","step":"passengers","label":"Passengers","lane":"3","sessionId":"l3-20261104-161022-vtwp"}
+{"t":1793788859851,"type":"web.field","step":"passengers","field":"pax.0.name","label":"Passenger 1 · Full name","value":"ttttt t","valueLen":7,"keys":[[1793788857947,"t"],[1793788858069,"tt"],[1793788858176,"ttt"],[1793788858422,"tttt"],[1793788858519,"ttttt"],[1793788859105,"ttttt "],[1793788859271,"ttttt t"]],"lane":"3","sessionId":"l3-20261104-161022-vtwp"}
+{"t":1793788859917,"type":"web.click","step":"passengers","field":"pax.idtype.toggle","label":"Passenger 1 · open ID types","value":"0","valueLen":1,"lane":"3","sessionId":"l3-20261104-161022-vtwp"}
+{"t":1793788860450,"type":"web.click","step":"passengers","field":"pax.idtype.pick","label":"Passenger 1 · ID type: Passport","value":"0:passport","valueLen":10,"lane":"3","sessionId":"l3-20261104-161022-vtwp"}
+{"t":1793788865518,"type":"web.field","step":"passengers","field":"pax.0.idNumber","label":"Passenger 1 · ID number","value":"12345678","valueLen":8,"keys":[[1793788861737,"1"],[1793788861808,"12"],[1793788862057,"123"],[1793788862204,"1234"],[1793788862385,"12345"],[1793788862537,"123456"],[1793788862658,"1234567"],[1793788862737,"12345678"]],"lane":"3","sessionId":"l3-20261104-161022-vtwp"}
+{"t":1793788866168,"type":"web.click","step":"passengers","field":"pax.next","label":"Check the price","lane":"3","sessionId":"l3-20261104-161022-vtwp"}
+{"t":1793788866168,"type":"web.error","step":"passengers","field":"pax.0.age","label":"Enter age.","lane":"3","sessionId":"l3-20261104-161022-vtwp"}
+{"t":1793788866168,"type":"web.error","step":"passengers","field":"pax.0.idNumber","label":"A passport number is one letter and 7 digits, like A1234567.","lane":"3","sessionId":"l3-20261104-161022-vtwp"}
+{"t":1793788866168,"type":"web.error","step":"passengers","field":"pax.class","label":"Choose where you want to sit.","lane":"3","sessionId":"l3-20261104-161022-vtwp"}
+{"t":1793788866168,"type":"web.error","step":"passengers","field":"pax.board","label":"Choose where you will board.","lane":"3","sessionId":"l3-20261104-161022-vtwp"}
+{"t":1793788887498,"type":"web.field","step":"passengers","field":"pax.0.name","label":"Passenger 1 · Full name","value":"ttttt t sr","valueLen":10,"keys":[[1793788880395,"ttttt t "],[1793788885822,"ttttt t s"],[1793788886771,"ttttt t sr"]],"lane":"3","sessionId":"l3-20261104-161022-vtwp"}

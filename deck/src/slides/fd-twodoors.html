@@ -1,0 +1,228 @@
+<section class="slide" data-id="fd-twodoors" data-title="Same link, two doors (live)" data-chapter="Then · You read the page">
+  <h2 class="td-head"><span class="ln"><span>Same link, <em>two doors.</em></span></span></h2>
+
+  <div class="td-link fade-in" style="--d:1">
+    <span class="td-get">GET</span><span class="td-url">/talk</span>
+  </div>
+  <p class="td-mode fade-in" style="--d:2"><i></i><span>Live from this laptop</span></p>
+
+  <svg class="td-branch" viewBox="0 0 1920 60" width="1920" height="60" aria-hidden="true">
+    <path class="td-br td-br-h" pathLength="1" d="M960 0 C 960 34, 536 22, 536 58"/>
+    <path class="td-br td-br-a" pathLength="1" d="M960 0 C 960 34, 1384 22, 1384 58"/>
+  </svg>
+
+  <!-- the human door -->
+  <figure class="td-pane td-human">
+    <div class="td-bar">
+      <span class="td-who">For a person</span>
+      <span class="td-accept">Accept: text/html</span>
+    </div>
+    <div class="td-meta"><b class="td-status">—</b><span class="td-type"></span><span class="td-bytes"></span></div>
+    <div class="td-frame"><iframe class="td-iframe" title="The talk page, as a person sees it" tabindex="-1"></iframe></div>
+  </figure>
+
+  <!-- the agent door -->
+  <figure class="td-pane td-agent">
+    <div class="td-bar">
+      <span class="td-who">For an agent</span>
+      <span class="td-accept">Accept: text/markdown</span>
+    </div>
+    <div class="td-meta"><b class="td-status">—</b><span class="td-type"></span><span class="td-bytes"></span></div>
+    <div class="td-term"><div class="td-lines"></div></div>
+  </figure>
+
+  <!-- sizes -->
+  <div class="td-size td-size-h"><i class="td-sbar"></i><span class="td-slbl"></span></div>
+  <div class="td-size td-size-a"><i class="td-sbar"></i><span class="td-slbl"></span></div>
+
+  <p class="td-cf footnote">Cloudflare measured its own launch post: <b>16,180 tokens</b> as a web page, <b>3,150</b> as Markdown, about 80% less. <span>blog.cloudflare.com/markdown-for-agents · Feb 2026</span></p>
+
+  <i data-step="1" hidden></i><i data-step="2" hidden></i><i data-step="3" hidden></i>
+  <aside class="notes">
+    <p><b>[1:15]</b></p>
+    <p>On screen: one link, /talk, served by this laptop. The tag at the top right says if it is live or recorded. "So what if the same link had two doors? This is the page for this talk, on the laptop in front of me."</p>
+    <p>Press: the left door opens. The slide asks for /talk the way a browser does, Accept text/html, and shows the answer: status, type, size, and the page itself. "Ask it like a browser and you get the web page."</p>
+    <p>Press: the right door. Same link, but the request says Accept text/markdown. The terminal prints the real reply: 200, text/markdown, the size, and a Link header pointing to llms.txt. Then the Markdown itself. "Ask it like an agent and you get the talk as text. Same address, no scraping, nothing to guess. And the Link header tells it where the instructions are."</p>
+    <p>Press: the two sizes as bars, and Cloudflare's number underneath. "Here, the Markdown is a small fraction of the page. Cloudflare measured the same thing on its own launch post: 16,180 tokens as a web page, 3,150 as Markdown. About 80% less to read, for the same words."</p>
+    <p>Careful: the bars are bytes, measured live on this laptop; Cloudflare's numbers are tokens, from their post. Don't put them on one scale or say "80%" about our page. If the tag says "Recorded", say "this is the reply I recorded when I built the deck", not "live".</p>
+  </aside>
+</section>
+<style>
+  section.slide[data-id="fd-twodoors"] { display: block; padding: 0; gap: 0; }
+  .slide[data-id="fd-twodoors"] .td-head { position: absolute; left: 136px; top: 92px; margin: 0; font: 500 92px/1.04 var(--font-display); letter-spacing: -0.04em; color: var(--headline); white-space: nowrap; }
+
+  .slide[data-id="fd-twodoors"] .td-link { position: absolute; left: 960px; top: 222px; transform: translateX(-50%); display: flex; align-items: center; gap: 16px; padding: 14px 28px; border-radius: 999px; border: 1px solid rgba(122, 167, 255, 0.55); background: rgba(12, 17, 29, 0.92); box-shadow: 0 0 0 6px rgba(61, 123, 255, 0.08), 0 20px 60px -20px rgba(10, 124, 255, 0.8); font: 500 30px/1 var(--font-mono); white-space: nowrap; }
+  .slide[data-id="fd-twodoors"].is-in .td-link { transform: translateX(-50%); }
+  .slide[data-id="fd-twodoors"] .td-get { color: #45d4ff; }
+  .slide[data-id="fd-twodoors"] .td-url { color: var(--ink); }
+
+  .slide[data-id="fd-twodoors"] .td-mode { position: absolute; right: 136px; top: 122px; margin: 0; display: flex; align-items: center; gap: 12px; padding: 10px 18px; border-radius: 999px; border: 1px solid var(--line-2); font: 500 22px/1 var(--font-body); color: var(--ink-2); white-space: nowrap; }
+  .slide[data-id="fd-twodoors"] .td-mode i { width: 10px; height: 10px; border-radius: 50%; background: #45d4ff; box-shadow: 0 0 0 4px rgba(69, 212, 255, 0.15), 0 0 12px rgba(69, 212, 255, 0.85); animation: fd-twodoors-live 2.4s ease-in-out infinite; }
+  .slide[data-id="fd-twodoors"].is-rec .td-mode { color: var(--hot); border-color: rgba(245, 176, 74, 0.45); }
+  .slide[data-id="fd-twodoors"].is-rec .td-mode i { background: var(--hot); box-shadow: none; animation: none; }
+  @keyframes fd-twodoors-live { 50% { box-shadow: 0 0 0 9px rgba(69, 212, 255, 0.03), 0 0 20px rgba(69, 212, 255, 0.95); } }
+
+  .slide[data-id="fd-twodoors"] .td-branch { position: absolute; left: 0; top: 282px; overflow: visible; }
+  .slide[data-id="fd-twodoors"] .td-br { fill: none; stroke: #7aa7ff; stroke-width: 2; stroke-dasharray: 1 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.1s cubic-bezier(0.65, 0, 0.35, 1); filter: drop-shadow(0 0 6px rgba(92, 147, 255, 0.9)); }
+  .slide[data-id="fd-twodoors"].b1 .td-br-h, .slide[data-id="fd-twodoors"].b2 .td-br-a { stroke-dashoffset: 0; }
+
+  .slide[data-id="fd-twodoors"] .td-pane { position: absolute; top: 340px; width: 800px; height: 526px; margin: 0; box-sizing: border-box; border-radius: 22px; overflow: hidden; background: #050914; border: 1px solid var(--line-2); opacity: 0.0; transform: translateY(26px); filter: blur(8px); transition: opacity 1s var(--ease) 0.6s, transform 1.2s var(--ease) 0.6s, filter 1s var(--ease) 0.6s; }
+  .slide[data-id="fd-twodoors"] .td-human { left: 136px; }
+  .slide[data-id="fd-twodoors"] .td-agent { left: 984px; border-color: rgba(122, 167, 255, 0.45); box-shadow: 0 50px 110px -55px rgba(10, 124, 255, 0.9); }
+  .slide[data-id="fd-twodoors"].b1 .td-human, .slide[data-id="fd-twodoors"].b2 .td-agent { opacity: 1; transform: none; filter: none; }
+
+  .slide[data-id="fd-twodoors"] .td-bar { height: 52px; display: flex; align-items: center; justify-content: space-between; padding: 0 22px; border-bottom: 1px solid var(--line); }
+  .slide[data-id="fd-twodoors"] .td-who { font: 500 22px/1 var(--font-body); letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-2); }
+  .slide[data-id="fd-twodoors"] .td-agent .td-who { color: #9cc0ff; }
+  .slide[data-id="fd-twodoors"] .td-accept { font: 400 22px/1 var(--font-mono); color: var(--accent-2); }
+  .slide[data-id="fd-twodoors"] .td-meta { height: 50px; display: flex; align-items: center; gap: 22px; padding: 0 22px; border-bottom: 1px solid var(--line); font: 400 22px/1 var(--font-mono); color: var(--ink-3); white-space: nowrap; }
+  .slide[data-id="fd-twodoors"] .td-status { font-weight: 500; color: #45d4ff; }
+  .slide[data-id="fd-twodoors"] .td-type { color: var(--ink-2); }
+  .slide[data-id="fd-twodoors"] .td-bytes { margin-left: auto; color: var(--ink); }
+
+  .slide[data-id="fd-twodoors"] .td-frame { position: relative; height: 422px; overflow: hidden; background: #02040b; }
+  .slide[data-id="fd-twodoors"] .td-iframe { position: absolute; left: 0; top: 0; width: 1280px; height: 676px; border: 0; transform: scale(0.625); transform-origin: 0 0; pointer-events: none; background: #02040b; }
+
+  .slide[data-id="fd-twodoors"] .td-term { position: relative; height: 422px; overflow: hidden; padding: 16px 22px; box-sizing: border-box; -webkit-mask: linear-gradient(180deg, #000 78%, transparent 99%); mask: linear-gradient(180deg, #000 78%, transparent 99%); }
+  .slide[data-id="fd-twodoors"] .td-lines { font: 400 22px/1.4 var(--font-mono); color: var(--ink-2); }
+  .slide[data-id="fd-twodoors"] .tdl { white-space: pre-wrap; word-break: break-word; min-height: 1.45em; }
+  .slide[data-id="fd-twodoors"] .tdl.cmd { color: var(--ink-3); }
+  .slide[data-id="fd-twodoors"] .tdl.cmd b { color: #45d4ff; font-weight: 400; }
+  .slide[data-id="fd-twodoors"] .tdl.hd { color: #9cc0ff; }
+  .slide[data-id="fd-twodoors"] .tdl.hd b { color: var(--ink-3); font-weight: 400; }
+  .slide[data-id="fd-twodoors"] .tdl.st { color: #45d4ff; }
+  .slide[data-id="fd-twodoors"] .tdl.h1 { color: var(--ink); font-weight: 600; }
+  .slide[data-id="fd-twodoors"] .tdl.h2 { color: var(--ink); }
+  .slide[data-id="fd-twodoors"] .tdl.md { color: var(--ink-2); }
+  .slide[data-id="fd-twodoors"] .tdl.anim { opacity: 0; animation: fd-twodoors-line 0.35s var(--ease) forwards; animation-delay: calc(var(--i) * 55ms + 0.9s); }
+  @keyframes fd-twodoors-line { from { opacity: 0; transform: translateX(-6px); } to { opacity: 1; transform: none; } }
+
+  /* sizes, step 3: bytes, one scale for both doors */
+  .slide[data-id="fd-twodoors"] .td-size { position: absolute; top: 884px; width: 800px; height: 66px; display: flex; flex-direction: column-reverse; justify-content: flex-end; align-items: flex-start; gap: 12px; opacity: 0; transition: opacity 0.9s var(--ease); }
+  .slide[data-id="fd-twodoors"] .td-size-h { left: 136px; }
+  .slide[data-id="fd-twodoors"] .td-size-a { left: 984px; }
+  .slide[data-id="fd-twodoors"] .td-sbar { flex: none; height: 16px; width: var(--w, 0px); border-radius: 8px; transform: scaleX(0); transform-origin: left; transition: transform 1.4s cubic-bezier(0.65, 0, 0.35, 1) 0.2s; }
+  .slide[data-id="fd-twodoors"] .td-size-h .td-sbar { background: linear-gradient(90deg, rgba(195, 202, 216, 0.35), rgba(195, 202, 216, 0.6)); }
+  .slide[data-id="fd-twodoors"] .td-size-a .td-sbar { background: #f4f8ff; box-shadow: 0 0 0 4px rgba(122, 167, 255, 0.2), 0 0 16px rgba(122, 167, 255, 0.9); }
+  .slide[data-id="fd-twodoors"] .td-slbl { font: 400 26px/1 var(--font-body); color: var(--ink-2); white-space: nowrap; }
+  .slide[data-id="fd-twodoors"] .td-slbl b { color: var(--ink); font-weight: 600; }
+  .slide[data-id="fd-twodoors"].b3 .td-size { opacity: 1; }
+  .slide[data-id="fd-twodoors"].b3 .td-sbar { transform: none; }
+
+  .slide[data-id="fd-twodoors"] .td-cf { bottom: 44px; font-size: 22px; color: var(--ink-2); max-width: 1648px; opacity: 0; transform: translateY(10px); transition: opacity 1s var(--ease) 1.2s, transform 1s var(--ease) 1.2s; }
+  .slide[data-id="fd-twodoors"] .td-cf b { color: var(--ink); font-weight: 500; }
+  .slide[data-id="fd-twodoors"] .td-cf span { display: block; color: var(--ink-3); }
+  .slide[data-id="fd-twodoors"].b3 .td-cf { opacity: 1; transform: none; }
+
+  .slide[data-id="fd-twodoors"].lx-snap *, .slide[data-id="fd-twodoors"].lx-snap *::before, .slide[data-id="fd-twodoors"].lx-snap *::after { transition-duration: 0s !important; transition-delay: 0s !important; }
+  .slide[data-id="fd-twodoors"].lx-snap .tdl.anim { animation: none; opacity: 1; }
+  .mini .slide[data-id="fd-twodoors"] .td-pane, .mini .slide[data-id="fd-twodoors"] .td-size, .mini .slide[data-id="fd-twodoors"] .td-cf { opacity: 1; transform: none; filter: none; }
+  .mini .slide[data-id="fd-twodoors"] .td-br { stroke-dashoffset: 0; }
+</style>
+<script>
+(() => {
+  // Same link, two doors. On this laptop (127.0.0.1 / localhost) the slide asks /talk twice, live:
+  // Accept: text/html for the person's door, Accept: text/markdown for the agent's door.
+  // Anywhere else (file, LAN, published copy) it shows the reply recorded at build time, labelled.
+  const LINK = '</talk/llms.txt>; rel="llms-txt", </talk.md>; rel="alternate"; type="text/markdown"';
+  const fmt = (n) => Number(n).toLocaleString("en-US");
+  const force = new URLSearchParams(location.search).get("live") === "1";
+  const isLive = (api) => api.localhost && (!api.static || force);
+
+  async function ask(api, accept) {
+    const want = accept === "md" ? "text/markdown" : "text/html";
+    if (isLive(api)) {
+      try {
+        const res = await fetch("/talk", { headers: { Accept: want }, cache: "no-store" });
+        const text = await res.text();
+        return { live: true, status: res.status, statusText: res.statusText || (res.ok ? "OK" : ""), type: res.headers.get("content-type") || "", bytes: new TextEncoder().encode(text).length, link: res.headers.get("link") || "", vary: res.headers.get("vary") || "", text };
+      } catch { /* fall through to the recording */ }
+    }
+    const text = accept === "md" ? api.inline.talkMd : api.inline.talkHtmlSize;
+    const bytes = accept === "md" ? api.inlineBytes.talkMd : api.inlineBytes.talkHtmlSize;
+    return { live: false, status: 200, statusText: "OK", type: `${want}; charset=utf-8`, bytes, link: LINK, vary: "Accept", text: text || "" };
+  }
+
+  function meta(pane, r) {
+    pane.querySelector(".td-status").textContent = `${r.status} ${r.statusText}`.trim();
+    pane.querySelector(".td-type").textContent = r.type.split(";")[0];
+    pane.querySelector(".td-bytes").textContent = r.bytes ? `${fmt(r.bytes)} bytes` : "";
+  }
+
+  function terminal(slide, r, api, animate) {
+    const host = location.host && api.localhost ? location.host : "127.0.0.1:4900";
+    const L = [];
+    L.push(["cmd", `$ curl -i -H <b>"Accept: text/markdown"</b> ${api.esc(host)}/talk`]);
+    L.push(["st", `HTTP/1.1 ${r.status} ${api.esc(r.statusText)}`]);
+    L.push(["hd", `<b>content-type:</b> ${api.esc(r.type)}`]);
+    L.push(["hd", `<b>content-length:</b> ${r.bytes}`]);
+    if (r.link) L.push(["hd", `<b>link:</b> ${api.esc(r.link)}`]);
+    if (r.vary) L.push(["hd", `<b>vary:</b> ${api.esc(r.vary)}`]);
+    L.push(["md", ""]);
+    const body = (r.text || "").split("\n").slice(0, 28);
+    for (const line of body) L.push([/^# /.test(line) ? "h1" : /^#{2,} /.test(line) ? "h2" : "md", api.esc(line)]);
+    slide.querySelector(".td-lines").innerHTML = L.map(([c, h], i) => `<div class="tdl ${c}${animate ? " anim" : ""}" style="--i:${i}">${h || " "}</div>`).join("");
+  }
+
+  function sizes(slide) {
+    const d = slide._td;
+    if (!d.html || !d.md) return;
+    const max = Math.max(d.html.bytes, d.md.bytes, 1);
+    const W = 800;
+    const h = slide.querySelector(".td-size-h"), a = slide.querySelector(".td-size-a");
+    h.style.setProperty("--w", `${Math.max(6, Math.round((W * d.html.bytes) / max))}px`);
+    a.style.setProperty("--w", `${Math.max(6, Math.round((W * d.md.bytes) / max))}px`);
+    h.querySelector(".td-slbl").innerHTML = `<b>${fmt(d.html.bytes)}</b> bytes as a web page`;
+    a.querySelector(".td-slbl").innerHTML = `<b>${fmt(d.md.bytes)}</b> bytes as Markdown`;
+  }
+
+  function frame(slide, api) {
+    const f = slide.querySelector(".td-iframe");
+    if (f.dataset.ready) return;
+    f.dataset.ready = "1";
+    if (isLive(api) || (api.localhost && !api.static)) f.src = "/talk";
+    else {
+      // The recorded page, without its scripts and with the deck's own (inlined) fonts instead of its font files.
+      let faces = "";
+      for (const sheet of document.styleSheets) { try { for (const r of sheet.cssRules) if (r instanceof CSSFontFaceRule) faces += r.cssText + "\n"; } catch { /* other origin */ } }
+      const html = (api.inline.talkHtmlSize || "").replace(/<script\b[\s\S]*?<\/script>/gi, "").replace(/@font-face\s*\{[^}]*\}/g, "").replace(/<\/head>/i, `<style>${faces}</style></head>`);
+      f.srcdoc = html || "<p style='font:24px sans-serif;color:#c3cad8;padding:40px'>The talk page was not found at build time.</p>";
+    }
+  }
+
+  // If a live request fails, the slide falls back to the recording and says so.
+  function recorded(slide, r) {
+    if (r.live) return;
+    slide.classList.add("is-rec");
+    slide.querySelector(".td-mode span").textContent = "Recorded when the deck was built";
+  }
+
+  async function render(slide, n, api, entering) {
+    const d = slide._td;
+    const failed = (d.html && !d.html.live) || (d.md && !d.md.live);
+    slide.classList.toggle("is-rec", !isLive(api) || failed);
+    slide.querySelector(".td-mode span").textContent = isLive(api) && !failed ? "Live from this laptop" : "Recorded when the deck was built";
+    if (n >= 1) {
+      frame(slide, api);
+      if (!d.htmlP) d.htmlP = ask(api, "html").then((r) => { d.html = r; recorded(slide, r); meta(slide.querySelector(".td-human"), r); sizes(slide); });
+    }
+    if (n >= 2 && !d.mdP) {
+      const animate = !entering && !api.static;
+      d.mdP = ask(api, "md").then((r) => { d.md = r; recorded(slide, r); meta(slide.querySelector(".td-agent"), r); terminal(slide, r, api, animate); sizes(slide); });
+    }
+    if (n >= 3) sizes(slide);
+  }
+
+  window.DECK_SLIDE_HOOKS["fd-twodoors"] = {
+    enter(slide) { slide._td = {}; slide._tdEnter = true; },
+    step(slide, n, api) {
+      const entering = slide._tdEnter;
+      if (entering && n > 0) { slide.classList.add("lx-snap"); setTimeout(() => slide.classList.remove("lx-snap"), 80); }
+      slide._tdEnter = false;
+      slide._td = slide._td || {};
+      render(slide, n, api, entering);
+    },
+    leave(slide) { slide._td = {}; },
+  };
+})();
+</script>

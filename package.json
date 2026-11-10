@@ -1,0 +1,17 @@
+{
+  "name": "agent-front-door",
+  "private": true,
+  "type": "module",
+  "description": "Devcon 8 talk 'Your Next Customer Won't Click': deck, Harbour Line demo shop (human door + agent door), race board",
+  "bin": {
+    "ferry": "./bin/ferry"
+  },
+  "scripts": {
+    "start": "node server/index.mjs",
+    "deck": "cd deck && node build.mjs",
+    "lane1": "node race/lane1.mjs"
+  },
+  "dependencies": {
+    "viem": "^2.57.16"
+  }
+}

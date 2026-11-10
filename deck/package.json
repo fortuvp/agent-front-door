@@ -1,0 +1,17 @@
+{
+  "name": "agent-front-door-deck",
+  "private": true,
+  "type": "module",
+  "description": "Builds the single-file deck for Your Next Customer Won't Click; the font packages and qrcode are only read at build time",
+  "scripts": {
+    "build": "node build.mjs"
+  },
+  "dependencies": {
+    "@fontsource/geist": "^5.3.0",
+    "@fontsource/geist-mono": "^5.2.5",
+    "@fontsource/ibm-plex-mono": "^5.3.0",
+    "@fontsource/instrument-serif": "^5.3.0",
+    "@fontsource/urbanist": "^5.2.5",
+    "qrcode": "^1.5.4"
+  }
+}

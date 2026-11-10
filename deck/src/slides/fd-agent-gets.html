@@ -1,0 +1,115 @@
+<section class="slide" data-id="fd-agent-gets" data-title="What the agent should get" data-chapter="Now · Your agent reads the docs">
+  <i data-step="1" hidden></i><i data-step="2" hidden></i><i data-step="3" hidden></i><i data-step="4" hidden></i><i data-step="5" hidden></i>
+  <span class="label ag-kick fade-in">The agent door · four pieces</span>
+  <h2 class="title ag-title"><span class="ln"><span>What the agent should <em>get.</em></span></span></h2>
+
+  <!-- the track: four nodes on one line of light -->
+  <svg class="ag-track" viewBox="0 0 1680 40" aria-hidden="true">
+    <line class="ag-rail" x1="20" y1="20" x2="1660" y2="20"/>
+    <line class="ag-lit ag-lit-1" x1="20" y1="20" x2="430" y2="20"/>
+    <line class="ag-lit ag-lit-2" x1="430" y1="20" x2="850" y2="20"/>
+    <line class="ag-lit ag-lit-3" x1="850" y1="20" x2="1270" y2="20"/>
+    <line class="ag-lit ag-lit-4" x1="1270" y1="20" x2="1660" y2="20"/>
+    <circle class="ag-node ag-n1" cx="20" cy="20" r="11"/>
+    <circle class="ag-node ag-n2" cx="440" cy="20" r="11"/>
+    <circle class="ag-node ag-n3" cx="860" cy="20" r="11"/>
+    <circle class="ag-node ag-n4" cx="1280" cy="20" r="11"/>
+  </svg>
+
+  <div class="ag-cards">
+    <div class="ag-card ag-c1">
+      <span class="ag-i">01</span>
+      <h3>Discover</h3>
+      <p>A Markdown page and a skill file.</p>
+<pre><span class="m">GET</span> /ferry/
+Accept: text/markdown
+<span class="r">→ 200</span> index.md
+  SKILL.md · llms.txt</pre>
+    </div>
+    <div class="ag-card ag-c2">
+      <span class="ag-i">02</span>
+      <h3>Price</h3>
+      <p>The price in the reply.</p>
+<pre><span class="m">POST</span> /quote
+<span class="r">→ 200</span> quote
+  12.80 USDC
+  test network</pre>
+    </div>
+    <div class="ag-card ag-c3">
+      <span class="ag-i">03</span>
+      <h3>Permission</h3>
+      <p>A request the human can say yes to.</p>
+<pre><span class="m">POST</span> /orders
+<span class="r">→ 202</span> awaiting_approval
+  approveUrl
+  /approve/?order=…</pre>
+    </div>
+    <div class="ag-card ag-c4">
+      <span class="ag-i">04</span>
+      <h3>Pay</h3>
+      <p>A receipt it can show.</p>
+<pre><span class="m">POST</span> /orders/…/pay
+<span class="r">→ 402</span> Payment Required
+X-PAYMENT: signed
+<span class="r">→ 200</span> receipt</pre>
+    </div>
+  </div>
+
+  <!-- press 5 · a CLI takes flags, not forms -->
+  <div class="ag-cli">
+    <p class="ag-cli-t">A CLI takes flags, <em>not forms.</em></p>
+    <pre class="ag-cmd"><span class="p">$</span> ferry quote --route gateway-elephanta --date 2026-11-07 --depart 09:30 --return 14:00 \
+    --class upper-deck --board jetty-4 --passenger "Asha Rao,31,passport,P4417702" …</pre>
+  </div>
+
+  <p class="footnote ag-foot">From this demo’s own shop (Harbour Line is made up). Payment: x402, HTTP status 402, test USDC on Arbitrum Sepolia.</p>
+
+  <aside class="notes">
+    <p><b>[1:00]</b></p>
+    <p>On entry: "So what should the agent get from your door? Four pieces, in the order it needs them."</p>
+    <p>Press. "Discover. Ask for Markdown and you get Markdown: a short page and a skill file that teaches the steps. No cookie banner."</p>
+    <p>Press. "Price. The price comes back in the reply, before anything is booked: 12.80 USDC, on a test network. No form."</p>
+    <p>Press. "Permission. The agent does not pay yet. It gets a request its human can say yes to. We will see that card in a moment."</p>
+    <p>Press. "Pay. Once the yes comes, the agent asks to pay and gets HTTP 402, Payment Required. x402 finally uses it. It signs the payment and gets a receipt it can show: a reference, the transaction, a link to check it."</p>
+    <p>Press. "And one more: a CLI takes flags, not forms. Every field the website asks me to type is one flag here. Words are for the person. Flags are for the agent."</p>
+    <p>Careful: no numbers on this slide except the demo’s own price. 402 is a status code, not a statistic. The receipt is real only on the test network; never say "paid" before settlement.</p>
+  </aside>
+</section>
+<style>
+  .slide[data-id="fd-agent-gets"] { display: block; padding: 0; }
+  .slide[data-id="fd-agent-gets"] .ag-kick { position: absolute; left: 120px; top: 92px; color: var(--ink-3); }
+  .slide[data-id="fd-agent-gets"] .ag-title { position: absolute; left: 114px; top: 132px; margin: 0; font-size: 100px; line-height: 1.08; white-space: nowrap; max-width: none; }
+
+  /* track */
+  .slide[data-id="fd-agent-gets"] .ag-track { position: absolute; left: 120px; top: 296px; width: 1680px; height: 40px; overflow: visible; }
+  .slide[data-id="fd-agent-gets"] .ag-rail { stroke: rgba(255, 255, 255, .1); stroke-width: 2; }
+  .slide[data-id="fd-agent-gets"] .ag-lit { stroke: #7aa7ff; stroke-width: 3; stroke-linecap: round; filter: drop-shadow(0 0 6px rgba(69, 212, 255, .8)); transform-box: fill-box; transform-origin: left; transform: scaleX(0); transition: transform 1.4s var(--ease) .1s; }
+  .slide[data-id="fd-agent-gets"].b1 .ag-lit-1, .slide[data-id="fd-agent-gets"].b2 .ag-lit-2, .slide[data-id="fd-agent-gets"].b3 .ag-lit-3, .slide[data-id="fd-agent-gets"].b4 .ag-lit-4 { transform: none; }
+  .slide[data-id="fd-agent-gets"] .ag-node { fill: #02040b; stroke: rgba(255, 255, 255, .22); stroke-width: 2; transition: fill 1s var(--ease), stroke 1s var(--ease); }
+  .slide[data-id="fd-agent-gets"].b1 .ag-n1, .slide[data-id="fd-agent-gets"].b2 .ag-n2, .slide[data-id="fd-agent-gets"].b3 .ag-n3, .slide[data-id="fd-agent-gets"].b4 .ag-n4 { fill: #45d4ff; stroke: #bfeeff; filter: drop-shadow(0 0 10px rgba(69, 212, 255, .9)); }
+
+  /* cards */
+  .slide[data-id="fd-agent-gets"] .ag-cards { position: absolute; left: 120px; top: 360px; width: 1680px; display: grid; grid-template-columns: repeat(4, 400px); gap: 20px; }
+  .slide[data-id="fd-agent-gets"] .ag-card { position: relative; height: 430px; box-sizing: border-box; padding: 28px 28px 0; border-radius: 22px; border: 1px solid var(--card-border); background: #0c111d; box-shadow: inset 0 1px 0 rgba(255, 255, 255, .06); opacity: .4; transform: translateY(14px); filter: saturate(0); transition: opacity 1s var(--ease), transform 1.2s var(--ease), filter 1s var(--ease), border-color 1s var(--ease); }
+  .slide[data-id="fd-agent-gets"].b1 .ag-c1, .slide[data-id="fd-agent-gets"].b2 .ag-c2, .slide[data-id="fd-agent-gets"].b3 .ag-c3, .slide[data-id="fd-agent-gets"].b4 .ag-c4 { opacity: 1; transform: none; filter: none; }
+  .slide[data-id="fd-agent-gets"] .ag-card :is(p, pre) { opacity: 0; transition: opacity 1s var(--ease) .25s; }
+  .slide[data-id="fd-agent-gets"].b1 .ag-c1 :is(p, pre), .slide[data-id="fd-agent-gets"].b2 .ag-c2 :is(p, pre), .slide[data-id="fd-agent-gets"].b3 .ag-c3 :is(p, pre), .slide[data-id="fd-agent-gets"].b4 .ag-c4 :is(p, pre) { opacity: 1; }
+  .slide[data-id="fd-agent-gets"] .ag-i { font: 500 22px/1 var(--font-mono); color: var(--ink-4); }
+  .slide[data-id="fd-agent-gets"] .ag-card h3 { margin: 16px 0 0; font: 500 52px/1 var(--font-display); letter-spacing: -0.035em; color: var(--ink); }
+  .slide[data-id="fd-agent-gets"] .ag-card p { margin: 14px 0 0; min-height: 80px; font: 400 30px/1.25 var(--font-body); color: var(--ink-2); text-wrap: balance; }
+  .slide[data-id="fd-agent-gets"] .ag-card pre { position: absolute; left: 20px; right: 20px; bottom: 20px; margin: 0; padding: 16px 18px; border-radius: 14px; background: rgba(0, 0, 0, .38); border: 1px solid var(--line); font: 400 22px/1.5 var(--font-mono); color: var(--ink-3); white-space: pre; overflow: hidden; }
+  .slide[data-id="fd-agent-gets"] .ag-card pre .m { color: var(--ink-2); }
+  .slide[data-id="fd-agent-gets"] .ag-card pre .r { color: #8be6ff; }
+
+  /* press 5 · CLI */
+  .slide[data-id="fd-agent-gets"] .ag-cli { position: absolute; left: 120px; top: 826px; width: 1680px; opacity: 0; transform: translateY(16px); transition: opacity 1.1s var(--ease), transform 1.3s var(--ease); }
+  .slide[data-id="fd-agent-gets"].b5 .ag-cli { opacity: 1; transform: none; }
+  .slide[data-id="fd-agent-gets"].b5 .ag-card { opacity: .78; }
+  .slide[data-id="fd-agent-gets"] .ag-cli-t { margin: 0; font: 500 46px/1.1 var(--font-display); letter-spacing: -0.03em; color: var(--ink); }
+  .slide[data-id="fd-agent-gets"] .ag-cmd { margin: 14px 0 0; font: 400 22px/1.45 var(--font-mono); color: var(--ink-2); white-space: pre; }
+  .slide[data-id="fd-agent-gets"] .ag-cmd .p { color: var(--accent-2); }
+
+  .slide[data-id="fd-agent-gets"] .ag-foot { left: 120px; right: 120px; bottom: 30px; max-width: 1680px; font-size: 22px; line-height: 1.4; color: var(--ink-3); }
+  /* readable from the back of the booth: labels and sources at 22px or more */
+  .slide[data-id="fd-agent-gets"] .label { font-size: 22px; }
+</style>

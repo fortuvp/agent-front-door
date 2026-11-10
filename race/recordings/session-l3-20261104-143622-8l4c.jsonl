@@ -1,0 +1,19 @@
+{"t":1793783182421,"type":"web.view","step":"home","label":"Opened the Harbour Line website","value":"/ferry/?lane=3","valueLen":14,"lane":"3","sessionId":"l3-20261104-143622-8l4c"}
+{"t":1793783196798,"type":"web.click","step":"home","field":"cookie.necessary","label":"Cookies: only necessary","lane":"3","sessionId":"l3-20261104-143622-8l4c"}
+{"t":1793783201481,"type":"web.click","step":"home","field":"nav.book","label":"Book tickets","lane":"3","sessionId":"l3-20261104-143622-8l4c"}
+{"t":1793783201481,"type":"web.step","step":"auth","label":"Sign in","lane":"3","sessionId":"l3-20261104-143622-8l4c"}
+{"t":1793783204248,"type":"web.click","step":"auth","field":"auth.tab","label":"Sign in tab","value":"signin","valueLen":6,"lane":"3","sessionId":"l3-20261104-143622-8l4c"}
+{"t":1793783208015,"type":"web.click","step":"auth","field":"auth.signin","label":"Sign in","lane":"3","sessionId":"l3-20261104-143622-8l4c"}
+{"t":1793783208015,"type":"web.submit","step":"auth","field":"auth.signin","label":"Signed in","lane":"3","sessionId":"l3-20261104-143622-8l4c"}
+{"t":1793783208015,"type":"web.step","step":"trip","label":"Trip","lane":"3","sessionId":"l3-20261104-143622-8l4c"}
+{"t":1793783209331,"type":"web.click","step":"trip","field":"trip.route.toggle","label":"Open the route list","lane":"3","sessionId":"l3-20261104-143622-8l4c"}
+{"t":1793783211058,"type":"web.click","step":"trip","field":"trip.route.pick","label":"Route: Gateway of India to Elephanta Island","value":"gateway-elephanta","valueLen":17,"lane":"3","sessionId":"l3-20261104-143622-8l4c"}
+{"t":1793783211717,"type":"web.click","step":"trip","field":"trip.date.toggle","label":"Open the calendar","lane":"3","sessionId":"l3-20261104-143622-8l4c"}
+{"t":1793783212999,"type":"web.click","step":"trip","field":"trip.date.pick","label":"Date: Sat 7 Nov","value":"2026-11-07","valueLen":10,"lane":"3","sessionId":"l3-20261104-143622-8l4c"}
+{"t":1793783215932,"type":"web.click","step":"trip","field":"trip.out","label":"Leave at 09:30","value":"09:30","valueLen":5,"lane":"3","sessionId":"l3-20261104-143622-8l4c"}
+{"t":1793783217849,"type":"web.click","step":"trip","field":"trip.ret","label":"Return at 15:30","value":"15:30","valueLen":5,"lane":"3","sessionId":"l3-20261104-143622-8l4c"}
+{"t":1793783219900,"type":"web.click","step":"trip","field":"trip.next","label":"Continue to passengers","lane":"3","sessionId":"l3-20261104-143622-8l4c"}
+{"t":1793783219900,"type":"web.submit","step":"trip","field":"trip.next","label":"Trip chosen: Sat 7 Nov, 09:30 and back at 15:30","lane":"3","sessionId":"l3-20261104-143622-8l4c"}
+{"t":1793783219900,"type":"web.step","step":"passengers","label":"Passengers","lane":"3","sessionId":"l3-20261104-143622-8l4c"}
+{"t":1793783225586,"type":"web.field","step":"passengers","field":"pax.0.name","label":"Passenger 1 · Full name","value":"Fortunato","valueLen":9,"keys":[[1793783224576,"F"],[1793783224704,"Fo"],[1793783224770,"For"],[1793783224931,"Fort"],[1793783224955,"Fortu"],[1793783225059,"Fortun"],[1793783225157,"Fortuna"],[1793783225299,"Fortunat"],[1793783225404,"Fortunato"]],"lane":"3","sessionId":"l3-20261104-143622-8l4c"}
+{"t":1793783226636,"type":"web.field","step":"passengers","field":"pax.0.age","label":"Passenger 1 · Age","value":"32","valueLen":2,"keys":[[1793783226315,"3"],[1793783226400,"32"]],"lane":"3","sessionId":"l3-20261104-143622-8l4c"}

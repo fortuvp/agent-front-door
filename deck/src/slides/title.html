@@ -1,0 +1,128 @@
+<section class="slide" data-id="title" data-title="Your next customer won't click" data-chapter="Opening" data-hud="none">
+  <p class="ti-event label fade-in">Devcon 8 <span class="ti-dot">·</span> Agentic Hub <span class="ti-dot">·</span> 4 Nov 2026</p>
+
+  <h1 class="ti-head">
+    <span class="ln"><span>Your next customer</span></span>
+    <span class="ln" style="--d:1"><span>won’t <em class="ti-click">click.</em></span></span>
+  </h1>
+  <p class="ti-sub fade-in" style="--d:2">Designing for humans and agents</p>
+
+  <div class="ti-by fade-in" style="--d:3">
+    <b>Fortunato Cinquepalmi</b>
+    <span>Product Lead, Kleros</span>
+  </div>
+
+  <!-- the cursor that never arrives -->
+  <div class="ti-cur" aria-hidden="true">
+    <div class="ti-cur-in">
+      <svg viewBox="0 0 40 56" width="52" height="73">
+        <path d="M3 3 L3 43 L13.5 33.5 L20.5 50 L27 47.2 L20 31 L34 31 Z" fill="#0c111d" stroke="#f4f6fb" stroke-width="2.4" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- the quiet text request that goes through -->
+  <div class="ti-req" aria-label="A text request to the talk's door">
+    <i class="ti-wire"><i class="ti-pulse"></i></i>
+    <p class="ti-out"><span class="ti-arrow">→</span> GET /talk <span class="ti-h">Accept: text/markdown</span></p>
+    <p class="ti-back"><span class="ti-arrow">←</span> <b class="ti-ok">200</b> <span class="ti-type">text/markdown</span> <span class="ti-bytes"></span></p>
+  </div>
+
+  <i data-step="1" hidden></i>
+  <aside class="notes">
+    <p><b>[0:30]</b></p>
+    <p>On screen: the title. A cursor drifts toward "click." and slows down. Let it drift while you start. "Hi, I'm Fortunato. I lead product at Kleros. This talk is about a customer that doesn't use your buttons."</p>
+    <p>Press: a quiet request goes out at the bottom right, and the answer comes back: 200, Markdown, a few kilobytes. The cursor is still not there. "While the cursor is still on its way, that request already went out and came back. No click. That is a customer too. So today: how do you design for people and for agents at the same time?"</p>
+    <p>Careful: don't say people stop clicking, or that the website is dead. The claim is smaller: some of your next customers arrive as agents, by text. The bytes on the line are the real size of this talk's Markdown door (measured live on the laptop, or at build time).</p>
+  </aside>
+</section>
+<style>
+  section.slide[data-id="title"] { display: block; padding: 0; gap: 0; }
+  .slide[data-id="title"] .ti-event { position: absolute; left: 136px; top: 112px; margin: 0; font-size: 24px; letter-spacing: 0.1em; color: var(--ink-3); }
+  .slide[data-id="title"] .ti-dot { color: var(--ink-4); padding: 0 6px; }
+
+  .slide[data-id="title"] .ti-head { position: absolute; left: 130px; top: 300px; margin: 0; font: 500 142px/1.02 var(--font-display); letter-spacing: -0.045em; color: var(--headline); white-space: nowrap; }
+  .slide[data-id="title"] .ti-head em { letter-spacing: -0.045em; }
+  .slide[data-id="title"] .ti-sub { position: absolute; left: 136px; top: 642px; margin: 0; font: 400 48px/1.2 var(--font-body); letter-spacing: -0.015em; color: var(--ink-2); }
+
+  .slide[data-id="title"] .ti-by { position: absolute; left: 136px; bottom: 116px; display: flex; flex-direction: column; gap: 10px; }
+  .slide[data-id="title"] .ti-by b { font: 500 38px/1.1 var(--font-display); letter-spacing: -0.02em; color: var(--ink); }
+  .slide[data-id="title"] .ti-by span { font: 400 30px/1.2 var(--font-body); color: var(--ink-3); }
+
+  /* cursor: positioned by the hook just past "click." (these are the fallbacks) */
+  .slide[data-id="title"] .ti-cur { position: absolute; left: var(--cx, 930px); top: var(--cy, 560px); width: 52px; height: 73px; opacity: 0; transform: translate(620px, 360px); pointer-events: none; }
+  .slide[data-id="title"].is-in .ti-cur { animation: title-approach 6.5s cubic-bezier(0.08, 0.62, 0.12, 1) 1.1s forwards, title-hesitate 7s ease-in-out 7.8s infinite; }
+  @keyframes title-approach { 0% { opacity: 0; transform: translate(620px, 360px); } 12% { opacity: 1; } 100% { opacity: 1; transform: translate(0, 0); } }
+  @keyframes title-hesitate { 0%, 100% { opacity: 1; transform: translate(0, 0); } 45% { opacity: 1; transform: translate(-16px, -10px); } 60% { opacity: 1; transform: translate(-16px, -10px); } }
+  .slide[data-id="title"] .ti-cur-in { transition: opacity 1.6s var(--ease) 0.6s, transform 2s var(--ease) 0.6s; filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.6)) drop-shadow(0 0 10px rgba(122, 167, 255, 0.35)); }
+  .slide[data-id="title"].b1 .ti-cur-in { opacity: 0.32; transform: translate(26px, 18px); }
+  .slide[data-id="title"] .ti-cur svg { display: block; }
+
+  /* the request */
+  .slide[data-id="title"] .ti-req { position: absolute; right: 136px; bottom: 116px; width: 620px; font: 400 26px/1.5 var(--font-mono); color: var(--ink-3); }
+  .slide[data-id="title"] .ti-req p { margin: 0; white-space: nowrap; opacity: 0; transform: translateY(10px); transition: opacity 0.9s var(--ease), transform 1s var(--ease); }
+  .slide[data-id="title"] .ti-arrow { color: var(--ink-4); padding-right: 6px; }
+  .slide[data-id="title"] .ti-h { color: var(--accent-2); padding-left: 10px; }
+  .slide[data-id="title"] .ti-ok { color: #45d4ff; font-weight: 500; }
+  .slide[data-id="title"] .ti-type { color: var(--ink-2); padding: 0 10px; }
+  .slide[data-id="title"] .ti-bytes { color: var(--ink-3); }
+  .slide[data-id="title"] .ti-wire { position: absolute; left: 0; right: 0; top: -22px; height: 1px; background: linear-gradient(90deg, transparent, rgba(122, 167, 255, 0.35) 18%, rgba(122, 167, 255, 0.35) 82%, transparent); transform: scaleX(0); transform-origin: left; transition: transform 1.2s cubic-bezier(0.65, 0, 0.35, 1); }
+  .slide[data-id="title"] .ti-pulse { position: absolute; top: -4px; left: 0; width: 60px; height: 9px; margin-left: -30px; border-radius: 9px; background: radial-gradient(closest-side, #f4f8ff, rgba(122, 167, 255, 0.8) 45%, transparent); opacity: 0; }
+  .slide[data-id="title"].b1 .ti-wire { transform: none; }
+  .slide[data-id="title"].b1 .ti-pulse { animation: title-pulse 1.7s cubic-bezier(0.45, 0, 0.25, 1) 0.4s both; }
+  @keyframes title-pulse { 0% { left: 0; opacity: 0; } 12% { opacity: 1; } 85% { opacity: 1; } 100% { left: 100%; opacity: 0; } }
+  .slide[data-id="title"].b1 .ti-out { opacity: 1; transform: none; transition-delay: 0.2s; }
+  .slide[data-id="title"].b1 .ti-back { opacity: 1; transform: none; transition-delay: 1.9s; }
+
+  .slide[data-id="title"].lx-snap *, .slide[data-id="title"].lx-snap *::before, .slide[data-id="title"].lx-snap *::after { transition-duration: 0s !important; transition-delay: 0s !important; }
+  .mini .slide[data-id="title"] .ti-cur { opacity: 1; transform: none; }
+  .mini .slide[data-id="title"] .ti-req p { opacity: 1; transform: none; }
+  .mini .slide[data-id="title"] .ti-wire { transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .slide[data-id="title"].is-in .ti-cur { animation: none; opacity: 1; transform: none; }
+  }
+</style>
+<script>
+(() => {
+  const fmt = (n) => n.toLocaleString("en-US");
+  // Put the cursor just past "click." (it stops short and never lands on it).
+  const place = (slide) => {
+    const em = slide.querySelector(".ti-click");
+    if (!em) return;
+    const r = slide.getBoundingClientRect(), e = em.getBoundingClientRect();
+    if (!r.width || !e.width) return;
+    const k = 1920 / r.width;
+    // the span is still rising out of its mask on entry: measure from its line box, not its moving glyphs
+    const line = em.closest(".ln").getBoundingClientRect();
+    slide.style.setProperty("--cx", `${Math.round((e.right - r.left) * k + 54)}px`);
+    slide.style.setProperty("--cy", `${Math.round((line.top - r.top) * k + 0.62 * line.height * k)}px`);
+  };
+  const fill = async (slide, api) => {
+    const out = slide.querySelector(".ti-bytes");
+    let bytes = api.inlineBytes.talkMd || 0, type = "text/markdown", ok = "200";
+    if (api.localhost && !api.static) {
+      try {
+        const res = await fetch("/talk", { headers: { Accept: "text/markdown" }, cache: "no-store" });
+        const text = await res.text();
+        bytes = new TextEncoder().encode(text).length;
+        ok = String(res.status);
+        type = (res.headers.get("content-type") || type).split(";")[0];
+      } catch { /* keep the build-time size */ }
+    }
+    slide.querySelector(".ti-ok").textContent = ok;
+    slide.querySelector(".ti-type").textContent = type;
+    out.textContent = bytes ? `${fmt(bytes)} bytes` : "";
+  };
+  window.DECK_SLIDE_HOOKS["title"] = {
+    enter(slide, api) { slide._tiEnter = true; requestAnimationFrame(() => place(slide)); setTimeout(() => place(slide), 400); },
+    step(slide, n, api) {
+      if (slide._tiEnter && n > 0) { slide.classList.add("lx-snap"); setTimeout(() => slide.classList.remove("lx-snap"), 80); }
+      slide._tiEnter = false;
+      place(slide);
+      if (n >= 1 && !slide._tiFilled) { slide._tiFilled = true; fill(slide, api); }
+      if (n === 0) slide._tiFilled = false;
+    },
+    leave(slide) { slide._tiFilled = false; },
+  };
+})();
+</script>
